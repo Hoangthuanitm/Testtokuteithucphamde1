@@ -120,7 +120,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>模擬試験 ĐỀ 1 - Trang Sensei <ruby><rb>特定技能</rb><rt>とくていぎのう</rt></ruby>1</h1>
+            <h1>飲食料品製造業特定技能1号ー模擬試験第１回目</h1>
             <p>Thời gian làm bài: 40 phút. Tổng số câu: 41 câu trắc nghiệm.</p>
         </div>
         <div id="info-form">
@@ -145,26 +145,24 @@
             </div>
             <button id="submit">Nộp bài</button>
         </div>
-        <div id="results">
-            <h2>Kết quả</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Phần</th>
-                        <th>Điểm</th>
-                        <th>Tổng câu</th>
-                        <th>Giải thích</th>
-                    </tr>
-                </thead>
-                <tbody id="results-body">
-                    <!-- Kết quả phần -->
-                </tbody>
-            </table>
-            <p id="total-score"></p>
-            <p id="grade"></p>
-            <button id="reset">Làm lại</button>
-        </div>
-    </div>
+       <div id="results">
+    <h2>Kết quả</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tên</th>
+                <th>Lớp</th>
+                <th>Ngày</th>
+                <th>Thời gian làm bài</th>
+                <th>Tổng điểm</th>
+                <th>Tỷ lệ</th>
+                <th>Xếp loại</th>
+            </tr>
+        </thead>
+        <tbody id="results-body"></tbody>
+    </table>
+    <button id="reset">Làm lại</button>
+</div>
     <div id="timer">Thời gian còn lại: 40:00</div>
     <div id="modal">
         <div class="modal-content">
@@ -174,20 +172,22 @@
         </div>
     </div>
     <div id="history-content" class="container">
-        <h2>Lịch sử kiểm tra</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Tên</th>
-                    <th>Lớp</th>
-                    <th>Ngày</th>
-                    <th>Điểm phần</th>
-                    <th>Tổng điểm</th>
-                </tr>
-            </thead>
-            <tbody id="history-body"></tbody>
-        </table>
-    </div>
+    <h2>Lịch sử kiểm tra</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tên</th>
+                <th>Lớp</th>
+                <th>Ngày</th>
+                <th>Thời gian làm bài</th>
+                <th>Tổng điểm</th>
+                <th>Tỷ lệ</th>
+                <th>Xếp loại</th>
+            </tr>
+        </thead>
+        <tbody id="history-body"></tbody>
+    </table>
+</div>
 
     <script>
         // Firebase config
@@ -351,53 +351,63 @@
         document.getElementById('submit').addEventListener('click', submitQuiz);
 
         function submitQuiz() {
-            clearInterval(timerInterval);
-            const answers = {};
-            questions.forEach(q => {
-                const selected = document.querySelector(`input[name="q${q.id}"]:checked`);
-                answers[q.id] = selected ? selected.value : null;
-            });
-            const partScores = parts.map(part => {
-                let correct = 0;
-                part.questions.forEach(q => {
-                    if (answers[q.id] === answerKey[q.id]) correct++;
-                });
-                return { correct, total: part.questions.length };
-            });
-            const totalCorrect = partScores.reduce((sum, s) => sum + s.correct, 0);
-            const totalQuestions = questions.length;
-            const percentage = (totalCorrect / totalQuestions) * 100;
-            let grade = 'F';
-            if (percentage >= 80) grade = 'A';
-            else if (percentage >= 60) grade = 'B';
-            else if (percentage >= 40) grade = 'C';
-            else if (percentage >= 20) grade = 'D';
+    clearInterval(timerInterval);
+    const answers = {};
+    questions.forEach(q => {
+        const selected = document.querySelector(`input[name="q${q.id}"]:checked`);
+        answers[q.id] = selected ? selected.value : null;
+    });
+    const partScores = parts.map(part => {
+        let correct = 0;
+        part.questions.forEach(q => {
+            if (answers[q.id] === answerKey[q.id]) correct++;
+        });
+        return { correct, total: part.questions.length };
+    });
+    const totalCorrect = partScores.reduce((sum, s) => sum + s.correct, 0);
+    const totalQuestions = questions.length;
+    const percentage = (totalCorrect / totalQuestions) * 100;
+    let grade = 'F';
+    if (percentage >= 80) grade = 'A';
+    else if (percentage >= 60) grade = 'B';
+    else if (percentage >= 40) grade = 'C';
+    else if (percentage >= 20) grade = 'D';
 
-            const resultsBody = document.getElementById('results-body');
-            resultsBody.innerHTML = '';
-            partScores.forEach((score, index) => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `<td>${parts[index].name}</td><td>${score.correct}/${score.total}</td><td>${score.total}</td><td></td>`; // Giải thích nếu có
-                resultsBody.appendChild(tr);
-            });
-            document.getElementById('total-score').textContent = `Tổng điểm: ${totalCorrect}/${totalQuestions} (${percentage.toFixed(2)}%)`;
-            document.getElementById('grade').textContent = `Xếp loại: ${grade}`;
+    // Tính thời gian làm bài
+    const timeTaken = (40 * 60 - timeLeft) > 0 ? `${Math.floor((40 * 60 - timeLeft) / 60)}:${((40 * 60 - timeLeft) % 60).toString().padStart(2, '0')}` : 'NaN';
 
-            // Lưu localStorage và Firestore
-            const result = {
-                name: document.getElementById('name').value,
-                class: document.getElementById('class').value,
-                date: document.getElementById('date').value,
-                partScores: partScores.map(s => `${s.correct}/${s.total}`),
-                total: `${totalCorrect}/${totalQuestions}`,
-                timestamp: new Date()
-            };
-            localStorage.setItem('quizHistory', JSON.stringify([...JSON.parse(localStorage.getItem('quizHistory') || '[]'), result]));
-            collection.add(result);
+    // Hiển thị kết quả trong bảng
+    const resultsBody = document.getElementById('results-body');
+    resultsBody.innerHTML = '';
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+        <td>${document.getElementById('name').value}</td>
+        <td>${document.getElementById('class').value}</td>
+        <td>${document.getElementById('date').value}</td>
+        <td>${timeTaken}</td>
+        <td>${totalCorrect}/${totalQuestions}</td>
+        <td>${percentage.toFixed(2)}%</td>
+        <td>${grade}</td>
+    `;
+    resultsBody.appendChild(tr);
 
-            document.getElementById('quiz').style.display = 'none';
-            document.getElementById('results').style.display = 'block';
-        }
+    // Lưu localStorage và Firestore
+    const result = {
+        name: document.getElementById('name').value,
+        class: document.getElementById('class').value,
+        date: document.getElementById('date').value,
+        timeTaken: timeTaken,
+        total: `${totalCorrect}/${totalQuestions}`,
+        percentage: percentage.toFixed(2),
+        grade: grade,
+        timestamp: new Date()
+    };
+    localStorage.setItem('quizHistory', JSON.stringify([...JSON.parse(localStorage.getItem('quizHistory') || '[]'), result]));
+    collection.add(result);
+
+    document.getElementById('quiz').style.display = 'none';
+    document.getElementById('results').style.display = 'block';
+}
 
         document.getElementById('reset').addEventListener('click', () => {
             document.getElementById('quiz').style.display = 'none';
@@ -425,19 +435,44 @@
             }
         });
 
-        async function loadHistory() {
-            const historyBody = document.getElementById('history-body');
-            historyBody.innerHTML = '';
-            // Từ Firestore
-            const snapshot = await collection.orderBy('timestamp', 'desc').get();
-            snapshot.forEach(doc => {
-                const data = doc.data();
-                const tr = document.createElement('tr');
-                tr.innerHTML = `<td>${data.name}</td><td>${data.class}</td><td>${data.date}</td><td>${data.partScores.join(', ')}</td><td>${data.total}</td>`;
-                historyBody.appendChild(tr);
-            });
-            // Hoặc từ localStorage nếu cần
+       async function loadHistory() {
+    const historyBody = document.getElementById('history-body');
+    historyBody.innerHTML = '';
+
+    // Lấy dữ liệu từ Firestore
+    const snapshot = await collection.orderBy('timestamp', 'desc').get();
+    snapshot.forEach(doc => {
+        const data = doc.data();
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${data.name || 'asd'}</td>
+            <td>${data.class || 'asd'}</td>
+            <td>${data.date || '2025-08-28'}</td>
+            <td>${data.timeTaken || 'NaN'}</td>
+            <td>${data.total || '0/0'}</td>
+            <td>${data.percentage ? data.percentage + '%' : 'NaN%'}</td>
+            <td>${data.grade || 'F'}</td>
+        `;
+        historyBody.appendChild(tr);
+    });
+
+    // Thêm dữ liệu mẫu nếu không có dữ liệu từ Firestore
+    if (snapshot.empty) {
+        for (let i = 0; i < 3; i++) {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>asd</td>
+                <td>asd</td>
+                <td>2025-08-28</td>
+                <td>NaN</td>
+                <td>0/0</td>
+                <td>NaN%</td>
+                <td>F</td>
+            `;
+            historyBody.appendChild(tr);
         }
+    }
+}
     </script>
 </body>
 </html>
