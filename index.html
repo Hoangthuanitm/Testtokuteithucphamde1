@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ĐỀ 1 - Trang Sensei 特定技能1</title>
+    <title>飲食料品製造業特定技能1号ー模擬試験第１回目</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -115,7 +115,7 @@
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script> <!-- If needed -->
 </head>
 <body>
     <div class="container">
@@ -204,7 +204,7 @@
         const db = firebase.firestore();
         const collection = db.collection('testHistorytokuteithucphamde1');
 
-        // Đáp án
+        // Đáp án - Dễ thay đổi, giả định dựa trên PDF (cần chỉnh nếu có đáp án thực)
         const answerKey = {
             1: 'A',
             2: 'B',
@@ -249,14 +249,14 @@
             40: 'A'
         };
 
-        // Câu hỏi đầy đủ
+        // Câu hỏi đầy đủ từ PDF
         const questions = [
             { id: 1, text: '<ruby><rb>問１</rb><rt>もん１</rt></ruby>：<ruby><rb>安全</rb><rt>あんぜん</rt></ruby>な<ruby><rb>商品</rb><rt>しょうひん</rt></ruby>では<ruby><rb>何</rb><rt>なん</rt></ruby>ですか。<ruby><rb>正</rb><rt>ただ</rt></ruby>しいものを一<ruby><rb>つ選</rb><rt>えら</rt></ruby>びなさい。', options: ['A. <ruby><rb>食</rb><rt>た</rt></ruby>べる<ruby><rb>人</rb><rt>ひと</rt></ruby>に<ruby><rb>怪我</rb><rt>けが</rt></ruby>をさせない<ruby><rb>食品</rb><rt>しょくひん</rt></ruby>', 'B. <ruby><rb>作</rb><rt>つく</rt></ruby>る<ruby><rb>人</rb><rt>ひと</rt></ruby>に<ruby><rb>病気</rb><rt>びょうき</rt></ruby>をさせない<ruby><rb>食品</rb><rt>しょくひん</rt></ruby>', 'C. おいしくて<ruby><rb>値段</rb><rt>ねだん</rt></ruby>が<ruby><rb>安</rb><rt>やす</rt></ruby>い<ruby><rb>食品</rb><rt>しょくひん</rt></ruby>'], explanation: '' },
             { id: 2, text: '<ruby><rb>問2</rb><rt>もん2</rt></ruby>：<ruby><rb>物理的</rb><rt>ぶつりてき</rt></ruby><ruby><rb>危害要因</rb><rt>きがいよういん</rt></ruby>はどれですか。<ruby><rb>間違</rb><rt>まちが</rt></ruby>っているものを一<ruby><rb>つ選</rb><rt>えら</rt></ruby>びなさい。', options: ['A. <ruby><rb>石</rb><rt>いし</rt></ruby>', 'B. <ruby><rb>髪</rb><rt>かみ</rt></ruby>の<ruby><rb>毛</rb><rt>け</rt></ruby>', 'C. ガラス'], explanation: '' },
             { id: 3, text: '<ruby><rb>問3</rb><rt>もん3</rt></ruby>：<ruby><rb>原材料</rb><rt>げんざいりょう</rt></ruby>に<ruby><rb>入</rb><rt>はい</rt></ruby>っていた<ruby><rb>農薬</rb><rt>のうやく</rt></ruby>や<ruby><rb>抗生物質</rb><rt>こうせいぶっしつ</rt></ruby>、<ruby><rb>洗浄剤</rb><rt>せんじょうざい</rt></ruby>や<ruby><rb>殺菌剤</rb><rt>さっきんざい</rt></ruby>などによっておこる<ruby><rb>危害要因</rb><rt>きがいよういん</rt></ruby>は<ruby><rb>何</rb><rt>なん</rt></ruby>と<ruby><rb>呼</rb><rt>よ</rt></ruby>ばれていますか。<ruby><rb>正</rb><rt>ただ</rt></ruby>しものを一<ruby><rb>つ選</rb><rt>えら</rt></ruby>びなさい', options: ['A. <ruby><rb>化学的危害要因</rb><rt>かがくてききがいよういん</rt></ruby>', 'B. <ruby><rb>生物的危害要因</rb><rt>せいぶつてききがいよういん</rt></ruby>', 'C. <ruby><rb>物理的危害要因</rb><rt>ぶつりてききがいよういん</rt></ruby>'], explanation: '' },
             { id: 4, text: '<ruby><rb>問４</rb><rt>もん４</rt></ruby>：ヒスタミンを<ruby><rb>含</rb><rt>ふく</rt></ruby>んだ<ruby><rb>魚</rb><rt>さかな</rt></ruby>やその<ruby><rb>料理</rb><rt>りょうり</rt></ruby>を<ruby><rb>食</rb><rt>た</rt></ruby>べると、どんな<ruby><rb>食中毒</rb><rt>しょくちゅうどく</rt></ruby>の<ruby><rb>症状</rb><rt>しょうじょう</rt></ruby>を<ruby><rb>起</rb><rt>お</rt></ruby>こりますか。<ruby><rb>正</rb><rt>ただ</rt></ruby>しいものを一<ruby><rb>つ選</rb><rt>えら</rt></ruby>びなさい。', options: ['A. <ruby><rb>吐</rb><rt>は</rt></ruby>き<ruby><rb>気</rb><rt>け</rt></ruby>、おう<ruby><rb>吐</rb><rt>と</rt></ruby>、<ruby><rb>下痢</rb><rt>げり</rt></ruby>、<ruby><rb>頭痛</rb><rt>ずつう</rt></ruby>', 'B. <ruby><rb>激</rb><rt>はげ</rt></ruby>しい<ruby><rb>腹痛</rb><rt>ふくつう</rt></ruby>', 'C. かゆみ、じんましん、<ruby><rb>唇</rb><rt>くちびる</rt></ruby>やまぶたの<ruby><rb>腫</rb><rt>は</rt></ruby>れ、<ruby><rb>鼻水</rb><rt>はなみず</rt></ruby>やくしゃみが<ruby><rb>止</rb><rt>と</rt></ruby>まらない、<ruby><rb>息</rb><rt>いき</rt></ruby>ができない、<ruby><rb>吐</rb><rt>は</rt></ruby>き<ruby><rb>気</rb><rt>け</rt></ruby>'], explanation: '' },
-            { id: 5, text: '<ruby><rb>問5</rb><rt>もん5</rt></ruby>: ソラニン<ruby><rb>食中毒</rb><rt>しょくちゅうどく</rt></ruby>の<ruby><rb>原因</rb><rt>げんいん</rt></ruby>は<ruby><rb>何</rb><rt>なん</rt></ruby>ですか。<ruby><rb>正</rb><rt>ただ</rt></ruby>しいものを<ruby><rb>選</rb><rt>えら</rt></ruby>びなさい。', options: ['A. <ruby><rb>魚</rb><rt>さかな</rt></ruby>をとったあと、すぐに<ruby><rb>冷蔵</rb><rt>れいぞう</rt></ruby>または<ruby><rb>冷凍</rb><rt>れいとう</rt></ruby>しなかったなど<ruby><rb>悪</rb><rt>わる</rt></ruby>い<ruby><rb>条件</rb><rt>じょうけん</rt></ruby>で<ruby><rb>保存</rb><rt>ほぞん</rt></ruby>した<ruby><rb>商品</rb><rt>しょうひん</rt></ruby>を<ruby><rb>食</rb><rt>た</rt></ruby>べたため', 'B. じゃがいもの<ruby><rb>芽</rb><rt>め</rt></ruby>や<ruby><rb>緑色</rb><rt>みどりいろ</rt></ruby>の<ruby><rb>皮</rb><rt>かわ</rt></ruby>を<ruby><rb>食</rb><rt>た</rt></ruby>べたため', 'C. <ruby><rb>人</rb><rt>ひと</rt></ruby>と<ruby><rb>動物</rb><rt>どうぶつ</rt></ruby>の<ruby><rb>体</rb><rt>からだ</rt></ruby>の<ruby><rb>表面</rb><rt>ひょうめん</rt></ruby>や<ruby><rb>体内</rb><rt>たいない</rt></ruby>で<ruby><rb>人</rb><rt>ひと</rt></ruby>や<ruby><rb>動物</rb><rt>どうぶつ</rt></ruby>から<ruby><rb>栄養</rb><rt>えいよう</rt></ruby>を<ruby><rb>取</rb><rt>と</rt></ruby>って<ruby><rb>生</rb><rt>い</rt></ruby>きている<ruby><rb>寄生虫</rb><rt>きせいちゅう</rt></ruby>を<ruby><rb>含</rb><rt>ふく</rt></ruby>まれている<ruby><rb>魚界類</rb><rt>ぎょうかいるい</rt></ruby>を<ruby><rb>食</rb><rt>た</rt></ruby>べたため'], explanation: '' },
-            { id: 6, text: '<ruby><rb>問6</rb><rt>もん6</rt></ruby>: <ruby><rb>硬質異物</rb><rt>こうしついぶつ</rt></ruby>でも<ruby><rb>硬質異物</rb><rt>こうしついぶつ</rt></ruby>ではない<ruby><rb>異物</rb><rt>いぶつ</rt></ruby>でも<ruby><rb>入</rb><rt>はい</rt></ruby>っていることを<ruby><rb>発見</rb><rt>はっけん</rt></ruby>したときは、<ruby><rb>何</rb><rt>なに</rt></ruby>をすればいいですか。', options: ['A. <ruby><rb>小</rb><rt>ちい</rt></ruby>さな<ruby><rb>異物</rb><rt>いぶつ</rt></ruby>ですから、<ruby><rb>自分</rb><rt>じぶん</rt></ruby>で<ruby><rb>取り除</rb><rt>のぞ</rt></ruby>く', 'B. すぐに<ruby><rb>作業</rb><rt>さぎょう</rt></ruby>を<ruby><rb>止</rb><rt>と</rt></ruby>めて<ruby><rb>責任者</rb><rt>せきにんしゃ</rt></ruby>に<ruby><rb>報告</rb><rt>ほうこく</rt></ruby>する', 'C. <ruby><rb>硬質異物</rb><rt>こうしついぶつ</rt></ruby>なら<ruby><rb>決</rb><rt>き</rt></ruby>められた<ruby><rb>通</rb><rt>とお</rt></ruby>り<ruby><rb>対応</rb><rt>たいおう</rt></ruby>しますが、<ruby><rb>硬質異物</rb><rt>こうしついぶつ</rt></ruby>ではない<ruby><rb>異物</rb><rt>いぶつ</rt></ruby>なら<ruby><rb>危</rb><rt>あぶ</rt></ruby>なくないので<ruby><rb>無視</rb><rt>むし</rt></ruby>する。'], explanation: '' },
+            { id: 5, text: '<ruby><rb>問5</rb><rt>もん5</rt></ruby>:  ソラニン<ruby><rb>食中毒</rb><rt>しょくちゅうどく</rt></ruby>の<ruby><rb>原因</rb><rt>げんいん</rt></ruby>は<ruby><rb>何</rb><rt>なん</rt></ruby>ですか。<ruby><rb>正</rb><rt>ただ</rt></ruby>しいものを<ruby><rb>選</rb><rt>えら</rt></ruby>びなさい。', options: ['A. <ruby><rb>魚</rb><rt>さかな</rt></ruby>をとったあと、すぐに<ruby><rb>冷蔵</rb><rt>れいぞう</rt></ruby>または<ruby><rb>冷凍</rb><rt>れいとう</rt></ruby>しなかったなど<ruby><rb>悪</rb><rt>わる</rt></ruby>い<ruby><rb>条件</rb><rt>じょうけん</rt></ruby>で<ruby><rb>保存</rb><rt>ほぞん</rt></ruby>した<ruby><rb>商品</rb><rt>しょうひん</rt></ruby>を<ruby><rb>食</rb><rt>た</rt></ruby>べたため', 'B. じゃがいもの<ruby><rb>芽</rb><rt>め</rt></ruby>や<ruby><rb>緑色</rb><rt>みどりいろ</rt></ruby>の<ruby><rb>皮</rb><rt>かわ</rt></ruby>を<ruby><rb>食</rb><rt>た</rt></ruby>べたため', 'C. <ruby><rb>人</rb><rt>ひと</rt></ruby>と<ruby><rb>動物</rb><rt>どうぶつ</rt></ruby>の<ruby><rb>体</rb><rt>からだ</rt></ruby>の<ruby><rb>表面</rb><rt>ひょうめん</rt></ruby>や<ruby><rb>体内</rb><rt>たいない</rt></ruby>で<ruby><rb>人</rb><rt>ひと</rt></ruby>や<ruby><rb>動物</rb><rt>どうぶつ</rt></ruby>から<ruby><rb>栄養</rb><rt>えいよう</rt></ruby>を<ruby><rb>取</rb><rt>と</rt></ruby>って<ruby><rb>生</rb><rt>い</rt></ruby>きている<ruby><rb>寄生虫</rb><rt>きせいちゅう</rt></ruby>を<ruby><rb>含</rb><rt>ふく</rt></ruby>まれている<ruby><rb>魚界類</rb><rt>ぎょうかいるい</rt></ruby>を<ruby><rb>食</rb><rt>た</rt></ruby>べたため'], explanation: '' },
+            { id: 6, text: '<ruby><rb>問6</rb><rt>もん6</rt></ruby>:  <ruby><rb>硬質異物</rb><rt>こうしついぶつ</rt></ruby>でも<ruby><rb>硬質異物</rb><rt>こうしついぶつ</rt></ruby>ではない<ruby><rb>異物</rb><rt>いぶつ</rt></ruby>でも<ruby><rb>入</rb><rt>はい</rt></ruby>っていることを<ruby><rb>発見</rb><rt>はっけん</rt></ruby>したときは、<ruby><rb>何</rb><rt>なに</rt></ruby>をすればいいですか。', options: ['A. <ruby><rb>小</rb><rt>ちい</rt></ruby>さな<ruby><rb>異物</rb><rt>いぶつ</rt></ruby>ですから、<ruby><rb>自分</rb><rt>じぶん</rt></ruby>で<ruby><rb>取り除</rb><rt>のぞ</rt></ruby>く', 'B. すぐに<ruby><rb>作業</rb><rt>さぎょう</rt></ruby>を<ruby><rb>止</rb><rt>と</rt></ruby>めて<ruby><rb>責任者</rb><rt>せきにんしゃ</rt></ruby>に<ruby><rb>報告</rb><rt>ほうこく</rt></ruby>する', 'C. <ruby><rb>硬質異物</rb><rt>こうしついぶつ</rt></ruby>なら<ruby><rb>決</rb><rt>き</rt></ruby>められた<ruby><rb>通</rb><rt>とお</rt></ruby>り<ruby><rb>対応</rb><rt>たいおう</rt></ruby>しますが、<ruby><rb>硬質異物</rb><rt>こうしついぶつ</rt></ruby>ではない<ruby><rb>異物</rb><rt>いぶつ</rt></ruby>なら<ruby><rb>危</rb><rt>あぶ</rt></ruby>なくないので<ruby><rb>無視</rb><rt>むし</rt></ruby>する。'], explanation: '' },
             { id: 7, text: '<ruby><rb>問7</rb><rt>もん7</rt></ruby>. <ruby><rb>危害要因</rb><rt>きがいよういん</rt></ruby>として、<ruby><rb>間違</rb><rt>まちが</rt></ruby>っているものを一<ruby><rb>つ選</rb><rt>えら</rt></ruby>びなさい。', options: ['A. <ruby><rb>食中毒菌</rb><rt>しょくちゅうどくきん</rt></ruby>', 'B. <ruby><rb>機械</rb><rt>きかい</rt></ruby>の<ruby><rb>故障</rb><rt>こしょう</rt></ruby>', 'C. <ruby><rb>洗浄剤</rb><rt>せんじょうざい</rt></ruby>や<ruby><rb>農薬等</rb><rt>のうやくとう</rt></ruby>を<ruby><rb>誤</rb><rt>あやま</rt></ruby>ってつかい、<ruby><rb>食品</rb><rt>しょくひん</rt></ruby>に<ruby><rb>混入</rb><rt>こんにゅう</rt></ruby>し、<ruby><rb>事故</rb><rt>じこ</rt></ruby>を<ruby><rb>発生</rb><rt>はっせい</rt></ruby>する'], explanation: '' },
             { id: 8, text: '<ruby><rb>問８</rb><rt>もん８</rt></ruby>．<ruby><rb>特徴</rb><rt>とくちょう</rt></ruby>は<ruby><rb>熱</rb><rt>ねつ</rt></ruby>に<ruby><rb>強</rb><rt>つよ</rt></ruby>い<ruby><rb>芽胞</rb><rt>がほう</rt></ruby>を<ruby><rb>作</rb><rt>つく</rt></ruby>ること、<ruby><rb>体</rb><rt>からだ</rt></ruby>の<ruby><rb>中</rb><rt>なか</rt></ruby>や<ruby><rb>食品</rb><rt>しょくひん</rt></ruby>の<ruby><rb>中</rb><rt>なか</rt></ruby>で<ruby><rb>菌数</rb><rt>きんすう</rt></ruby>が<ruby><rb>増</rb><rt>ふ</rt></ruby>えて<ruby><rb>毒素</rb><rt>どくそ</rt></ruby>を<ruby><rb>作</rb><rt>つく</rt></ruby>ることです。それ はどの<ruby><rb>細菌</rb><rt>さいきん</rt></ruby>ですか。<ruby><rb>正</rb><rt>ただ</rt></ruby>しいものを一つ選びなさい', options: ['A. セレウス<ruby><rb>菌</rb><rt>きん</rt></ruby>', 'B. <ruby><rb>黄色</rb><rt>おうしょく</rt></ruby>ブドウ<ruby><rb>球菌</rb><rt>きゅうきん</rt></ruby>', 'C. ウェルシュ<ruby><rb>菌</rb><rt>きん</rt></ruby>'], explanation: '' },
             { id: 9, text: '<ruby><rb>問９</rb><rt>もん９</rt></ruby>：<ruby><rb>食中毒</rb><rt>しょくちゅうどく</rt></ruby>の<ruby><rb>原因</rb><rt>げんいん</rt></ruby>となる<ruby><rb>微生物</rb><rt>びせいぶつ</rt></ruby>を<ruby><rb>防</rb><rt>ふせ</rt></ruby>ぐために３つの<ruby><rb>原則</rb><rt>げんそく</rt></ruby>を<ruby><rb>守</rb><rt>まも</rt></ruby>らなけれんばなりません。それは「つけ ない」、「<ruby><rb>増</rb><rt>ふ</rt></ruby>やさない」のほかに、もう一 <ruby><rb>つ</rb><rt>ひと</rt></ruby>は何 ですか。', options: ['A. <ruby><rb>汚染</rb><rt>おせん</rt></ruby>させない', 'B. <ruby><rb>殺</rb><rt>ころ</rt></ruby>す', 'C. <ruby><rb>広</rb><rt>ひろ</rt></ruby>げない'], explanation: '' },
@@ -281,4 +281,163 @@
             { id: 28, text: '<ruby><rb>問28</rb><rt>もん28</rt></ruby>：<ruby><rb>重要管理点</rb><rt>じゅうようかんりてん</rt></ruby>のうち、<ruby><rb>間違</rb><rt>まちが</rt></ruby>っているものを一 <ruby><rb>つ選</rb><rt>えら</rt></ruby>びなさい。', options: ['A. <ruby><rb>金属検出器</rb><rt>きんぞくけんしゅつき</rt></ruby>', 'B. <ruby><rb>加熱殺菌</rb><rt>かねつさっきん</rt></ruby>', 'C. <ruby><rb>入出庫現場</rb><rt>にゅうしゅっこげんば</rt></ruby>'], explanation: '' },
             { id: 29, text: '<ruby><rb>問29</rb><rt>もん29</rt></ruby>：<ruby><rb>食品</rb><rt>しょくひん</rt></ruby>を<ruby><rb>製造</rb><rt>せいぞう</rt></ruby>する<ruby><rb>場合</rb><rt>ばあい</rt></ruby>に<ruby><rb>重要管理点</rb><rt>じゅうようかんりてん</rt></ruby>となる<ruby><rb>代表的</rb><rt>だいひょうてき</rt></ruby>な<ruby><rb>工程</rb><rt>こうてい</rt></ruby>はどれですか。<ruby><rb>間違</rb><rt>まちが</rt></ruby>っているものを一 <ruby><rb>つ選</rb><rt>えら</rt></ruby>びなさい。', options: ['A. <ruby><rb>金属探知機</rb><rt>きんぞくたんちき</rt></ruby>', 'B. X Ｘ <ruby><rb>線異物検出器</rb><rt>せんいぶつけんしゅつき</rt></ruby>', 'C. <ruby><rb>賞味期限</rb><rt>しょうみきげん</rt></ruby>、<ruby><rb>消費期限管理</rb><rt>しょうひきげんかんり</rt></ruby>'], explanation: '' },
             { id: 30, text: '<ruby><rb>問30</rb><rt>もん30</rt></ruby>：<ruby><rb>食品製造工場</rb><rt>しょくひんせいぞうこうじょう</rt></ruby>で<ruby><rb>起</rb><rt>お</rt></ruby>きる<ruby><rb>労働災害</rb><rt>ろうどうさいがい</rt></ruby>は、多 い<ruby><rb>順</rb><rt>じゅん</rt></ruby>について<ruby><rb>正</rb><rt>ただ</rt></ruby>しいものを一 <ruby><rb>つ選</rb><rt>えら</rt></ruby>びなさい。', options: ['A. <ruby><rb>転倒</rb><rt>てんとう</rt></ruby>、はさまれ・<ruby><rb>巻</rb><rt>ま</rt></ruby>き<ruby><rb>込</rb><rt>こ</rt></ruby>まれ、<ruby><rb>切</rb><rt>き</rt></ruby>れ・こすれ', 'B. はさまれ・<ruby><rb>巻</rb><rt>ま</rt></ruby>き<ruby><rb>込</rb><rt>こ</rt></ruby>まれ、<ruby><rb>転倒</rb><rt>てんとう</rt></ruby>、<ruby><rb>切</rb><rt>き</rt></ruby>れ・こすれ', 'C. <ruby><rb>転倒</rb><rt>てんとう</rt></ruby>、<ruby><rb>切</rb><rt>き</rt></ruby>れ・こすれ、はさまれ・巻き込まれ'], explanation: '' },
-            { id: 31, text: '<ruby><rb>問31</rb><rt>もん31</rt></ruby>：<ruby><rb>正</rb><rt>ただ</rt></ruby>しい<ruby><rb>服装</rb><rt>ふくそう</rt></ruby>の<ruby><rb>着用</rb><rt>ちゃくよう</rt></ruby>について、<ruby><rb>間違</rb><rt>まちが</rt></ruby>っているものを一 <ruby><rb>つ選</rb><rt>えら</rt></ruby>びなさい。', options: ['A. <ruby><rb>決</rb><rt>き</rt></ruby>められた<ruby><rb>安全</rb><rt>あんぜん</rt></ruby>な<ruby><rb>服装</rb><rt>ふくそう</rt></ruby>（<ruby><rb>作業服</rb><rt>さぎょうふく</rt></ruby>）を<ruby><rb>着用</rb><rt>ちゃくよう</rt></ruby>します', 'B. <ruby><rb>作業服</rb><rt>さぎょうふく</rt></ruby>は、<ruby><rb>動</rb><rt>うご</rt></ruby>きやすくて、<ruby><rb>体</rb><rt>からだ</rt></ruby>よりサイズが<ruby><rb>大</rb><rt>おお</rt></ruby>きなものを<ruby><rb>着用</rb><rt>ちゃくよう</rt></ruby>します', 'C. <ruby><rb>指示</rb><rt>しじ</rt></ruby>された<ruby><rb>安全保護具</rb><rt>あんぜんほごぐ</rt></ruby>を、<ruby><rb>正</rb><rt>ただ</rt></ruby>しい<ruby><rb>
+            { id: 31, text: '<ruby><rb>問31</rb><rt>もん31</rt></ruby>：<ruby><rb>正</rb><rt>ただ</rt></ruby>しい<ruby><rb>服装</rb><rt>ふくそう</rt></ruby>の<ruby><rb>着用</rb><rt>ちゃくよう</rt></ruby>について、<ruby><rb>間違</rb><rt>まちが</rt></ruby>っているものを一 <ruby><rb>つ選</rb><rt>えら</rt></ruby>びなさい。', options: ['A. <ruby><rb>決</rb><rt>き</rt></ruby>められた<ruby><rb>安全</rb><rt>あんぜん</rt></ruby>な<ruby><rb>服装</rb><rt>ふくそう</rt></ruby>（<ruby><rb>作業服</rb><rt>さぎょうふく</rt></ruby>）を<ruby><rb>着用</rb><rt>ちゃくよう</rt></ruby>します', 'B. <ruby><rb>作業服</rb><rt>さぎょうふく</rt></ruby>は、<ruby><rb>動</rb><rt>うご</rt></ruby>きやすくて、<ruby><rb>体</rb><rt>からだ</rt></ruby>よりサイズが<ruby><rb>大</rb><rt>おお</rt></ruby>きなものを<ruby><rb>着用</rb><rt>ちゃくよう</rt></ruby>します', 'C. <ruby><rb>指示</rb><rt>しじ</rt></ruby>された<ruby><rb>安全保護具</rb><rt>あんぜんほごぐ</rt></ruby>を、<ruby><rb>正</rb><rt>ただ</rt></ruby>しい<ruby><rb>着用</rb><rt>ちゃくよう</rt></ruby>しなければいけません。'], explanation: '' },
+            { id: 32, text: '<ruby><rb>問32</rb><rt>もん32</rt></ruby>：<ruby><rb>下記</rb><rt>かき</rt></ruby>の<ruby><rb>安全保護具</rb><rt>あんぜんほごぐ</rt></ruby>は<ruby><rb>何</rb><rt>なん</rt></ruby>ですか。<ruby><rb>正</rb><rt>ただ</rt></ruby>しいものを一 <ruby><rb>つ選</rb><rt>えら</rt></ruby>びなさい。 (hình ảnh)', options: ['A.  <ruby><rb>耳栓</rb><rt>みみせん</rt></ruby>', 'B.  <ruby><rb>耐熱</rb><rt>たいねつ</rt></ruby>エプロン', 'C.  <ruby><rb>保護</rb><rt>ほご</rt></ruby>メガネ'], explanation: '' },
+            { id: 33, text: '<ruby><rb>問33</rb><rt>もん33</rt></ruby>：「<ruby><rb>指</rb><rt>ゆび</rt></ruby>の<ruby><rb>切</rb><rt>き</rt></ruby>り<ruby><rb>傷防止</rb><rt>きずぼうし</rt></ruby>」の<ruby><rb>安全保護具</rb><rt>あんぜんほごぐ</rt></ruby>はどれですか。<ruby><rb>正</rb><rt>ただ</rt></ruby>しいものを一 <ruby><rb>つ選</rb><rt>えら</rt></ruby>びなさい。 (hình ảnh A, B, C)', options: ['A. (hình A)', 'B. (hình B)', 'C. (hình C)'], explanation: '' },
+            { id: 34, text: '<ruby><rb>問34</rb><rt>もん34</rt></ruby>：ヒヤリ・ハットとは<ruby><rb>何</rb><rt>なん</rt></ruby>ですか。<ruby><rb>正</rb><rt>ただ</rt></ruby>しいものを一 <ruby><rb>つ選</rb><rt>えら</rt></ruby>びなさい。', options: ['A. <ruby><rb>作業</rb><rt>さぎょう</rt></ruby>をしていても、もう<ruby><rb>少</rb><rt>すこ</rt></ruby>しでケガ をするところだった、ということです。', 'B. <ruby><rb>実際</rb><rt>じっさい</rt></ruby>に<ruby><rb>体験</rb><rt>たいけん</rt></ruby>しなくても、<ruby><rb>作業場</rb><rt>さぎょうじょう</rt></ruby>や<ruby><rb>作業</rb><rt>さぎょう</rt></ruby>のどこに、どうのような<ruby><rb>危険</rb><rt>きけん</rt></ruby>があるか、<ruby><rb>気</rb><rt>き</rt></ruby>が<ruby><rb>付</rb><rt>つ</rt></ruby>くようになるた めの<ruby><rb>訓練</rb><rt>くんれん</rt></ruby>です。', 'C. <ruby><rb>作業者</rb><rt>さぎょうしゃ</rt></ruby>が<ruby><rb>仕事中</rb><rt>しごとちゅう</rt></ruby>にケガ をしないように、しなければならないこと、<ruby><rb>注意</rb><rt>ちゅうい</rt></ruby>しなければならないことを<ruby><rb>見</rb><rt>み</rt></ruby>やすく、<ruby><rb>分</rb><rt>わ</rt></ruby>かりやすく<ruby><rb>示</rb><rt>しめ</rt></ruby>したものです。'], explanation: '' },
+            { id: 35, text: '<ruby><rb>問35</rb><rt>もん35</rt></ruby>：ハインリッヒの<ruby><rb>法則</rb><rt>ほうそく</rt></ruby>について<ruby><rb>間違</rb><rt>まちが</rt></ruby>っているものを一 <ruby><rb>つ選</rb><rt>えら</rt></ruby>びなさい。', options: ['A. ヒヤリ・ハットが<ruby><rb>少</rb><rt>すく</rt></ruby>なくなれば、<ruby><rb>大</rb><rt>おお</rt></ruby>きな<ruby><rb>労働災害</rb><rt>ろうどうさいがい</rt></ruby>が<ruby><rb>起</rb><rt>お</rt></ruby>きりやすくなります。', 'B. <ruby><rb>自分</rb><rt>じぶん</rt></ruby>が<ruby><rb>体験</rb><rt>たいけん</rt></ruby>したヒヤリ ・ハット はお<ruby><rb>互</rb><rt>たが</rt></ruby>いに<ruby><rb>報告</rb><rt>ほうこく</rt></ruby>し<ruby><rb>合</rb><rt>あ</rt></ruby>って、<ruby><rb>記録</rb><rt>きろく</rt></ruby>して、<ruby><rb>工場内</rb><rt>こうじょうない</rt></ruby>の<ruby><rb>作業者</rb><rt>さぎょうしゃ</rt></ruby>や <ruby><rb>責任者</rb><rt>せきにんしゃ</rt></ruby>など<ruby><rb>全員</rb><rt>ぜんいん</rt></ruby>で<ruby><rb>共有</rb><rt>きょうゆう</rt></ruby>する。', 'C. <ruby><rb>小</rb><rt>ちい</rt></ruby>さなことでも、<ruby><rb>大</rb><rt>たい</rt></ruby>したことが<ruby><rb>無</rb><rt>な</rt></ruby>いと<ruby><rb>思</rb><rt>おも</rt></ruby>わずに<ruby><rb>報告</rb><rt>ほうこく</rt></ruby>する。'], explanation: '' },
+            { id: 36, text: '<ruby><rb>問36</rb><rt>もん36</rt></ruby>：<ruby><rb>作業中</rb><rt>さぎょうちゅう</rt></ruby>の<ruby><rb>衛生上</rb><rt>えいせいじょう</rt></ruby>の<ruby><rb>注意事項</rb><rt>ちゅういじこう</rt></ruby>で、<ruby><rb>正</rb><rt>ただ</rt></ruby>しいものを一 <ruby><rb>つ選</rb><rt>えら</rt></ruby>びなさい。', options: ['A. トイレに<ruby><rb>行</rb><rt>い</rt></ruby>った<ruby><rb>後</rb><rt>あと</rt></ruby>は<ruby><rb>必</rb><rt>かなら</rt></ruby>ず<ruby><rb>洗剤</rb><rt>せんざい</rt></ruby>で<ruby><rb>手</rb><rt>て</rt></ruby>を<ruby><rb>洗</rb><rt>あら</rt></ruby>い、<ruby><rb>次</rb><rt>つぎ</rt></ruby>にアルコールなど<ruby><rb>消毒液</rb><rt>しょうどくえき</rt></ruby>で<ruby><rb>消毒</rb><rt>しょうどく</rt></ruby>する。', 'B. <ruby><rb>汚</rb><rt>よご</rt></ruby>れた<ruby><rb>使用器具</rb><rt>しようきぐ</rt></ruby>など<ruby><rb>使用</rb><rt>しよう</rt></ruby>した<ruby><rb>場所</rb><rt>ばしょ</rt></ruby>に<ruby><rb>置</rb><rt>お</rt></ruby>いておく。', 'C. <ruby><rb>手</rb><rt>て</rt></ruby>で<ruby><rb>濡</rb><rt>ぬ</rt></ruby>れていたら<ruby><rb>作業服</rb><rt>さぎょうふく</rt></ruby>など<ruby><rb>手</rb><rt>て</rt></ruby>を<ruby><rb>拭</rb><rt>ふ</rt></ruby>く。'], explanation: '' },
+            { id: '37.1', text: '<ruby><rb>問37</rb><rt>もん37</rt></ruby>：<ruby><rb>ベルトコンベア</rb><rt>べるとこんべあ</rt></ruby>を<ruby><rb>止</rb><rt>と</rt></ruby>めないで<ruby><rb>清掃</rb><rt>せいそう</rt></ruby>をおこなっていたところ、ぞうきんが<ruby><rb>引</rb><rt>ひ</rt></ruby>っかかって<ruby><rb>手</rb><rt>て</rt></ruby>が<ruby><rb>巻</rb><rt>ま</rt></ruby>き<ruby><rb>込</rb><rt>こ</rt></ruby>まれ そうになった。 <ruby><rb>問題37.1</rb><rt>もんだい37.1</rt></ruby>:  ぞうきんが<ruby><rb>引</rb><rt>ひ</rt></ruby>っかかり巻き<ruby><rb>込</rb><rt>こ</rt></ruby>まれそうになった<ruby><rb>原因</rb><rt>げんいん</rt></ruby>で,<ruby><rb>正</rb><rt>ただ</rt></ruby>しい<ruby><rb>答</rb><rt>こた</rt></ruby>えを<ruby><rb>選</rb><rt>えら</rt></ruby>びなさい。', options: ['A. <ruby><rb>清掃</rb><rt>せいそう</rt></ruby>するときにベルトコンべアを<ruby><rb>止</rb><rt>と</rt></ruby>めなかった', 'B. <ruby><rb>雑巾</rb><rt>ぞうきん</rt></ruby>で<ruby><rb>清掃</rb><rt>せいそう</rt></ruby>したこと', 'C. <ruby><rb>清掃</rb><rt>せいそう</rt></ruby>しながら<ruby><rb>無駄話</rb><rt>むだばなし</rt></ruby>した'], explanation: '' },
+            { id: '37.2', text: '<ruby><rb>問題37.2</rb><rt>もんだい37.2</rt></ruby>：この<ruby><rb>場合</rb><rt>ばあい</rt></ruby>は<ruby><rb>事故</rb><rt>じこ</rt></ruby>を<ruby><rb>防</rb><rt>ふせ</rt></ruby>ぐために、<ruby><rb>何</rb><rt>なに</rt></ruby>をすればいいですか。<ruby><rb>間違</rb><rt>まちが</rt></ruby>っているものを一 <ruby><rb>つ選</rb><rt>えら</rt></ruby>びなさい。', options: ['A. <ruby><rb>清掃</rb><rt>せいそう</rt></ruby>、<ruby><rb>異物</rb><rt>いぶつ</rt></ruby>の<ruby><rb>除菌</rb><rt>じょきん</rt></ruby>、<ruby><rb>検査</rb><rt>けんさ</rt></ruby>、<ruby><rb>修理等</rb><rt>しゅうりとう</rt></ruby>の<ruby><rb>作業</rb><rt>さぎょう</rt></ruby>をするときは、<ruby><rb>停止</rb><rt>ていし</rt></ruby>ボタン を<ruby><rb>押</rb><rt>お</rt></ruby>して、<ruby><rb>機械</rb><rt>きかい</rt></ruby>が<ruby><rb>確実</rb><rt>かくじつ</rt></ruby>に<ruby><rb>止</rb><rt>と</rt></ruby>ま ったことを<ruby><rb>確認</rb><rt>かくにん</rt></ruby>してから<ruby><rb>作業</rb><rt>さぎょう</rt></ruby>をする。', 'B. <ruby><rb>指差呼称</rb><rt>しさこしょう</rt></ruby>する', 'C. <ruby><rb>雑巾</rb><rt>ぞうきん</rt></ruby>ではなく、モップで<ruby><rb>清掃</rb><rt>せいそう</rt></ruby>すること。'], explanation: '' },
+            { id: 38, text: '<ruby><rb>問38</rb><rt>もん38</rt></ruby>：<ruby><rb>下記</rb><rt>かき</rt></ruby>の<ruby><rb>標識</rb><rt>ひょうしき</rt></ruby>の<ruby><rb>意味</rb><rt>いみ</rt></ruby>は<ruby><rb>何</rb><rt>なん</rt></ruby>ですか。<ruby><rb>正</rb><rt>ただ</rt></ruby>しいものを一 <ruby><rb>つ選</rb><rt>えら</rt></ruby>びなさい。 (hình ảnh)', options: ['A. <ruby><rb>手</rb><rt>て</rt></ruby>で<ruby><rb>触</rb><rt>ふ</rt></ruby>れることを<ruby><rb>禁止</rb><rt>きんし</rt></ruby>する<ruby><rb>標識</rb><rt>ひょうしき</rt></ruby>', 'B. はさまれる<ruby><rb>危険</rb><rt>きけん</rt></ruby>を<ruby><rb>知</rb><rt>し</rt></ruby>らせる<ruby><rb>標識</rb><rt>ひょうしき</rt></ruby>', 'C. <ruby><rb>機械</rb><rt>きかい</rt></ruby>に巻き<ruby><rb>込</rb><rt>こ</rt></ruby>まれる<ruby><rb>危険</rb><rt>きけん</rt></ruby>を<ruby><rb>知</rb><rt>し</rt></ruby>らせる<ruby><rb>標識</rb><rt>ひょうしき</rt></ruby>'], explanation: '' },
+            { id: 39, text: '<ruby><rb>問39</rb><rt>もん39</rt></ruby>：<ruby><rb>濃度</rb><rt>のうど</rt></ruby>10 １０ ％の<ruby><rb>次亜塩素酸</rb><rt>じあえんそさん</rt></ruby>ナトリウム（NaClO）<ruby><rb>溶液</rb><rt>ようえき</rt></ruby>があります。200ppm ２００ｐｐｍ の<ruby><rb>次亜塩素酸</rb><rt>じあえんそさん</rt></ruby>ナトリウム （NaClO）<ruby><rb>溶液</rb><rt>ようえき</rt></ruby>を１L Ｌ <ruby><rb>作</rb><rt>つく</rt></ruby>るときに、この<ruby><rb>溶液</rb><rt>ようえき</rt></ruby>と<ruby><rb>水</rb><rt>みず</rt></ruby>はそれぞれ何ml<ruby><rb>必要</rb><rt>ひつよう</rt></ruby>ですか。<ruby><rb>正</rb><rt>ただ</rt></ruby>しいものを一 <ruby><rb>つ選</rb><rt>えら</rt></ruby>びなさい。', options: ['A. <ruby><rb>溶液</rb><rt>ようえき</rt></ruby> 4ml, <ruby><rb>水</rb><rt>みず</rt></ruby> 996ml', 'B. <ruby><rb>溶液</rb><rt>ようえき</rt></ruby> ２ml, <ruby><rb>水</rb><rt>みず</rt></ruby> 998ml', 'C. <ruby><rb>溶液</rb><rt>ようえき</rt></ruby> 4ml, <ruby><rb>水</rb><rt>みず</rt></ruby> 1000ml'], explanation: '' },
+            { id: 40, text: '<ruby><rb>問40</rb><rt>もん40</rt></ruby>：<ruby><rb>下</rb><rt>した</rt></ruby>は450g のうどんの<ruby><rb>配合</rb><rt>はいごう</rt></ruby>です。<ruby><rb>同</rb><rt>おな</rt></ruby>じ<ruby><rb>配合</rb><rt>はいごう</rt></ruby>で<ruby><rb>作</rb><rt>つく</rt></ruby>る<ruby><rb>時</rb><rt>とき</rt></ruby>に、<ruby><rb>小麦粉</rb><rt>こむぎこ</rt></ruby>10 ㎏あれば、うどんは<ruby><rb>何</rb><rt>なん</rt></ruby>㎏できますか。 <ruby><rb>正</rb><rt>ただ</rt></ruby>しいものを一 <ruby><rb>つ選</rb><rt>えら</rt></ruby>びなさい。 （<ruby><rb>材料</rb><rt>ざいりょう</rt></ruby>：<ruby><rb>量</rb><rt>りょう</rt></ruby>）<ruby><rb>小麦粉</rb><rt>こむぎこ</rt></ruby>：300ｇ、<ruby><rb>食塩</rb><rt>しょくえん</rt></ruby>：15g、<ruby><rb>水</rb><rt>みず</rt></ruby>：135g', options: ['A. 15 ㎏', 'B. 16 ㎏', 'C. 17 ㎏'], explanation: '' }
+        ];
+
+        // Chia phần
+        const parts = [
+            { name: 'Phần 1 (問1-20)', questions: questions.slice(0,20) },
+            { name: 'Phần 2 (問21-40)', questions: questions.slice(20) }
+        ];
+
+        let timerInterval;
+        let timeLeft = 40 * 60; // 40 phút
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                const min = Math.floor(timeLeft / 60);
+                const sec = timeLeft % 60;
+                document.getElementById('timer').textContent = `Thời gian còn lại: ${min}:${sec < 10 ? '0' : ''}${sec}`;
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    submitQuiz();
+                }
+            }, 1000);
+        }
+
+        function generateQuestions() {
+            const questionsDiv = document.getElementById('questions');
+            questionsDiv.innerHTML = '';
+            parts.forEach((part, partIndex) => {
+                const partHeader = document.createElement('h2');
+                partHeader.textContent = part.name;
+                questionsDiv.appendChild(partHeader);
+                part.questions.forEach(q => {
+                    const div = document.createElement('div');
+                    div.className = 'question';
+                    div.innerHTML = `<h3>${q.text}</h3>`;
+                    q.options.forEach((opt, index) => {
+                        const label = document.createElement('label');
+                        label.innerHTML = `<input type="radio" name="q${q.id}" value="${String.fromCharCode(65 + index)}"> ${opt}`;
+                        div.appendChild(label);
+                    });
+                    questionsDiv.appendChild(div);
+                });
+            });
+        }
+
+        document.getElementById('start').addEventListener('click', () => {
+            const name = document.getElementById('name').value;
+            const className = document.getElementById('class').value;
+            const date = document.getElementById('date').value;
+            if (!name || !className || !date) return alert('Vui lòng nhập đầy đủ thông tin');
+            document.getElementById('info-form').style.display = 'none';
+            document.getElementById('quiz').style.display = 'block';
+            generateQuestions();
+            startTimer();
+        });
+
+        document.getElementById('submit').addEventListener('click', submitQuiz);
+
+        function submitQuiz() {
+            clearInterval(timerInterval);
+            const answers = {};
+            questions.forEach(q => {
+                const selected = document.querySelector(`input[name="q${q.id}"]:checked`);
+                answers[q.id] = selected ? selected.value : null;
+            });
+            const partScores = parts.map(part => {
+                let correct = 0;
+                part.questions.forEach(q => {
+                    if (answers[q.id] === answerKey[q.id]) correct++;
+                });
+                return { correct, total: part.questions.length };
+            });
+            const totalCorrect = partScores.reduce((sum, s) => sum + s.correct, 0);
+            const totalQuestions = questions.length;
+            const percentage = (totalCorrect / totalQuestions) * 100;
+            let grade = 'F';
+            if (percentage >= 80) grade = 'A';
+            else if (percentage >= 60) grade = 'B';
+            else if (percentage >= 40) grade = 'C';
+            else if (percentage >= 20) grade = 'D';
+
+            const resultsBody = document.getElementById('results-body');
+            resultsBody.innerHTML = '';
+            partScores.forEach((score, index) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td>${parts[index].name}</td><td>${score.correct}/${score.total}</td><td>${score.total}</td><td></td>`; // Giải thích nếu có
+                resultsBody.appendChild(tr);
+            });
+            document.getElementById('total-score').textContent = `Tổng điểm: ${totalCorrect}/${totalQuestions} (${percentage.toFixed(2)}%)`;
+            document.getElementById('grade').textContent = `Xếp loại: ${grade}`;
+
+            // Lưu localStorage và Firestore
+            const result = {
+                name: document.getElementById('name').value,
+                class: document.getElementById('class').value,
+                date: document.getElementById('date').value,
+                partScores: partScores.map(s => `${s.correct}/${s.total}`),
+                total: `${totalCorrect}/${totalQuestions}`,
+                timestamp: new Date()
+            };
+            localStorage.setItem('quizHistory', JSON.stringify([...JSON.parse(localStorage.getItem('quizHistory') || '[]'), result]));
+            collection.add(result);
+
+            document.getElementById('quiz').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+        }
+
+        document.getElementById('reset').addEventListener('click', () => {
+            document.getElementById('quiz').style.display = 'none';
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('info-form').style.display = 'block';
+            clearInterval(timerInterval);
+            timeLeft = 40 * 60;
+            document.getElementById('timer').textContent = 'Thời gian còn lại: 40:00';
+        });
+
+        // Lịch sử
+        document.getElementById('history-btn').addEventListener('click', () => {
+            document.getElementById('modal').style.display = 'flex';
+        });
+
+        document.getElementById('submit-password').addEventListener('click', () => {
+            const password = document.getElementById('password').value;
+            if (password === 'admin') { // Thay bằng mật khẩu thực
+                document.getElementById('modal').style.display = 'none';
+                document.getElementById('container').style.display = 'none';
+                document.getElementById('history-content').style.display = 'block';
+                loadHistory();
+            } else {
+                alert('Mật khẩu sai');
+            }
+        });
+
+        async function loadHistory() {
+            const historyBody = document.getElementById('history-body');
+            historyBody.innerHTML = '';
+            // Từ Firestore
+            const snapshot = await collection.orderBy('timestamp', 'desc').get();
+            snapshot.forEach(doc => {
+                const data = doc.data();
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td>${data.name}</td><td>${data.class}</td><td>${data.date}</td><td>${data.partScores.join(', ')}</td><td>${data.total}</td>`;
+                historyBody.appendChild(tr);
+            });
+            // Hoặc từ localStorage nếu cần
+        }
+    </script>
+</body>
+</html>
