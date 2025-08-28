@@ -225,7 +225,8 @@
                     <th>Ngày</th>
                     <th>Thời gian làm bài</th>
                     <th>Tổng điểm</th>
-                    <th>Tỷ lệ - Xếp loại</th>
+                    <th>Tỷ lệ</th>
+                    <th>Xếp loại</th>
                     <th>Thao tác</th>
                 </tr>
             </thead>
@@ -327,7 +328,8 @@
                             <td>${entry.date || 'N/A'}</td>
                             <td>${timeTaken}</td>
                             <td>${entry.total || 'N/A'}</td>
-                            <td>${percentage}% - <span class="${rankClass}">${evaluation}</span></td>
+                            <td>${percentage}% </td> 
+                            <td><span class="${rankClass}">${evaluation}</span></td>
                             <td><button class="delete-btn" data-doc-id="${entry.id}">Xóa</button></td>
                         </tr>
                     `;
