@@ -2,33 +2,70 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
- <title>飲食料品製造業特定技能1号ー模擬試験第１回目</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>飲食料品製造業特定技能1号ー模擬試験第１回目</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #F5F7FA;
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-        }
-        .container {
+            font-family: 'Noto Sans JP', 'Roboto', sans-serif;
             max-width: 800px;
             margin: 0 auto;
-            background: white;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        h1, h2 {
-            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #F5F7FA;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
         }
         .header {
             text-align: center;
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        .header h1 {
+            font-size: 1.8em;
+            margin: 0;
+            color: #4A90E2;
+        }
+        .header h2 {
+            font-size: 1.4em;
+            margin: 10px 0;
+            color: #333;
+        }
+        .student-info {
+            display: flex;
+            flex-direction: column;
             margin-bottom: 20px;
+            border: 1px solid #E0E4EA;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #FFFFFF;
+        }
+        .student-info div {
+            margin: 10px 0;
+        }
+        .student-info label {
+            font-weight: 500;
+            color: #4A90E2;
+            display: block;
+        }
+        .student-info input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #D1D5DB;
+            border-radius: 6px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+        }
+        .student-info input:focus {
+            border-color: #4A90E2;
+            outline: none;
         }
         .form-group {
             margin-bottom: 15px;
@@ -40,32 +77,94 @@
             border-radius: 5px;
         }
         button {
-            padding: 10px 20px;
-            background: #007BFF;
-            color: white;
+            background-color: #4A90E2;
+            color: #FFFFFF;
             border: none;
-            border-radius: 5px;
+            padding: 12px 24px;
+            border-radius: 8px;
             cursor: pointer;
+            margin-top: 20px;
+            font-size: 1em;
+            font-family: 'Roboto', sans-serif;
+            transition: background-color 0.2s, transform 0.1s;
             margin-right: 10px;
         }
         button:hover {
-            background: #0056b3;
+            background-color: #357ABD;
+            transform: translateY(-1px);
+        }
+        button.reset {
+            background-color: #EF4444;
+        }
+        button.reset:hover {
+            background-color: #DC2626;
         }
         #timer {
             position: fixed;
             top: 20px;
             right: 20px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #FF0000;
+            background-color: #4A90E2;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1.2em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .timer.warning {
+            background-color: #EF4444;
+        }
+        .question-section {
+            margin-bottom: 30px;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            display: none;
         }
         .question {
             margin-bottom: 20px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #E0E4EA;
         }
-        .question h3 {
-            margin-bottom: 10px;
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+        .option {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+        }
+        .option input {
+            margin-right: 12px;
+            accent-color: #4A90E2;
+        }
+        .option label {
+            font-size: 1em;
+            color: #333;
+        }
+        .example {
+            background-color: #F9FAFB;
+            padding: 15px;
+            border-left: 4px solid #4A90E2;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+        h2 {
+            background-color: #4A90E2;
+            color: #FFFFFF;
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 1.3em;
+            margin-top: 0;
+        }
+        .vietnamese {
+            font-family: 'Roboto', sans-serif;
+            font-style: italic;
+            color: #6B7280;
+            margin-bottom: 15px;
+            font-size: 0.95em;
         }
         label {
             display: block;
@@ -74,8 +173,24 @@
         #quiz {
             display: none;
         }
+        .student-details {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #F9FAFB;
+            border-radius: 8px;
+        }
+        .student-details p {
+            margin: 8px 0;
+            font-size: 1em;
+            color: #333;
+        }
         #results {
             display: none;
+        }
+        .error-message {
+            color: #EF4444;
+            margin-top: 15px;
+            font-size: 0.95em;
         }
         table {
             width: 100%;
@@ -100,96 +215,112 @@
             background: rgba(0,0,0,0.5);
             justify-content: center;
             align-items: center;
+            z-index: 1000;
         }
         .modal-content {
             background: white;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+        .modal-content input {
+            width: 80%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #D1D5DB;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        .modal-content button {
+            margin: 5px;
         }
         #history-content {
             display: none;
             margin-top: 20px;
         }
+        .search-section {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .search-section label {
+            font-weight: 500;
+            color: #4A90E2;
+            white-space: nowrap;
+        }
+        .search-section input {
+            flex: 1;
+            min-width: 200px;
+            padding: 8px;
+            border: 1px solid #D1D5DB;
+            border-radius: 6px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+        }
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .result-table th, .result-table td {
+            border: 1px solid #E0E4EA;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        .result-table th {
+            background-color: #4A90E2;
+            color: #FFFFFF;
+            font-weight: 500;
+        }
+        .result-table tr:nth-child(even) {
+            background-color: #F9FAFB;
+        }
+        .result-table tr.total {
+            font-weight: bold;
+            background-color: #E5E7EB;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px 0;
+            border-top: 1px solid #E0E4EA;
+            color: #6B7280;
+            font-size: 0.9em;
+            font-family: 'Roboto', sans-serif;
+        }
+        .rank-a {
+            color: #4A90E2;
+            font-weight: 500;
+        }
+        .rank-f {
+            color: #EF4444;
+            font-weight: 500;
+        }
+        @media (max-width: 600px) {
+            #timer {
+                top: 10px;
+                right: 10px;
+                font-size: 1em;
+                padding: 8px 16px;
+            }
+            .modal-content {
+                width: 95%;
+            }
+            .result-table th, .result-table td {
+                font-size: 0.8em;
+                padding: 8px;
+            }
+        }
     </style>
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script> <!-- If needed -->
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>飲食料品製造業特定技能1号ー模擬試験第１回目</h1>
-            <p>Thời gian làm bài: 40 phút. Tổng số câu: 41 câu trắc nghiệm.</p>
-        </div>
-        <div id="info-form">
-            <div class="form-group">
-                <label for="name">Tên học viên:</label>
-                <input type="text" id="name" required>
-            </div>
-            <div class="form-group">
-                <label for="class">Lớp:</label>
-                <input type="text" id="class" required>
-            </div>
-            <div class="form-group">
-                <label for="date">Ngày:</label>
-                <input type="date" id="date" required>
-            </div>
-            <button id="start">Bắt đầu làm bài</button>
-            <button id="history-btn">Lịch sử kiểm tra</button>
-        </div>
-        <div id="quiz">
-            <div id="questions">
-                <!-- Câu hỏi sẽ được generate bằng JS -->
-            </div>
-            <button id="submit">Nộp bài</button>
-        </div>
-       <div id="results">
-    <h2>Kết quả</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Tên</th>
-                <th>Lớp</th>
-                <th>Ngày</th>
-                <th>Thời gian làm bài</th>
-                <th>Tổng điểm</th>
-                <th>Tỷ lệ</th>
-                <th>Xếp loại</th>
-            </tr>
-        </thead>
-        <tbody id="results-body"></tbody>
-    </table>
-    <button id="reset">Làm lại</button>
-</div>
-    <div id="timer">Thời gian còn lại: 40:00</div>
-    <div id="modal">
-        <div class="modal-content">
-            <label for="password">Nhập mật khẩu:</label>
-            <input type="password" id="password">
-            <button id="submit-password">Xác nhận</button>
-        </div>
-    </div>
-    <div id="history-content" class="container">
-    <h2>Lịch sử kiểm tra</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Tên</th>
-                <th>Lớp</th>
-                <th>Ngày</th>
-                <th>Thời gian làm bài</th>
-                <th>Tổng điểm</th>
-                <th>Tỷ lệ</th>
-                <th>Xếp loại</th>
-            </tr>
-        </thead>
-        <tbody id="history-body"></tbody>
-    </table>
-</div>
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+        import { getFirestore, collection, addDoc, getDocs, query, orderBy } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 
-    <script>
         // Firebase config
         const firebaseConfig = {
             apiKey: "AIzaSyAfy4QMD9_7PyFHpInNdKDRWuW4AYCtLJ4",
@@ -200,12 +331,17 @@
             appId: "1:331974436893:web:10c3c6adf7b66d2b5fbef4",
             measurementId: "G-DC055090BW"
         };
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-        const collection = db.collection('testHistorytokuteithucphamde1');
+        try {
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
+            const testCollection = collection(db, 'testHistorytokuteithucphamde1');
+            console.log('Firebase initialized successfully');
+        } catch (error) {
+            console.error('Error initializing Firebase:', error);
+        }
 
-        // Đáp án - Dễ thay đổi, giả định dựa trên PDF (cần chỉnh nếu có đáp án thực)
-        const answerKey = {
+        // Đáp án - Giả định
+       const answerKey = {
             1: 'A',
             2: 'B',
             3: 'A',
@@ -294,9 +430,10 @@
             { id: 40, text: '<ruby><rb>問40</rb><rt>もん40</rt></ruby>：<ruby><rb>下</rb><rt>した</rt></ruby>は450g のうどんの<ruby><rb>配合</rb><rt>はいごう</rt></ruby>です。<ruby><rb>同</rb><rt>おな</rt></ruby>じ<ruby><rb>配合</rb><rt>はいごう</rt></ruby>で<ruby><rb>作</rb><rt>つく</rt></ruby>る<ruby><rb>時</rb><rt>とき</rt></ruby>に、<ruby><rb>小麦粉</rb><rt>こむぎこ</rt></ruby>10 ㎏あれば、うどんは<ruby><rb>何</rb><rt>なん</rt></ruby>㎏できますか。 <ruby><rb>正</rb><rt>ただ</rt></ruby>しいものを一 <ruby><rb>つ選</rb><rt>えら</rt></ruby>びなさい。 （<ruby><rb>材料</rb><rt>ざいりょう</rt></ruby>：<ruby><rb>量</rb><rt>りょう</rt></ruby>）<ruby><rb>小麦粉</rb><rt>こむぎこ</rt></ruby>：300ｇ、<ruby><rb>食塩</rb><rt>しょくえん</rt></ruby>：15g、<ruby><rb>水</rb><rt>みず</rt></ruby>：135g', options: ['A. 15 ㎏', 'B. 16 ㎏', 'C. 17 ㎏'], explanation: '' }
         ];
 
+
         // Chia phần
         const parts = [
-            { name: 'Phần 1 (問1-20)', questions: questions.slice(0,20) },
+            { name: 'Phần 1 (問1-20)', questions: questions.slice(0, 20) },
             { name: 'Phần 2 (問21-40)', questions: questions.slice(20) }
         ];
 
@@ -350,64 +487,65 @@
 
         document.getElementById('submit').addEventListener('click', submitQuiz);
 
-        function submitQuiz() {
-    clearInterval(timerInterval);
-    const answers = {};
-    questions.forEach(q => {
-        const selected = document.querySelector(`input[name="q${q.id}"]:checked`);
-        answers[q.id] = selected ? selected.value : null;
-    });
-    const partScores = parts.map(part => {
-        let correct = 0;
-        part.questions.forEach(q => {
-            if (answers[q.id] === answerKey[q.id]) correct++;
-        });
-        return { correct, total: part.questions.length };
-    });
-    const totalCorrect = partScores.reduce((sum, s) => sum + s.correct, 0);
-    const totalQuestions = questions.length;
-    const percentage = (totalCorrect / totalQuestions) * 100;
-    let grade = 'F';
-    if (percentage >= 80) grade = 'A';
-    else if (percentage >= 60) grade = 'B';
-    else if (percentage >= 40) grade = 'C';
-    else if (percentage >= 20) grade = 'D';
-
-    // Tính thời gian làm bài
-    const timeTaken = (40 * 60 - timeLeft) > 0 ? `${Math.floor((40 * 60 - timeLeft) / 60)}:${((40 * 60 - timeLeft) % 60).toString().padStart(2, '0')}` : 'NaN';
-
-    // Hiển thị kết quả trong bảng
-    const resultsBody = document.getElementById('results-body');
-    resultsBody.innerHTML = '';
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-        <td>${document.getElementById('name').value}</td>
-        <td>${document.getElementById('class').value}</td>
-        <td>${document.getElementById('date').value}</td>
-        <td>${timeTaken}</td>
-        <td>${totalCorrect}/${totalQuestions}</td>
-        <td>${percentage.toFixed(2)}%</td>
-        <td>${grade}</td>
-    `;
-    resultsBody.appendChild(tr);
-
-    // Lưu localStorage và Firestore
-    const result = {
-        name: document.getElementById('name').value,
-        class: document.getElementById('class').value,
-        date: document.getElementById('date').value,
-        timeTaken: timeTaken,
-        total: `${totalCorrect}/${totalQuestions}`,
-        percentage: percentage.toFixed(2),
-        grade: grade,
-        timestamp: new Date()
-    };
-    localStorage.setItem('quizHistory', JSON.stringify([...JSON.parse(localStorage.getItem('quizHistory') || '[]'), result]));
-    collection.add(result);
-
-    document.getElementById('quiz').style.display = 'none';
-    document.getElementById('results').style.display = 'block';
-}
+        async function submitQuiz() {
+            clearInterval(timerInterval);
+            const answers = {};
+            questions.forEach(q => {
+                const selected = document.querySelector(`input[name="q${q.id}"]:checked`);
+                answers[q.id] = selected ? selected.value : null;
+            });
+            const partScores = parts.map(part => {
+                let correct = 0;
+                part.questions.forEach(q => {
+                    if (answers[q.id] === answerKey[q.id]) correct++;
+                });
+                return { correct, total: part.questions.length };
+            });
+            const totalCorrect = partScores.reduce((sum, s) => sum + s.correct, 0);
+            const totalQuestions = questions.length;
+            const percentage = (totalCorrect / totalQuestions) * 100;
+            let grade = 'F';
+            if (percentage >= 80) grade = 'A';
+            else if (percentage >= 60) grade = 'B';
+            else if (percentage >= 40) grade = 'C';
+            else if (percentage >= 20) grade = 'D';
+            const timeTaken = (40 * 60 - timeLeft) > 0 ? `${Math.floor((40 * 60 - timeLeft) / 60)}:${((40 * 60 - timeLeft) % 60).toString().padStart(2, '0')}` : 'NaN';
+            const resultsBody = document.getElementById('results-body');
+            resultsBody.innerHTML = '';
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${document.getElementById('name').value}</td>
+                <td>${document.getElementById('class').value}</td>
+                <td>${document.getElementById('date').value}</td>
+                <td>${timeTaken}</td>
+                <td>${totalCorrect}/${totalQuestions}</td>
+                <td>${percentage.toFixed(2)}%</td>
+                <td><span class="${grade === 'A' ? 'rank-a' : grade === 'F' ? 'rank-f' : ''}">${grade}</span></td>
+            `;
+            resultsBody.appendChild(tr);
+            const result = {
+                name: document.getElementById('name').value,
+                class: document.getElementById('class').value,
+                date: document.getElementById('date').value,
+                timeTaken: timeTaken,
+                total: `${totalCorrect}/${totalQuestions}`,
+                percentage: percentage.toFixed(2),
+                grade: grade,
+                timestamp: new Date()
+            };
+            try {
+                await addDoc(testCollection, result);
+                console.log('Result saved to Firestore');
+            } catch (error) {
+                console.error('Error saving to Firestore:', error);
+                document.getElementById('message').textContent = 'Lỗi khi lưu kết quả vào Firestore.';
+            }
+            const localHistory = JSON.parse(localStorage.getItem('quizHistory') || '[]');
+            localHistory.push(result);
+            localStorage.setItem('quizHistory', JSON.stringify(localHistory));
+            document.getElementById('quiz').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+        }
 
         document.getElementById('reset').addEventListener('click', () => {
             document.getElementById('quiz').style.display = 'none';
@@ -418,61 +556,206 @@
             document.getElementById('timer').textContent = 'Thời gian còn lại: 40:00';
         });
 
-        // Lịch sử
         document.getElementById('history-btn').addEventListener('click', () => {
             document.getElementById('modal').style.display = 'flex';
         });
 
         document.getElementById('submit-password').addEventListener('click', () => {
             const password = document.getElementById('password').value;
-            if (password === '112') { // Thay bằng mật khẩu thực
-                document.getElementById('modal').style.display = 'none';
-                document.getElementById('container').style.display = 'none';
-                document.getElementById('history-content').style.display = 'block';
+            const modal = document.getElementById('modal');
+            const container = document.getElementById('container');
+            const historyContent = document.getElementById('history-content');
+            if (password === '112') {
+                if (!modal || !container || !historyContent) {
+                    console.error('Không tìm thấy một trong các phần tử: modal, container, hoặc history-content');
+                    return;
+                }
+                modal.style.display = 'none';
+                container.style.display = 'none';
+                historyContent.style.display = 'block';
                 loadHistory();
             } else {
-                alert('Mật khẩu sai');
+                document.getElementById('password-error').textContent = 'Mật khẩu sai';
             }
         });
 
-       async function loadHistory() {
-    const historyBody = document.getElementById('history-body');
-    historyBody.innerHTML = '';
+        document.getElementById('password').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                document.getElementById('submit-password').click();
+            }
+        });
 
-    // Lấy dữ liệu từ Firestore
-    const snapshot = await collection.orderBy('timestamp', 'desc').get();
-    snapshot.forEach(doc => {
-        const data = doc.data();
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-            <td>${data.name || 'asd'}</td>
-            <td>${data.class || 'asd'}</td>
-            <td>${data.date || '2025-08-28'}</td>
-            <td>${data.timeTaken || 'NaN'}</td>
-            <td>${data.total || '0/0'}</td>
-            <td>${data.percentage ? data.percentage + '%' : 'NaN%'}</td>
-            <td>${data.grade || 'F'}</td>
-        `;
-        historyBody.appendChild(tr);
-    });
+        document.getElementById('cancel-password')?.addEventListener('click', () => {
+            document.getElementById('modal').style.display = 'none';
+            document.getElementById('password-error').textContent = '';
+        });
 
-    // Thêm dữ liệu mẫu nếu không có dữ liệu từ Firestore
-    if (snapshot.empty) {
-        for (let i = 0; i < 3; i++) {
-            const tr = document.createElement('tr');
-            tr.innerHTML = `
-                <td>asd</td>
-                <td>asd</td>
-                <td>2025-08-28</td>
-                <td>NaN</td>
-                <td>0/0</td>
-                <td>NaN%</td>
-                <td>F</td>
-            `;
-            historyBody.appendChild(tr);
+        document.getElementById('back-btn')?.addEventListener('click', () => {
+            document.getElementById('history-content').style.display = 'none';
+            document.getElementById('container').style.display = 'block';
+            document.getElementById('message').textContent = '';
+        });
+
+        document.getElementById('search')?.addEventListener('input', () => {
+            loadHistory(document.getElementById('search').value.trim());
+        });
+
+        async function loadHistory(searchTerm = '') {
+            const historyBody = document.getElementById('history-body');
+            const messageDiv = document.getElementById('message');
+            historyBody.innerHTML = '<tr><td colspan="7" class="loading">Đang tải...</td></tr>';
+            try {
+                const q = query(testCollection, orderBy('timestamp', 'desc'));
+                const snapshot = await getDocs(q);
+                let testHistory = snapshot.docs.map(doc => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+                testHistory = testHistory.filter(entry => {
+                    if (!entry.name || !entry.total || !entry.timestamp) {
+                        console.warn(`Dữ liệu không hợp lệ trong id ${entry.id}`);
+                        return false;
+                    }
+                    return true;
+                });
+                if (searchTerm) {
+                    const normalizedSearch = searchTerm.normalize('NFKC').trim().replace(/[\s\u3000]+/g, '').replace(/[。！？｡!?.、，]/g, '').toLowerCase();
+                    testHistory = testHistory.filter(entry =>
+                        (entry.name || '').normalize('NFKC').trim().replace(/[\s\u3000]+/g, '').replace(/[。！？｡!?.、，]/g, '').toLowerCase().includes(normalizedSearch) ||
+                        (entry.class || '').normalize('NFKC').trim().replace(/[\s\u3000]+/g, '').replace(/[。！？｡!?.、，]/g, '').toLowerCase().includes(normalizedSearch) ||
+                        (entry.date || '').normalize('NFKC').trim().replace(/[\s\u3000]+/g, '').replace(/[。！？｡!?.、，]/g, '').toLowerCase().includes(normalizedSearch)
+                    );
+                }
+                historyBody.innerHTML = '';
+                if (testHistory.length === 0) {
+                    historyBody.innerHTML = '<tr><td colspan="7">Không có dữ liệu lịch sử hoặc không thể truy xuất dữ liệu.</td></tr>';
+                    messageDiv.textContent = '';
+                    return;
+                }
+                testHistory.forEach(data => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${data.name || 'asd'}</td>
+                        <td>${data.class || 'asd'}</td>
+                        <td>${data.date || '2025-08-28'}</td>
+                        <td>${data.timeTaken || 'NaN'}</td>
+                        <td>${data.total || '0/0'}</td>
+                        <td>${data.percentage ? data.percentage + '%' : 'NaN%'}</td>
+                        <td><span class="${data.grade === 'A' ? 'rank-a' : data.grade === 'F' ? 'rank-f' : ''}">${data.grade || 'F'}</span></td>
+                    `;
+                    historyBody.appendChild(tr);
+                });
+                messageDiv.textContent = '';
+            } catch (error) {
+                console.error('Error loading history:', error);
+                let errorMessage = 'Đã xảy ra lỗi khi tải lịch sử kiểm tra. Vui lòng thử lại.';
+                if (error.code === 'permission-denied') {
+                    errorMessage = 'Không có quyền truy cập dữ liệu. Vui lòng kiểm tra quy tắc Firestore.';
+                } else if (error.code === 'unavailable') {
+                    errorMessage = 'Không thể kết nối với Firestore. Vui lòng kiểm tra kết nối mạng.';
+                }
+                messageDiv.textContent = errorMessage;
+                historyBody.innerHTML = '<tr><td colspan="7">Lỗi tải dữ liệu.</td></tr>';
+                const localHistory = JSON.parse(localStorage.getItem('quizHistory') || '[]');
+                localHistory.forEach(data => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${data.name || 'asd'}</td>
+                        <td>${data.class || 'asd'}</td>
+                        <td>${data.date || '2025-08-28'}</td>
+                        <td>${data.timeTaken || 'NaN'}</td>
+                        <td>${data.total || '0/0'}</td>
+                        <td>${data.percentage ? data.percentage + '%' : 'NaN%'}</td>
+                        <td><span class="${data.grade === 'A' ? 'rank-a' : data.grade === 'F' ? 'rank-f' : ''}">${data.grade || 'F'}</span></td>
+                    `;
+                    historyBody.appendChild(tr);
+                });
+            }
         }
-    }
-}
     </script>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="header">
+            <h1>飲食料品製造業特定技能1号ー模擬試験第１回目</h1>
+            <p>Thời gian làm bài: 40 phút. Tổng số câu: 41 câu trắc nghiệm.</p>
+        </div>
+        <div id="info-form">
+            <div class="form-group">
+                <label for="name">Tên học viên:</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="class">Lớp:</label>
+                <input type="text" id="class" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Ngày:</label>
+                <input type="date" id="date" required>
+            </div>
+            <button id="start">Bắt đầu làm bài</button>
+            <button id="history-btn">Lịch sử kiểm tra</button>
+        </div>
+        <div id="quiz">
+            <div id="questions">
+                <!-- Câu hỏi sẽ được generate bằng JS -->
+            </div>
+            <button id="submit">Nộp bài</button>
+        </div>
+        <div id="results">
+            <h2>Kết quả</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tên</th>
+                        <th>Lớp</th>
+                        <th>Ngày</th>
+                        <th>Thời gian làm bài</th>
+                        <th>Tổng điểm</th>
+                        <th>Tỷ lệ</th>
+                        <th>Xếp loại</th>
+                    </tr>
+                </thead>
+                <tbody id="results-body"></tbody>
+            </table>
+            <button id="reset">Làm lại</button>
+        </div>
+        <div id="timer">Thời gian còn lại: 40:00</div>
+        <div id="modal">
+            <div class="modal-content">
+                <label for="password">Nhập mật khẩu:</label>
+                <input type="password" id="password">
+                <div id="password-error" class="error-message"></div>
+                <button id="submit-password">Xác nhận</button>
+                <button id="cancel-password">Hủy</button>
+            </div>
+        </div>
+        <div id="history-content" class="container" style="display: none;">
+            <h2>Lịch sử kiểm tra</h2>
+            <div class="search-section">
+                <label for="search">Tìm kiếm:</label>
+                <input type="text" id="search" placeholder="Nhập tên, lớp hoặc ngày (YYYY-MM-DD)">
+            </div>
+            <div id="message" class="error-message"></div>
+            <table class="result-table">
+                <thead>
+                    <tr>
+                        <th>Tên</th>
+                        <th>Lớp</th>
+                        <th>Ngày</th>
+                        <th>Thời gian làm bài</th>
+                        <th>Tổng điểm</th>
+                        <th>Tỷ lệ</th>
+                        <th>Xếp loại</th>
+                    </tr>
+                </thead>
+                <tbody id="history-body"></tbody>
+            </table>
+            <button id="back-btn">Quay lại</button>
+        </div>
+    </div>
+    <footer>
+        <p>© 2025 Tài liệu kiểm tra | Thiết kế bởi Thuận</p>
+    </footer>
 </body>
 </html>
