@@ -141,61 +141,67 @@
             font-size: 0.95em;
         }
         .result-section {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #FFFFFF;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            display: none;
-        }
-        .error-message {
-            color: #EF4444;
-            margin-top: 15px;
-            font-size: 0.95em;
-        }
-        .result-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            table-layout: fixed;
-        }
-        .result-table th, .result-table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            font-size: clamp(14px, 2vw, 16px);
-        }
-        .result-table th {
-            background-color: #4A90E2;
-            color: #FFFFFF;
-            font-weight: 500;
-        }
-        .result-table tr:nth-child(even) {
-            background-color: #F9FAFB;
-        }
-        .rank-a {
-            color: #4A90E2;
-            font-weight: 500;
-        }
-        .rank-f {
-            color: #EF4444;
-            font-weight: 500;
-        }
-        .result-section::-webkit-scrollbar {
-            height: 8px;
-        }
-        .result-section::-webkit-scrollbar-thumb {
-            background-color: #4A90E2;
-            border-radius: 4px;
-        }
-        .result-section::-webkit-scrollbar-track {
-            background-color: #F5F7FA;
-        }
+    margin-top: 30px; /* Tạo khoảng cách 30px từ phía trên của phần tử */
+    padding: 20px; /* Tạo khoảng đệm bên trong 20px cho tất cả các cạnh */
+    background-color: #FFFFFF; /* Màu nền của phần tử là màu trắng */
+    border-radius: 10px; /* Bo góc các cạnh của phần tử với bán kính 10px */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Hiệu ứng bóng mờ với độ lệch ngang 0, độ lệch dọc 4px, độ mờ 8px, màu đen với độ trong suốt 5% */
+    overflow-x: auto; /* Cho phép cuộn ngang nếu nội dung vượt quá kích thước phần tử */
+    -webkit-overflow-scrolling: touch; /* Cải thiện trải nghiệm cuộn trên các thiết bị sử dụng WebKit (như iPhone, iPad) để cuộn mượt hơn */
+    display: none; /* Ẩn phần tử này theo mặc định (không hiển thị cho đến khi được kích hoạt) */
+}
+
+.error-message {
+    color: #EF4444; /* Màu chữ của thông báo lỗi là màu đỏ */
+    margin-top: 15px; /* Tạo khoảng cách 15px từ phía trên của phần tử */
+    font-size: 0.95em; /* Kích thước chữ nhỏ hơn một chút so với kích thước chữ mặc định (95% kích thước chữ chuẩn) */
+}
+
+.result-table {
+    width: auto; /* Chiều rộng của bảng sẽ tự điều chỉnh dựa trên nội dung bên trong */
+    border-collapse: collapse; /* Gộp các đường viền của các ô trong bảng lại với nhau, không để lại khoảng cách giữa các ô */
+}
+
+.result-table th, .result-table td {
+    border: 1px solid #ddd; /* Tạo đường viền 1px màu xám nhạt cho các ô tiêu đề (th) và ô dữ liệu (td) */
+    padding: 8px; /* Tạo khoảng đệm 8px bên trong các ô */
+    text-align: left; /* Căn chỉnh nội dung bên trong các ô về phía bên trái */
+    white-space: nowrap; /* Ngăn nội dung trong ô xuống dòng, giữ tất cả nội dung trên một dòng */
+    min-width: 120px; /* Đặt chiều rộng tối thiểu cho mỗi ô là 120px */
+}
+
+.result-table th {
+    background-color: #4A90E2; /* Màu nền của ô tiêu đề là màu xanh dương */
+    color: #FFFFFF; /* Màu chữ trong ô tiêu đề là màu trắng */
+    font-weight: 500; /* Độ đậm của chữ trong ô tiêu đề là trung bình (không quá đậm như bold) */
+    width: 100%; /* Đảm bảo ô tiêu đề chiếm toàn bộ chiều rộng có thể (áp dụng trong ngữ cảnh phù hợp) */
+}
+.rank-a {
+    color: #4A90E2;
+    font-weight: 500;
+}
+
+.rank-f {
+    color: #EF4444;
+    font-weight: 500;
+}
+
+.result-section {
+    overflow-x: auto; /* Cho phép cuộn ngang */
+}
+
+.result-section::-webkit-scrollbar {
+    height: 8px;
+}
+
+.result-section::-webkit-scrollbar-thumb {
+    background-color: #4A90E2;
+    border-radius: 4px;
+}
+
+.result-section::-webkit-scrollbar-track {
+    background-color: #F5F7FA;
+}
         .image-placeholder {
             width: 150px;
             height: 120px;
