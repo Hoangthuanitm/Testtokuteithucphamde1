@@ -121,29 +121,23 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>飲食料品製造業特定技能1号</h1>
-        <h2>模擬試験第１回目</h2>
-        <p>時間：40 分</p>
-    </div>
-    <div class="student-info">
-        <div>
-            <label for="name">名前（なまえ）:</label>
-            <input type="text" id="name" name="name">
+    <div class="container">
+        <div class="form-group">
+            <label>名前 (なまえ) :</label>
+            <input type="text" placeholder="Nhập tên">
         </div>
-        <div>
-            <label for="class">クラス:</label>
-            <input type="text" id="class" name="class">
+        <div class="form-group">
+            <label>クラス :</label>
+            <input type="text" placeholder="Nhập lớp">
         </div>
-        <div>
-            <label for="date">日付:</label>
-            <input type="date" id="date" name="date">
+        <div class="form-group">
+            <label>日付 :</label>
+            <input type="text" class="date-input" value="ngày 30 thg 8, 2025" readonly>
         </div>
-    </div>
-    <div class="button-container">
-        <button id="start-test" type="button">Bắt đầu làm bài</button>
-        <button id="history-test" type="button" onclick="window.showPasswordModal()">Lịch sử kiểm tra</button>
-    </div>
+        <div class="button-container">
+            <button>Bắt đầu làm bài</button>
+            <button>Lịch sử kiểm tra</button>
+        </div>
     <div id="message-info" class="error-message"></div>
     <div id="timer" class="timer" style="display: none;">Thời gian còn lại: 40:00</div>
     <div class="question-section" id="question-section">
