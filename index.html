@@ -6,7 +6,7 @@
     <title>飲食料品製造業特定技能1号</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        /* Ngăn chặn zoom và trượt ngang trên thiết bị di động */
+       /* Ngăn chặn zoom và trượt ngang trên thiết bị di động */
 body {
     font-family: 'Noto Sans JP', 'Roboto', sans-serif;
     max-width: 1000px;
@@ -179,8 +179,9 @@ button.reset:hover {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     display: none;
-    /* Tắt cuộn ngang trong phần kết quả */
-    overflow-x: hidden;
+    /* Cho phép cuộn ngang khi hiển thị kết quả */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .error-message {
@@ -190,7 +191,7 @@ button.reset:hover {
 }
 
 .result-table {
-    width: 100%;
+    width: auto; /* Cho phép bảng mở rộng theo nội dung */
     border-collapse: collapse;
 }
 
@@ -372,17 +373,19 @@ footer {
     }
     .result-section {
         padding: 10px;
-        overflow-x: hidden; /* Tắt cuộn ngang trên di động */
+        /* Cho phép cuộn ngang trên di động khi hiển thị kết quả */
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
     .result-table th, .result-table td {
         font-size: 0.8em;
         padding: 8px;
     }
-    /* Đảm bảo bảng kết quả không vượt quá chiều rộng màn hình */
+    /* Đảm bảo bảng kết quả có thể cuộn ngang */
     .result-table {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
+        width: auto;
+        max-width: none;
+        overflow-x: auto;
     }
 }
 
