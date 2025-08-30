@@ -179,26 +179,30 @@
             font-size: var(--font-small);
         }
         .result-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-            table-layout: auto;
-            overflow-x: auto;
-            min-width: 600px;
-        }
-        .result-table th,
-        .result-table td {
-            border: 1px solid #E0E4EA;
-            padding: 12px;
-            text-align: left;
-            white-space: nowrap;
-            font-size: clamp(16px, 2.5vw, 18px);
-        }
-        .result-table th {
-            background-color: var(--color-primary);
-            color: #FFFFFF;
-            font-weight: 500;
-        }
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    table-layout: fixed; /* Đảm bảo các cột có độ rộng cố định */
+    overflow-x: auto;
+    min-width: 600px;
+}
+
+.result-table th,
+.result-table td {
+    border: 1px solid #E0E4EA;
+    padding: 12px;
+    text-align: left;
+    white-space: nowrap;
+    font-size: clamp(16px, 2.5vw, 18px);
+    /* Cố định chiều rộng cho từng cột */
+    width: 12.5%; /* Chia đều cho 8 cột (100% / 8) */
+}
+
+.result-table th {
+    background-color: var(--color-primary); /* Nền xanh */
+    color: #FFFFFF;
+    font-weight: 500;
+}
         .result-table tr:nth-child(even) {
             background-color: #F9FAFB;
         }
@@ -392,6 +396,7 @@
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
+             @media (max-width: 600px) {   
             .result-table {
         width: 100%;
         min-width: 600px; /* Đảm bảo bảng không bị thu nhỏ quá mức */
