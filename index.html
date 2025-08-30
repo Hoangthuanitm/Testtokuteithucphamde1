@@ -10,9 +10,9 @@
     font-family: 'Noto Sans JP', 'Roboto', sans-serif;
     max-width: 100vw; /* Đảm bảo chiều rộng không vượt quá viewport */
     margin: 0 auto;
-    padding: 10px; /* Giảm padding cho điện thoại */
+    padding: 15px; /* Giảm nhẹ padding */
     background-color: #F5F7FA;
-    font-size: 14px; /* Giảm kích thước chữ cho điện thoại */
+    font-size: 16px; /* Giữ nguyên kích thước chữ */
     line-height: 1.6;
     color: #333;
     overflow-x: hidden; /* Ngăn cuộn ngang */
@@ -20,38 +20,38 @@
 
 .header {
     text-align: center;
-    margin-bottom: 20px;
-    padding: 10px;
+    margin-bottom: 25px;
+    padding: 12px;
     background-color: #FFFFFF;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 .header h1 {
-    font-size: 1.5em; /* Giảm kích thước tiêu đề cho điện thoại */
+    font-size: 1.8em; /* Giữ nguyên kích thước */
     margin: 0;
     color: #4A90E2;
 }
 
 .header h2 {
-    font-size: 1.2em; /* Giảm kích thước tiêu đề phụ */
-    margin: 8px 0;
+    font-size: 1.4em; /* Giữ nguyên kích thước */
+    margin: 10px 0;
     color: #333;
 }
 
 .student-info {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     border: 1px solid #E0E4EA;
-    padding: 10px;
-    border-radius: 8px;
+    padding: 12px;
+    border-radius: 10px;
     background-color: #FFFFFF;
     box-sizing: border-box; /* Đảm bảo padding không làm vượt chiều rộng */
 }
 
 .student-info div {
-    margin: 8px 0;
+    margin: 10px 0;
 }
 
 .student-info label {
@@ -62,11 +62,11 @@
 
 .student-info input {
     width: 100%;
-    padding: 6px;
+    padding: 8px;
     border: 1px solid #D1D5DB;
     border-radius: 6px;
     font-family: 'Roboto', sans-serif;
-    font-size: 14px; /* Giảm kích thước chữ */
+    font-size: 16px; /* Giữ nguyên kích thước chữ */
     transition: border-color 0.2s;
     box-sizing: border-box;
 }
@@ -77,18 +77,18 @@
 }
 
 .question-section {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     background-color: #FFFFFF;
     padding: 15px;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     display: none;
     box-sizing: border-box;
 }
 
 .question {
-    margin-bottom: 15px;
-    padding-bottom: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
     border-bottom: 1px solid #E0E4EA;
 }
 
@@ -98,35 +98,35 @@
 }
 
 .option {
-    margin: 6px 0;
+    margin: 8px 0;
     display: flex;
     align-items: center;
 }
 
 .option input {
-    margin-right: 10px;
+    margin-right: 12px;
     accent-color: #4A90E2;
 }
 
 .option label {
-    font-size: 0.9em;
+    font-size: 1em; /* Giữ nguyên kích thước chữ */
     color: #333;
 }
 
 .example {
     background-color: #F9FAFB;
-    padding: 10px;
+    padding: 15px;
     border-left: 4px solid #4A90E2;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     border-radius: 6px;
 }
 
 h2 {
     background-color: #4A90E2;
     color: #FFFFFF;
-    padding: 10px 12px;
-    border-radius: 6px;
-    font-size: 1.1em;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 1.3em; /* Giữ nguyên kích thước */
     margin-top: 0;
 }
 
@@ -134,14 +134,14 @@ button {
     background-color: #4A90E2;
     color: #FFFFFF;
     border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
+    padding: 12px 24px;
+    border-radius: 8px;
     cursor: pointer;
-    margin-top: 15px;
-    font-size: 0.9em;
+    margin-top: 20px;
+    font-size: 1em; /* Giữ nguyên kích thước */
     font-family: 'Roboto', sans-serif;
     transition: background-color 0.2s, transform 0.1s;
-    margin-right: 8px;
+    margin-right: 10px;
 }
 
 button:hover {
@@ -161,15 +161,15 @@ button.reset:hover {
     font-family: 'Roboto', sans-serif;
     font-style: italic;
     color: #6B7280;
-    margin-bottom: 10px;
-    font-size: 0.9em;
+    margin-bottom: 15px;
+    font-size: 0.95em; /* Giữ nguyên kích thước */
 }
 
 .result-section {
-    margin-top: 20px;
+    margin-top: 25px;
     padding: 15px;
     background-color: #FFFFFF;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -179,8 +179,8 @@ button.reset:hover {
 
 .error-message {
     color: #EF4444;
-    margin-top: 10px;
-    font-size: 0.9em;
+    margin-top: 15px;
+    font-size: 0.95em; /* Giữ nguyên kích thước */
 }
 
 .result-table {
@@ -190,10 +190,10 @@ button.reset:hover {
 
 .result-table th, .result-table td {
     border: 1px solid #ddd;
-    padding: 6px;
+    padding: 8px;
     text-align: left;
     white-space: nowrap;
-    min-width: 30px; /* Giảm chiều rộng tối thiểu cho điện thoại */
+    min-width: 40px;
 }
 
 .result-table th {
@@ -213,7 +213,7 @@ button.reset:hover {
 }
 
 .result-section::-webkit-scrollbar {
-    height: 6px;
+    height: 8px;
 }
 
 .result-section::-webkit-scrollbar-thumb {
@@ -226,15 +226,15 @@ button.reset:hover {
 }
 
 .image-placeholder {
-    width: 100px; /* Giảm kích thước ảnh cho điện thoại */
-    height: 80px;
+    width: 120px; /* Giảm nhẹ kích thước ảnh */
+    height: 100px;
     border: 1px dashed #D1D5DB;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 8px 0;
+    margin: 10px 0;
     background-color: #F9FAFB;
-    font-size: 0.8em;
+    font-size: 0.9em;
     overflow: hidden;
 }
 
@@ -246,11 +246,11 @@ button.reset:hover {
 
 footer {
     text-align: center;
-    margin-top: 30px;
-    padding: 15px 0;
+    margin-top: 35px;
+    padding: 20px 0;
     border-top: 1px solid #E0E4EA;
     color: #6B7280;
-    font-size: 0.8em;
+    font-size: 0.9em; /* Giữ nguyên kích thước */
     font-family: 'Roboto', sans-serif;
 }
 
@@ -263,8 +263,8 @@ footer {
 }
 
 .answer-feedback {
-    margin-top: 6px;
-    font-size: 0.8em;
+    margin-top: 8px;
+    font-size: 0.9em; /* Giữ nguyên kích thước */
     color: #4A90E2;
 }
 
@@ -274,13 +274,13 @@ footer {
 
 .timer {
     position: fixed;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 15px;
     background-color: #4A90E2;
     color: #FFFFFF;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 0.9em;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1.2em; /* Giữ nguyên kích thước */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 }
@@ -305,43 +305,43 @@ footer {
 .password-box {
     background-color: #FFFFFF;
     padding: 15px;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    max-width: 80%; /* Giảm chiều rộng tối đa */
+    max-width: 90%; /* Giảm chiều rộng tối đa */
     width: 100%;
     box-sizing: border-box;
 }
 
 .password-box input {
     width: 100%;
-    padding: 8px;
-    margin: 8px 0;
+    padding: 10px;
+    margin: 10px 0;
     border: 1px solid #D1D5DB;
     border-radius: 6px;
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 16px; /* Giữ nguyên kích thước chữ */
     box-sizing: border-box;
 }
 
 .password-box button {
-    margin: 8px 5px;
+    margin: 10px 5px;
 }
 
 .password-error {
     color: #EF4444;
-    font-size: 0.8em;
-    margin-top: 8px;
+    font-size: 0.9em; /* Giữ nguyên kích thước */
+    margin-top: 10px;
 }
 
 .text-input {
     width: 100%;
-    padding: 6px;
+    padding: 8px;
     border: 1px solid #D1D5DB;
     border-radius: 6px;
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    margin-top: 8px;
+    font-size: 16px; /* Giữ nguyên kích thước chữ */
+    margin-top: 10px;
     box-sizing: border-box;
 }
 
@@ -354,96 +354,64 @@ footer {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    flex-wrap: wrap; /* Cho phép các nút xuống dòng nếu không đủ chỗ */
+    flex-wrap: wrap; /* Cho phép các nút xuống dòng */
 }
 
 @media (max-width: 600px) {
     body {
-        padding: 5px; /* Giảm padding hơn nữa cho màn hình nhỏ */
-        font-size: 12px; /* Giảm kích thước chữ */
+        padding: 10px; /* Giảm padding cho màn hình nhỏ */
     }
 
     .header {
-        padding: 8px;
-    }
-
-    .header h1 {
-        font-size: 1.2em;
-    }
-
-    .header h2 {
-        font-size: 1em;
+        padding: 10px;
     }
 
     .student-info {
-        padding: 8px;
+        padding: 10px;
     }
 
     .student-info input {
-        font-size: 12px;
-        padding: 5px;
-    }
-
-    .question-section {
-        padding: 10px;
-    }
-
-    .question {
-        margin-bottom: 10px;
-        padding-bottom: 8px;
-    }
-
-    .option label {
-        font-size: 0.8em;
-    }
-
-    h2 {
-        font-size: 1em;
-        padding: 8px 10px;
-    }
-
-    button {
-        padding: 8px 16px;
-        font-size: 0.8em;
-    }
-
-    .result-table th, .result-table td {
-        font-size: 0.7em;
-        padding: 5px;
-        min-width: 20px; /* Giảm kích thước tối thiểu */
-    }
-
-    .image-placeholder {
-        width: 80px;
-        height: 60px;
-        font-size: 0.7em;
-    }
-
-    .timer {
-        top: 5px;
-        right: 5px;
-        font-size: 0.8em;
-        padding: 6px 12px;
-    }
-
-    .password-box {
-        padding: 10px;
-        max-width: 90%;
-    }
-
-    .password-box input {
-        font-size: 12px;
         padding: 6px;
     }
 
-    .password-error {
-        font-size: 0.7em;
+    .question-section {
+        padding: 12px;
     }
 
-    .text-input {
-        font-size: 12px;
-        padding: 5px;
+    .question {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
     }
+
+    button {
+        padding: 10px 20px;
+    }
+
+    .result-table th, .result-table td {
+        padding: 6px;
+        min-width: 30px; /* Giảm kích thước tối thiểu */
+    }
+
+    .image-placeholder {
+        width: 100px; /* Giảm kích thước ảnh */
+        height: 80px;
+    }
+
+    .timer {
+        top: 10px;
+        right: 10px;
+        padding: 8px 16px;
+    }
+
+    .password-box {
+        padding: 12px;
+        max-width: 95%;
+    }
+
+    .password-box input {
+        padding: 8px;
+    }
+}
     </style>
 </head>
 <body>
