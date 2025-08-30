@@ -6,176 +6,209 @@
     <title>飲食料品製造業特定技能1号</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Noto Sans JP', 'Roboto', sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #F5F7FA;
-            font-size: 16px;
-            line-height: 1.6;
-            color: #333;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 15px;
-            background-color: #FFFFFF;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-        }
-        .header h1 {
-            font-size: 1.8em;
-            margin: 0;
-            color: #4A90E2;
-        }
-        .header h2 {
-            font-size: 1.4em;
-            margin: 10px 0;
-            color: #333;
-        }
-        .student-info {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 20px;
-            border: 1px solid #E0E4EA;
-            padding: 15px;
-            border-radius: 10px;
-            background-color: #FFFFFF;
-        }
-        .student-info div {
-            margin: 10px 0;
-        }
-        .student-info label {
-            font-weight: 500;
-            color: #4A90E2;
-            display: block;
-        }
-        .student-info input {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #D1D5DB;
-            border-radius: 6px;
-            font-family: 'Roboto', sans-serif;
-            font-size: 16px;
-            transition: border-color 0.2s;
-            box-sizing: border-box;
-        }
-        .student-info input:focus {
-            border-color: #4A90E2;
-            outline: none;
-        }
-        .question-section {
-            margin-bottom: 30px;
-            background-color: #FFFFFF;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            display: none;
-        }
-        .question {
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #E0E4EA;
-        }
-        .options {
-            display: flex;
-            flex-direction: column;
-        }
-        .option {
-            margin: 8px 0;
-            display: flex;
-            align-items: center;
-        }
-        .option input {
-            margin-right: 12px;
-            accent-color: #4A90E2;
-        }
-        .option label {
-            font-size: 1em;
-            color: #333;
-        }
-        .example {
-            background-color: #F9FAFB;
-            padding: 15px;
-            border-left: 4px solid #4A90E2;
-            margin-bottom: 20px;
-            border-radius: 6px;
-        }
-        h2 {
-            background-color: #4A90E2;
-            color: #FFFFFF;
-            padding: 12px 15px;
-            border-radius: 8px;
-            font-size: 1.3em;
-            margin-top: 0;
-        }
-        button {
-            background-color: #4A90E2;
-            color: #FFFFFF;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            cursor: pointer;
-            margin-top: 20px;
-            font-size: 1em;
-            font-family: 'Roboto', sans-serif;
-            transition: background-color 0.2s, transform 0.1s;
-            margin-right: 10px;
-        }
-        button:hover {
-            background-color: #357ABD;
-            transform: translateY(-1px);
-        }
-        button.reset {
-            background-color: #EF4444;
-        }
-        button.reset:hover {
-            background-color: #DC2626;
-        }
-        .vietnamese {
-            font-family: 'Roboto', sans-serif;
-            font-style: italic;
-            color: #6B7280;
-            margin-bottom: 15px;
-            font-size: 0.95em;
-        }
-        .result-section {
-    margin-top: 30px; /* Tạo khoảng cách 30px từ phía trên của phần tử */
-    padding: 20px; /* Tạo khoảng đệm bên trong 20px cho tất cả các cạnh */
-    background-color: #FFFFFF; /* Màu nền của phần tử là màu trắng */
-    border-radius: 10px; /* Bo góc các cạnh của phần tử với bán kính 10px */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Hiệu ứng bóng mờ với độ lệch ngang 0, độ lệch dọc 4px, độ mờ 8px, màu đen với độ trong suốt 5% */
-    overflow-x: auto; /* Cho phép cuộn ngang nếu nội dung vượt quá kích thước phần tử */
-    -webkit-overflow-scrolling: touch; /* Cải thiện trải nghiệm cuộn trên các thiết bị sử dụng WebKit (như iPhone, iPad) để cuộn mượt hơn */
-    display: none; /* Ẩn phần tử này theo mặc định (không hiển thị cho đến khi được kích hoạt) */
+    body {
+    font-family: 'N bright redoto Sans JP', 'Roboto', sans-serif;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: clamp(1rem, 3vw, 1.5rem);
+    background-color: #F5F7FA;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: clamp(1.5rem, 4vw, 2rem);
+    padding: clamp(0.75rem, 2vw, 1rem);
+    background-color: #FFFFFF;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header h1 {
+    font-size: clamp(1.25rem, 3.5vw, 1.5rem);
+    margin: 0;
+    color: #4A90E2;
+}
+
+.header h2 {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    margin: clamp(0.5rem, 1.5vw, 0.75rem) 0;
+    color: #333;
+}
+
+.student-info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    border: 1px solid #E0E4EA;
+    padding: clamp(0.75rem, 2vw, 1rem);
+    border-radius: 0.5rem;
+    background-color: #FFFFFF;
+}
+
+.student-info div {
+    margin: clamp(0.5rem, 1.5vw, 0.75rem) 0;
+}
+
+.student-info label {
+    font-weight: 500;
+    color: #4A90E2;
+    display: block;
+    font-size: clamp(0.8125rem, 2.2vw, 0.9375rem);
+}
+
+.student-info input {
+    width: 100%;
+    padding: clamp(0.5rem, 1.5vw, 0.75rem);
+    border: 1px solid #D1D5DB;
+    border-radius: 0.375rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.8125rem, 2.2vw, 0.9375rem);
+    transition: border-color 0.2s ease-in-out;
+    box-sizing: border-box;
+}
+
+.student-info input:focus {
+    border-color: #4A90E2;
+    outline: none;
+}
+
+.question-section {
+    margin-bottom: clamp(1.5rem, 4vw, 2rem);
+    background-color: #FFFFFF;
+    padding: clamp(0.75rem, 2vw, 1rem);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: none;
+}
+
+.question {
+    margin-bottom: clamp(0.75rem, 2vw, 1rem);
+    padding-bottom: clamp(0.5rem, 1.5vw, 0.75rem);
+    border-bottom: 1px solid #E0E4EA;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+}
+
+.option {
+    margin: clamp(0.375rem, 1vw, 0.5rem) 0;
+    display: flex;
+    align-items: center;
+}
+
+.option input {
+    margin-right: clamp(0.5rem, 1.5vw, 0.75rem);
+    accent-color: #4A90E2;
+}
+
+.option label {
+    font-size: clamp(0.8125rem, 2.2vw, 0.9375rem);
+    color: #333;
+}
+
+.example {
+    background-color: #F9FAFB;
+    padding: clamp(0.75rem, 2vw, 1rem);
+    border-left: 3px solid #4A90E2;
+    margin-bottom: clamp(0.75rem, 2vw, 1rem);
+    border-radius: 0.375rem;
+}
+
+h2 {
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    padding: clamp(0.5rem, 1.5vw, 0.75rem);
+    border-radius: 0.375rem;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    margin-top: 0;
+}
+
+button {
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    border: none;
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+    border-radius: 0.375rem;
+    cursor: pointer;
+    margin-top: clamp(0.75rem, 2vw, 1rem);
+    font-size: clamp(0.8125rem, 2.2vw, 0.9375rem);
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.2s ease-in-out;
+    margin-right: clamp(0.5rem, 1vw, 0.75rem);
+    touch-action: manipulation;
+}
+
+button:hover {
+    background-color: #357ABD;
+}
+
+button.reset {
+    background-color: #EF4444;
+}
+
+button.reset:hover {
+    background-color: #DC2626;
+}
+
+.vietnamese {
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    color: #6B7280;
+    margin-bottom: clamp(0.75rem, 2vw, 1rem);
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+}
+
+.result-section {
+    margin-top: clamp(1.5rem, 4vw, 2rem);
+    padding: clamp(0.75rem, 2vw, 1rem);
+    background-color: #FFFFFF;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    display: none;
 }
 
 .error-message {
-    color: #EF4444; /* Màu chữ của thông báo lỗi là màu đỏ */
-    margin-top: 15px; /* Tạo khoảng cách 15px từ phía trên của phần tử */
-    font-size: 0.95em; /* Kích thước chữ nhỏ hơn một chút so với kích thước chữ mặc định (95% kích thước chữ chuẩn) */
+    color: #EF4444;
+    margin-top: clamp(0.5rem, 1.5vw, 0.75rem);
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
 }
 
 .result-table {
-    width: auto; /* Chiều rộng của bảng sẽ tự điều chỉnh dựa trên nội dung bên trong */
-    border-collapse: collapse; /* Gộp các đường viền của các ô trong bảng lại với nhau, không để lại khoảng cách giữa các ô */
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: clamp(0.75rem, 2vw, 1rem);
+    table-layout: auto;
+    min-width: 600px;
 }
 
-.result-table th, .result-table td {
-    border: 1px solid #ddd; /* Tạo đường viền 1px màu xám nhạt cho các ô tiêu đề (th) và ô dữ liệu (td) */
-    padding: 8px; /* Tạo khoảng đệm 8px bên trong các ô */
-    text-align: left; /* Căn chỉnh nội dung bên trong các ô về phía bên trái */
-    white-space: nowrap; /* Ngăn nội dung trong ô xuống dòng, giữ tất cả nội dung trên một dòng */
-    min-width: 120px; /* Đặt chiều rộng tối thiểu cho mỗi ô là 120px */
+.result-table th,
+.result-table td {
+    border: 1px solid #E0E4EA;
+    padding: clamp(0.5rem, 1.5vw, 0.75rem);
+    text-align: left;
+    white-space: normal;
+    word-wrap: break-word;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
 }
 
 .result-table th {
-    background-color: #4A90E2; /* Màu nền của ô tiêu đề là màu xanh dương */
-    color: #FFFFFF; /* Màu chữ trong ô tiêu đề là màu trắng */
-    font-weight: 500; /* Độ đậm của chữ trong ô tiêu đề là trung bình (không quá đậm như bold) */
-    width: 100%; /* Đảm bảo ô tiêu đề chiếm toàn bộ chiều rộng có thể (áp dụng trong ngữ cảnh phù hợp) */
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-weight: 500;
 }
+
+.result-table tr:nth-child(even) {
+    background-color: #F9FAFB;
+}
+
 .rank-a {
     color: #4A90E2;
     font-weight: 500;
@@ -186,152 +219,224 @@
     font-weight: 500;
 }
 
-.result-section {
-    overflow-x: auto; /* Cho phép cuộn ngang */
-}
-
 .result-section::-webkit-scrollbar {
-    height: 8px;
+    height: 0.375rem;
 }
 
 .result-section::-webkit-scrollbar-thumb {
     background-color: #4A90E2;
-    border-radius: 4px;
+    border-radius: 0.1875rem;
 }
 
 .result-section::-webkit-scrollbar-track {
     background-color: #F5F7FA;
 }
-        .image-placeholder {
-            width: 150px;
-            height: 120px;
-            border: 1px dashed #D1D5DB;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 10px 0;
-            background-color: #F9FAFB;
-            font-size: 0.9em;
-            overflow: hidden;
-        }
-        .image-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px 0;
-            border-top: 1px solid #E0E4EA;
-            color: #6B7280;
-            font-size: 0.9em;
-            font-family: 'Roboto', sans-serif;
-        }
-        .correct-answer {
-            color: #4A90E2;
-        }
-        .wrong-answer {
-            color: #EF4444;
-        }
-        .answer-feedback {
-            margin-top: 8px;
-            font-size: 0.9em;
-            color: #4A90E2;
-        }
-        .answer-feedback.wrong {
-            color: #EF4444;
-        }
-        .timer {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #4A90E2;
-            color: #FFFFFF;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 1.2em;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-        }
-        .timer.warning {
-            background-color: #EF4444;
-        }
-        .password-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-        }
-        .password-box {
-            background-color: #FFFFFF;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-        }
-        .password-box input {
-            width: 80%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #D1D5DB;
-            border-radius: 6px;
-            font-family: 'Roboto', sans-serif;
-            font-size: 16px;
-        }
-        .password-box button {
-            margin: 10px 5px;
-        }
-        .password-error {
-            color: #EF4444;
-            font-size: 0.9em;
-            margin-top: 10px;
-        }
-        .text-input {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #D1D5DB;
-            border-radius: 6px;
-            font-family: 'Roboto', sans-serif;
-            font-size: 16px;
-            margin-top: 10px;
-            box-sizing: border-box;
-        }
-        .text-input:focus {
-            border-color: #4A90E2;
-            outline: none;
-        }
-        .button-container {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-        }
-        @media (max-width: 600px) {
-            .timer {
-                top: 10px;
-                right: 10px;
-                font-size: 1em;
-                padding: 8px 16px;
-            }
-            .password-box {
-                width: 80%;
-            }
-            .result-section {
-                padding: 10px;
-            }
-            .result-table th, .result-table td {
-                font-size: 0.8em;
-                padding: 8px;
-            }
-        }
+
+.image-placeholder {
+    width: 100%;
+    max-width: clamp(6rem, 15vw, 7.5rem);
+    height: clamp(5rem, 12vw, 6rem);
+    border: 1px dashed #D1D5DB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: clamp(0.5rem, 1.5vw, 0.75rem) 0;
+    background-color: #F9FAFB;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    overflow: hidden;
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+footer {
+    text-align: center;
+    margin-top: clamp(1.5rem, 4vw, 2rem);
+    padding: clamp(0.75rem, 2vw, 1rem) 0;
+    border-top: 1px solid #E0E4EA;
+    color: #6B7280;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    font-family: 'Roboto', sans-serif;
+}
+
+.correct-answer {
+    color: #4A90E2;
+}
+
+.wrong-answer {
+    color: #EF4444;
+}
+
+.answer-feedback {
+    margin-top: clamp(0.375rem, 1vw, 0.5rem);
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    color: #4A90E2;
+}
+
+.answer-feedback.wrong {
+    color: #EF4444;
+}
+
+.timer {
+    position: fixed;
+    top: clamp(0.5rem, 1.5vw, 0.75rem);
+    right: clamp(0.5rem, 1.5vw, 0.75rem);
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    padding: clamp(0.5rem, 1.5vw, 0.75rem);
+    border-radius: 0.375rem;
+    font-size: clamp(0.75rem, 2.2vw, 0.875rem);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.timer.warning {
+    background-color: #EF4444;
+}
+
+.password-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.password-box {
+    background-color: #FFFFFF;
+    padding: clamp(0.75rem, 2vw, 1rem);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 90%;
+    width: clamp(15rem, 50vw, 18.75rem);
+}
+
+.password-box input {
+    width: 100%;
+    padding: clamp(0.5rem, 1.5vw, 0.75rem);
+    margin: clamp(0.5rem, 1.5vw, 0.75rem) 0;
+    border: 1px solid #D1D5DB;
+    border-radius: 0.375rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.8125rem, 2.2vw, 0.9375rem);
+    box-sizing: border-box;
+}
+
+.password-box input:focus {
+    border-color: #4A90E2;
+    outline: none;
+}
+
+.password-box button {
+    margin: clamp(0.5rem, 1.5vw, 0.75rem) 0.25rem;
+}
+
+.password-error {
+    color: #EF4444;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    margin-top: clamp(0.5rem, 1.5vw, 0.75rem);
+}
+
+.text-input {
+    width: 100%;
+    padding: clamp(0.5rem, 1.5vw, 0.75rem);
+    border: 1px solid #D1D5DB;
+    border-radius: 0.375rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.8125rem, 2.2vw, 0.9375rem);
+    margin-top: clamp(0.5rem, 1.5vw, 0.75rem);
+    box-sizing: border-box;
+}
+
+.text-input:focus {
+    border-color: #4A90E2;
+    outline: none;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(0.5rem, 1.5vw, 0.75rem);
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: clamp(0.5rem, 2vw, 0.75rem);
+    }
+
+    .header {
+        padding: clamp(0.5rem, 1.5vw, 0.75rem);
+        margin-bottom: clamp(0.75rem, 2vw, 1rem);
+    }
+
+    .header h1 {
+        font-size: clamp(1rem, 3vw, 1.25rem);
+    }
+
+    .header h2 {
+        font-size: clamp(0.75rem, 2.2vw, 0.875rem);
+    }
+
+    .student-info {
+        padding: clamp(0.5rem, 1.5vw, 0.75rem);
+    }
+
+    .student-info input {
+        font-size: clamp(0.75rem, 2vw, 0.875rem);
+    }
+
+    .question-section {
+        padding: clamp(0.5rem, 1.5vw, 0.75rem);
+    }
+
+    .result-section {
+        padding: clamp(0.5rem, 1.5vw, 0.75rem);
+    }
+
+    .result-table {
+        font-size: clamp(0.6875rem, 1.8vw, 0.8125rem);
+        min-width: 100%;
+    }
+
+    .result-table th,
+    .result-table td {
+        padding: clamp(0.375rem, 1vw, 0.5rem);
+        font-size: clamp(0.6875rem, 1.8vw, 0.8125rem);
+    }
+
+    button {
+        padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
+        font-size: clamp(0.75rem, 2vw, 0.875rem);
+    }
+
+    .timer {
+        top: clamp(0.375rem, 1vw, 0.5rem);
+        right: clamp(0.375rem, 1vw, 0.5rem);
+        padding: clamp(0.375rem, 1vw, 0.5rem) clamp(0.75rem, 2vw, 1rem);
+        font-size: clamp(0.6875rem, 1.8vw, 0.8125rem);
+    }
+
+    .image-placeholder {
+        max-width: clamp(5rem, 12vw, 6rem);
+        height: clamp(4rem, 10vw, 5rem);
+    }
+
+    .password-box {
+        width: clamp(80%, 40vw, 90%);
+        padding: clamp(0.5rem, 1.5vw, 0.75rem);
+    }
+}
     </style>
 </head>
 <body>
