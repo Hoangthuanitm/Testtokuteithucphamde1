@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>飲食料品製造業特定技能1号</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-<style>
+ <style>
         :root {
             --font-base: clamp(18px, 3vw, 20px);
             --font-small: clamp(16px, 2.5vw, 18px);
@@ -391,12 +391,21 @@
             }
             .result-table {
                 font-size: clamp(15px, 2.5vw, 17px);
+                min-width: 600px;
+                width: 100%;
             }
             .result-table th,
             .result-table td {
                 padding: 10px;
                 font-size: clamp(15px, 2.5vw, 17px);
-                width: 180%;
+            }
+            .result-section h2 {
+                width: 100%;
+                box-sizing: border-box;
+                padding-left: 15px;
+                padding-right: 15px;
+                min-width: 600px;
+                overflow-x: auto;
             }
             button {
                 padding: 10px 20px;
@@ -417,21 +426,7 @@
                 width: 90%;
                 padding: 15px;
             }
-            @media (max-width: 600px) {
-    .result-section h2 {
-        width: 95%; /* Đặt chiều rộng bằng với container của nó */
-        box-sizing: border-box;
-        padding-left: 15px;
-        padding-right: 15px;
-        min-width: 600px; /* Đảm bảo chiều rộng tối thiểu bằng với bảng */
-        overflow-x: auto; /* Cho phép cuộn ngang nếu nội dung vượt quá */
-    }
-    .result-table {
-        width: 95%;
-        min-width: 600px; /* Đảm bảo bảng có chiều rộng tối thiểu */
-        font-size: clamp(15px, 2.5vw, 17px);
-    }
-}
+        }
     </style>
 </head>
 <body>
