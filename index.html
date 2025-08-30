@@ -6,489 +6,200 @@
     <title>飲食料品製造業特定技能1号</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
    <style>
-        body {
-    font-family: 'Noto Sans JP', 'Roboto', sans-serif;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #F5F7FA;
-    font-size: clamp(14px, 2vw, 20px); /* Giảm kích thước chữ */
-    line-height: 1.6;
-    color: #222;
-    overflow-x: hidden;
-}
-
-.header {
-    text-align: center;
-    margin-bottom: 25px;
-    padding: 15px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-}
-
-.header h1 {
-    font-size: clamp(20px, 3vw, 28px); /* Giảm kích thước h1 */
-    margin: 0;
-    color: #4A90E2;
-}
-
-.header h2 {
-    font-size: clamp(16px, 2.5vw, 24px); /* Giảm kích thước h2 */
-    margin: 10px 0;
-    color: #4A90E2;
-}
-
-.student-info {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    border: 1px solid #E0E4EA;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: #FFFFFF;
-}
-
-.student-info div {
-    margin: 10px 0;
-}
-
-.student-info label {
-    font-weight: 500;
-    color: #4A90E2;
-    display: block;
-    font-size: clamp(14px, 2vw, 20px); /* Giảm kích thước label */
-}
-
-.student-info input {
-    width: 100%;
-    min-height: 48px;
-    padding: 10px;
-    border: 1px solid #D1D5DB;
-    border-radius: 8px;
-    font-family: 'Roboto', sans-serif;
-    font-size: clamp(14px, 2vw, 20px); /* Giảm kích thước input */
-    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    box-sizing: border-box;
-}
-
-.student-info input:focus {
-    border-color: #4A90E2;
-    outline: none;
-    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
-}
-
-.question-section {
-    margin-bottom: 25px;
-    background-color: #FFFFFF;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    display: none;
-}
-
-.question {
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #E0E4EA;
-}
-
-.options {
-    display: flex;
-    flex-direction: column;
-}
-
-.option {
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-}
-
-.option input[type="radio"] {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 18px;
-    height: 18px;
-    border: 2px solid #4A90E2;
-    border-radius: 50%;
-    background-color: #FFFFFF;
-    margin-right: 15px; /* Tăng khoảng cách để dễ bấm */
-    cursor: pointer;
-    flex-shrink: 0; /* Ngăn radio button bị co giãn */
-}
-
-.option input[type="radio"]:checked {
-    background-color: #4A90E2;
-    border: 2px solid #4A90E2;
-    position: relative;
-}
-
-.option input[type="radio"]:checked::after {
-    content: '';
-    width: 10px;
-    height: 10px;
-    background-color: #FFFFFF;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.option label {
-    font-size: clamp(14px, 2vw, 20px); /* Giảm kích thước label */
-    color: #222;
-    cursor: pointer;
-}
-
-.example {
-    background-color: #F9FAFB;
-    padding: 15px;
-    border-left: 4px solid #4A90E2;
-    margin-bottom: 20px;
-    border-radius: 8px;
-}
-
-h2 {
-    background-color: #4A90E2;
-    color: #FFFFFF;
-    padding: 12px 15px;
-    border-radius: 8px;
-    font-size: clamp(16px, 2.5vw, 24px); /* Giảm kích thước h2 */
-    margin-top: 0;
-}
-
-button {
-    background-color: #4A90E2;
-    color: #FFFFFF;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 20px;
-    font-size: clamp(14px, 2vw, 20px); /* Giảm kích thước button */
-    font-family: 'Roboto', sans-serif;
-    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-    min-height: 48px;
-    margin-right: 10px;
-}
-
-button:hover {
-    background-color: #357ABD;
-    transform: translateY(-2px);
-}
-
-button:active {
-    transform: translateY(0);
-    background-color: #2A6DAF;
-}
-
-button.reset {
-    background-color: #EF4444;
-}
-
-button.reset:hover {
-    background-color: #DC2626;
-    transform: translateY(-2px);
-}
-
-.vietnamese {
-    font-family: 'Roboto', sans-serif;
-    font-style: italic;
-    color: #4B5563;
-    margin-bottom: 15px;
-    font-size: clamp(14px, 1.8vw, 18px); /* Giảm kích thước chữ */
-}
-
-.result-section {
-    margin-top: 25px;
-    padding: 20px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    display: none;
-}
-
-.error-message {
-    color: #EF4444;
-    margin-top: 12px;
-    font-size: clamp(14px, 1.8vw, 18px); /* Giảm kích thước chữ */
-}
-
-.result-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    table-layout: auto;
-    min-width: 0;
-    max-width: 100%;
-}
-
-.result-table th,
-.result-table td {
-    border: 1px solid #E0E4EA;
-    padding: 10px;
-    text-align: left;
-    white-space: normal;
-    word-wrap: break-word;
-    font-size: clamp(14px, 1.8vw, 18px); /* Giảm kích thước chữ */
-}
-
-.result-table th {
-    background-color: #4A90E2;
-    color: #FFFFFF;
-    font-weight: 500;
-}
-
-.result-table tr:nth-child(even) {
-    background-color: #F9FAFB;
-}
-
-.rank-a {
-    color: #4A90E2;
-    font-weight: 500;
-}
-
-.rank-f {
-    color: #EF4444;
-    font-weight: 500;
-}
-
-.result-section::-webkit-scrollbar {
-    height: 8px;
-}
-
-.result-section::-webkit-scrollbar-thumb {
-    background-color: #4A90E2;
-    border-radius: 4px;
-}
-
-.result-section::-webkit-scrollbar-track {
-    background-color: #F5F7FA;
-}
-
-.image-placeholder {
-    width: 100%;
-    max-width: 150px;
-    height: 120px;
-    border: 1px dashed #D1D5DB;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px 0;
-    background-color: #F9FAFB;
-    font-size: clamp(14px, 1.8vw, 18px); /* Giảm kích thước chữ */
-    overflow: hidden;
-}
-
-.image-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-footer {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px 0;
-    border-top: 1px solid #E0E4EA;
-    color: #4B5563;
-    font-size: clamp(14px, 1.8vw, 18px); /* Giảm kích thước chữ */
-}
-
-.correct-answer {
-    color: #4A90E2;
-}
-
-.wrong-answer {
-    color: #EF4444;
-}
-
-.answer-feedback {
-    margin-top: 8px;
-    font-size: clamp(14px, 1.8vw, 18px); /* Giảm kích thước chữ */
-    color: #4A90E2;
-}
-
-.answer-feedback.wrong {
-    color: #EF4444;
-}
-
-.timer {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    background-color: #4A90E2;
-    color: #FFFFFF;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: clamp(14px, 2vw, 18px); /* Giảm kích thước chữ */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    z-index: 3000;
-}
-
-.timer.warning {
-    background-color: #EF4444;
-}
-
-.password-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-}
-
-.password-box {
-    background-color: #FFFFFF;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    max-width: 90%;
-    width: 350px;
-}
-
-.password-box input {
-    width: 100%;
-    min-height: 48px;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #D1D5DB;
-    border-radius: 8px;
-    font-family: 'Roboto', sans-serif;
-    font-size: clamp(14px, 2vw, 20px); /* Giảm kích thước chữ */
-    box-sizing: border-box;
-}
-
-.password-box input:focus {
-    border-color: #4A90E2;
-    outline: none;
-    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
-}
-
-.password-box button {
-    margin: 10px 5px;
-}
-
-.password-error {
-    color: #EF4444;
-    font-size: clamp(14px, 1.8vw, 18px); /* Giảm kích thước chữ */
-    margin-top: 10px;
-}
-
-.text-input {
-    width: 100%;
-    min-height: 48px;
-    padding: 10px;
-    border: 1px solid #D1D5DB;
-    border-radius: 8px;
-    font-family: 'Roboto', sans-serif;
-    font-size: clamp(14px, 2vw, 20px); /* Giảm kích thước chữ */
-    margin-top: 10px;
-    box-sizing: border-box;
-}
-
-.text-input:focus {
-    border-color: #4A90E2;
-    outline: none;
-    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
-}
-
-.button-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-@media (max-width: 600px) {
     body {
-        padding: 10px;
+        font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #F5F7FA;
+        font-size: clamp(15px, 1.5vw, 20px); /* ⚡ Giữ cân đối cho mobile & PC */
+        line-height: 1.7;
+        color: #222;
+        overflow-x: hidden;
     }
 
     .header {
-        padding: 10px;
-        margin-bottom: 15px;
+        text-align: center;
+        margin-bottom: 25px;
+        padding: 15px;
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
     }
 
     .header h1 {
-        font-size: clamp(18px, 2.8vw, 24px); /* Giảm kích thước h1 */
+        font-size: clamp(26px, 3vw, 38px);
+        margin: 0;
+        color: #2563EB;
+        font-weight: 700;
     }
 
     .header h2 {
-        font-size: clamp(14px, 2.3vw, 20px); /* Giảm kích thước h2 */
+        font-size: clamp(20px, 2.5vw, 30px);
+        margin: 8px 0;
+        color: #2563EB;
+        font-weight: 500;
     }
 
     .student-info {
-        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        border: 1px solid #E0E4EA;
+        padding: 18px;
+        border-radius: 12px;
+        background-color: #FFFFFF;
+    }
+
+    .student-info label {
+        font-weight: 600;
+        color: #2563EB;
+        display: block;
+        font-size: clamp(16px, 2vw, 22px);
+        margin-bottom: 5px;
     }
 
     .student-info input {
-        font-size: clamp(14px, 1.8vw, 18px); /* Giảm kích thước chữ */
+        width: 100%;
+        min-height: 44px;
+        padding: 10px 12px;
+        border: 1px solid #D1D5DB;
+        border-radius: 8px;
+        font-size: clamp(16px, 2vw, 22px);
+        transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+    .student-info input:focus {
+        border-color: #2563EB;
+        outline: none;
+        box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
     }
 
     .question-section {
-        padding: 12px;
+        margin-bottom: 25px;
+        background-color: #FFFFFF;
+        padding: 18px;
+        border-radius: 12px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+        display: none;
     }
 
-    .result-section {
-        padding: 12px;
+    .question {
+        margin-bottom: 18px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #E0E4EA;
     }
 
-    .result-table {
-        font-size: clamp(12px, 1.6vw, 16px); /* Giảm kích thước chữ */
+    .option {
+        display: flex;
+        align-items: center;
+        margin: 8px 0;
     }
 
-    .result-table th,
-    .result-table td {
-        padding: 8px;
-        font-size: clamp(12px, 1.6vw, 16px); /* Giảm kích thước chữ */
+    .option input[type="radio"] {
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        border: 2px solid #2563EB;
+        border-radius: 50%;
+        margin-right: 12px;
+        cursor: pointer;
+    }
+
+    .option input[type="radio"]:checked {
+        background-color: #2563EB;
+    }
+
+    .option label {
+        font-size: clamp(16px, 2vw, 22px);
+        color: #222;
+        cursor: pointer;
+    }
+
+    h2 {
+        background-color: #2563EB;
+        color: #FFFFFF;
+        padding: 10px 14px;
+        border-radius: 8px;
+        font-size: clamp(18px, 2.5vw, 26px);
+        margin-top: 0;
     }
 
     button {
-        padding: 10px 20px;
-        font-size: clamp(14px, 1.8vw, 18px); /* Giảm kích thước chữ */
-        width: 100%;
+        background-color: #2563EB;
+        color: #FFFFFF;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 15px;
+        font-size: clamp(16px, 2vw, 22px);
+        font-weight: 500;
+        transition: background-color 0.2s, transform 0.2s;
     }
 
-    .timer {
-        top: 10px;
-        right: 10px;
-        padding: 8px 15px;
-        font-size: clamp(12px, 1.8vw, 16px); /* Giảm kích thước chữ */
+    button:hover {
+        background-color: #1E40AF;
+        transform: translateY(-2px);
     }
 
-    .image-placeholder {
-        max-width: 120px;
-        height: 100px;
+    button:active {
+        transform: translateY(0);
+        background-color: #1D4ED8;
     }
 
-    .password-box {
-        width: 90%;
-        padding: 15px;
-    }
-}
-
-@media (min-width: 1200px) {
-    body {
-        padding: 25px;
+    button.reset {
+        background-color: #DC2626;
     }
 
-    .header, .student-info, .question-section, .result-section {
-        padding: 25px;
+    button.reset:hover {
+        background-color: #B91C1C;
     }
-}
-    </style>
+
+    footer {
+        text-align: center;
+        margin-top: 40px;
+        padding: 20px 0;
+        border-top: 1px solid #E0E4EA;
+        color: #4B5563;
+        font-size: clamp(14px, 1.8vw, 20px);
+    }
+
+    /* 📱 Mobile tối ưu */
+    @media (max-width: 600px) {
+        body {
+            padding: 12px;
+            font-size: clamp(15px, 3.5vw, 18px);
+        }
+
+        .header h1 {
+            font-size: clamp(22px, 5vw, 30px);
+        }
+
+        .header h2 {
+            font-size: clamp(18px, 4vw, 24px);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: clamp(15px, 4vw, 20px);
+        }
+    }
+
+    /* 💻 PC màn to */
+    @media (min-width: 1200px) {
+        body {
+            font-size: 18px;
+            padding: 30px;
+        }
+
+        .header, .student-info, .question-section, .result-section {
+            padding: 25px;
+        }
+    }
+</style>
+
 </head>
 <body>
     <div class="header">
