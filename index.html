@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>飲食料品製造業特定技能1号</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        /* CSS đã chỉnh sửa từ yêu cầu của bạn */
+<style>
+        /* CSS điều chỉnh để chữ không tràn và tăng kích thước <ruby> */
         body {
             font-family: 'Noto Sans JP', 'Roboto', sans-serif;
             max-width: 1000px;
@@ -20,25 +20,32 @@
             min-width: 0;
             overflow-x: hidden;
             box-sizing: border-box;
+            overflow-wrap: break-word;
+            word-break: break-word;
         }
 
         * {
             box-sizing: border-box;
         }
 
+        ruby {
+            font-size: 1.1em; /* Tăng kích thước chữ của <ruby> thêm 10% (16px -> ~17.6px) */
+        }
+
         .header, .student-info, .question-section, .result-section {
             width: 100%;
             max-width: 100%;
-            box-sizing: border-box;
+            background-color: #FFFFFF; /* Đảm bảo nền trắng */
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            overflow-wrap: break-word; /* Ngăn chữ tràn */
+            word-break: break-word;
         }
 
         .header {
             text-align: center;
             margin-bottom: 30px;
-            padding: 15px;
-            background-color: #FFFFFF;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
         }
 
         .header h1 {
@@ -58,9 +65,6 @@
             flex-direction: column;
             margin-bottom: 20px;
             border: 1px solid #E0E4EA;
-            padding: 15px;
-            border-radius: 10px;
-            background-color: #FFFFFF;
         }
 
         .student-info div {
@@ -82,6 +86,7 @@
             font-size: 16px;
             transition: border-color 0.2s;
             box-sizing: border-box;
+            overflow-wrap: break-word;
         }
 
         .student-info input:focus {
@@ -91,10 +96,6 @@
 
         .question-section {
             margin-bottom: 30px;
-            background-color: #FFFFFF;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
             display: none;
         }
 
@@ -123,6 +124,7 @@
         .option label {
             font-size: 1em;
             color: #333;
+            overflow-wrap: break-word;
         }
 
         .example {
@@ -131,6 +133,7 @@
             border-left: 4px solid #4A90E2;
             margin-bottom: 20px;
             border-radius: 6px;
+            overflow-wrap: break-word;
         }
 
         h2 {
@@ -175,14 +178,11 @@
             color: #6B7280;
             margin-bottom: 15px;
             font-size: 0.95em;
+            overflow-wrap: break-word;
         }
 
         .result-section {
             margin-top: 30px;
-            padding: 15px;
-            background-color: #FFFFFF;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
             display: none;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
@@ -262,6 +262,7 @@
             color: #6B7280;
             font-size: 0.9em;
             font-family: 'Roboto', sans-serif;
+            background-color: #FFFFFF; /* Nền trắng cho footer */
         }
 
         .correct-answer {
@@ -276,6 +277,7 @@
             margin-top: 8px;
             font-size: 0.9em;
             color: #4A90E2;
+            overflow-wrap: break-word;
         }
 
         .answer-feedback.wrong {
@@ -330,6 +332,7 @@
             border-radius: 6px;
             font-family: 'Roboto', sans-serif;
             font-size: 16px;
+            overflow-wrap: break-word;
         }
 
         .password-box button {
@@ -340,6 +343,7 @@
             color: #EF4444;
             font-size: 0.9em;
             margin-top: 10px;
+            overflow-wrap: break-word;
         }
 
         .text-input {
@@ -351,6 +355,7 @@
             font-size: 16px;
             margin-top: 10px;
             box-sizing: border-box;
+            overflow-wrap: break-word;
         }
 
         .text-input:focus {
@@ -369,7 +374,7 @@
                 padding: 10px;
             }
 
-            .header, .student-info, .question-section, .result-section {
+            .header, .student-info, .question-section, .result-section, footer {
                 padding: 10px;
             }
 
@@ -389,7 +394,10 @@
             .text-input,
             .option label,
             .question,
-            .example {
+            .example,
+            .vietnamese,
+            .answer-feedback,
+            .password-error {
                 overflow-wrap: break-word;
                 word-break: break-word;
             }
