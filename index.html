@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>飲食料品製造業特定技能1号</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <style>
+  <style>
         body {
             font-family: 'Noto Sans JP', 'Roboto', sans-serif;
-            max-width: 800;
+            max-width: 800px;
             margin: 0 auto;
             padding: 20px;
             background-color: #F5F7FA;
@@ -141,67 +134,56 @@
             font-size: 0.95em;
         }
         .result-section {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    display: none;
-}
-
-.error-message {
-    color: #EF4444;
-    margin-top: 15px;
-    font-size: 0.95em;
-}
-
-.result-table {
-    width: 100%; /* Bảng chiếm toàn bộ chiều rộng của phần tử chứa */
-    max-width: 100%; /* Đảm bảo bảng không vượt quá chiều rộng của phần tử chứa */
-    border-collapse: collapse;
-}
-
-.result-table th, .result-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-    white-space: nowrap;
-    min-width: auto; /* Giảm min-width nếu cần để bảng gọn hơn */
-}
-
-.result-table th {
-    background-color: #4A90E2;
-    color: #FFFFFF;
-    font-weight: 500;
-}
-.rank-a {
-    color: #4A90E2;
-    font-weight: 500;
-}
-
-.rank-f {
-    color: #EF4444;
-    font-weight: 500;
-}
-
-.result-section {
-    overflow-x: auto; /* Cho phép cuộn ngang */
-}
-
-.result-section::-webkit-scrollbar {
-    height: 8px;
-}
-
-.result-section::-webkit-scrollbar-thumb {
-    background-color: #4A90E2;
-    border-radius: 4px;
-}
-
-.result-section::-webkit-scrollbar-track {
-    background-color: #F5F7FA;
-}
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            display: none;
+        }
+        .error-message {
+            color: #EF4444;
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+        .result-table {
+            width: 100%;
+            max-width: 100%;
+            border-collapse: collapse;
+            table-layout: auto;
+        }
+        .result-table th, .result-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+        .result-table th {
+            background-color: #4A90E2;
+            color: #FFFFFF;
+            font-weight: 500;
+        }
+        .rank-a {
+            color: #4A90E2;
+            font-weight: 500;
+        }
+        .rank-f {
+            color: #EF4444;
+            font-weight: 500;
+        }
+        .result-section::-webkit-scrollbar {
+            height: 8px;
+        }
+        .result-section::-webkit-scrollbar-thumb {
+            background-color: #4A90E2;
+            border-radius: 4px;
+        }
+        .result-section::-webkit-scrollbar-track {
+            background-color: #F5F7FA;
+        }
         .image-placeholder {
             width: 150px;
             height: 120px;
@@ -333,7 +315,7 @@
             }
         }
     </style>
-</head>
+    </head>
 <body>
     <div class="header">
         <h1>飲食料品製造業特定技能1号</h1>
