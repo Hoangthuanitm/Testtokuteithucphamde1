@@ -145,11 +145,9 @@
     padding: 20px;
     background-color: #FFFFFF;
     border-radius: 10px;
-    max-width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    overflow-x: auto; /* Cho phép cuộn ngang nếu cần */
-    -webkit-overflow-scrolling: touch; /* Cải thiện trải nghiệm cuộn trên iOS */
-    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     display: none;
 }
 
@@ -186,10 +184,6 @@
 .rank-f {
     color: #EF4444;
     font-weight: 500;
-}
-
-.result-section {
-    overflow-x: hidden; /* Cho phép cuộn ngang */
 }
 
 .result-section::-webkit-scrollbar {
