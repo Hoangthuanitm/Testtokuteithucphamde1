@@ -6,88 +6,89 @@
     <title>飲食料品製造業特定技能1号</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
-    body {
-    font-family: 'N bright redoto Sans JP', 'Roboto', sans-serif;
-    max-width: 100%;
+   body {
+    font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: clamp(1rem, 3vw, 1.5rem);
+    padding: 20px;
     background-color: #F5F7FA;
-    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    font-size: clamp(18px, 2.5vw, 28px);
     line-height: 1.6;
-    color: #333;
+    color: #222;
     overflow-x: hidden;
 }
 
 .header {
     text-align: center;
-    margin-bottom: clamp(1.5rem, 4vw, 2rem);
-    padding: clamp(0.75rem, 2vw, 1rem);
+    margin-bottom: 25px;
+    padding: 15px;
     background-color: #FFFFFF;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .header h1 {
-    font-size: clamp(1.25rem, 3.5vw, 1.5rem);
+    font-size: clamp(28px, 4vw, 42px);
     margin: 0;
     color: #4A90E2;
 }
 
 .header h2 {
-    font-size: clamp(0.875rem, 2.5vw, 1rem);
-    margin: clamp(0.5rem, 1.5vw, 0.75rem) 0;
-    color: #333;
+    font-size: clamp(22px, 3.5vw, 34px);
+    margin: 10px 0;
+    color: #4A90E2;
 }
 
 .student-info {
     display: flex;
     flex-direction: column;
-    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    margin-bottom: 20px;
     border: 1px solid #E0E4EA;
-    padding: clamp(0.75rem, 2vw, 1rem);
-    border-radius: 0.5rem;
+    padding: 15px;
+    border-radius: 10px;
     background-color: #FFFFFF;
 }
 
 .student-info div {
-    margin: clamp(0.5rem, 1.5vw, 0.75rem) 0;
+    margin: 10px 0;
 }
 
 .student-info label {
     font-weight: 500;
     color: #4A90E2;
     display: block;
-    font-size: clamp(0.8125rem, 2.2vw, 0.9375rem);
+    font-size: clamp(18px, 2.5vw, 26px);
 }
 
 .student-info input {
     width: 100%;
-    padding: clamp(0.5rem, 1.5vw, 0.75rem);
+    min-height: 48px;
+    padding: 10px;
     border: 1px solid #D1D5DB;
-    border-radius: 0.375rem;
+    border-radius: 8px;
     font-family: 'Roboto', sans-serif;
-    font-size: clamp(0.8125rem, 2.2vw, 0.9375rem);
-    transition: border-color 0.2s ease-in-out;
+    font-size: clamp(18px, 2.5vw, 26px);
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     box-sizing: border-box;
 }
 
 .student-info input:focus {
     border-color: #4A90E2;
     outline: none;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
 }
 
 .question-section {
-    margin-bottom: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 25px;
     background-color: #FFFFFF;
-    padding: clamp(0.75rem, 2vw, 1rem);
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    display: none;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .question {
-    margin-bottom: clamp(0.75rem, 2vw, 1rem);
-    padding-bottom: clamp(0.5rem, 1.5vw, 0.75rem);
+    margin-bottom: 20px;
+    padding-bottom: 15px;
     border-bottom: 1px solid #E0E4EA;
 }
 
@@ -97,35 +98,37 @@
 }
 
 .option {
-    margin: clamp(0.375rem, 1vw, 0.5rem) 0;
+    margin: 10px 0;
     display: flex;
     align-items: center;
 }
 
 .option input {
-    margin-right: clamp(0.5rem, 1.5vw, 0.75rem);
+    margin-right: 12px;
     accent-color: #4A90E2;
+    width: 20px;
+    height: 20px;
 }
 
 .option label {
-    font-size: clamp(0.8125rem, 2.2vw, 0.9375rem);
-    color: #333;
+    font-size: clamp(18px, 2.5vw, 26px);
+    color: #222;
 }
 
 .example {
     background-color: #F9FAFB;
-    padding: clamp(0.75rem, 2vw, 1rem);
-    border-left: 3px solid #4A90E2;
-    margin-bottom: clamp(0.75rem, 2vw, 1rem);
-    border-radius: 0.375rem;
+    padding: 15px;
+    border-left: 4px solid #4A90E2;
+    margin-bottom: 20px;
+    border-radius: 8px;
 }
 
 h2 {
     background-color: #4A90E2;
     color: #FFFFFF;
-    padding: clamp(0.5rem, 1.5vw, 0.75rem);
-    border-radius: 0.375rem;
-    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: clamp(22px, 3.5vw, 34px);
     margin-top: 0;
 }
 
@@ -133,19 +136,20 @@ button {
     background-color: #4A90E2;
     color: #FFFFFF;
     border: none;
-    padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
-    border-radius: 0.375rem;
+    padding: 12px 24px;
+    border-radius: 8px;
     cursor: pointer;
-    margin-top: clamp(0.75rem, 2vw, 1rem);
-    font-size: clamp(0.8125rem, 2.2vw, 0.9375rem);
+    margin-top: 20px;
+    font-size: clamp(18px, 2.5vw, 26px);
     font-family: 'Roboto', sans-serif;
-    transition: background-color 0.2s ease-in-out;
-    margin-right: clamp(0.5rem, 1vw, 0.75rem);
-    touch-action: manipulation;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    min-height: 48px;
+    margin-right: 10px;
 }
 
 button:hover {
     background-color: #357ABD;
+    transform: translateY(-2px);
 }
 
 button.reset {
@@ -154,49 +158,48 @@ button.reset {
 
 button.reset:hover {
     background-color: #DC2626;
+    transform: translateY(-2px);
 }
 
 .vietnamese {
     font-family: 'Roboto', sans-serif;
     font-style: italic;
     color: #6B7280;
-    margin-bottom: clamp(0.75rem, 2vw, 1rem);
-    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    margin-bottom: 15px;
+    font-size: clamp(16px, 2vw, 24px);
 }
 
 .result-section {
-    margin-top: clamp(1.5rem, 4vw, 2rem);
-    padding: clamp(0.75rem, 2vw, 1rem);
+    margin-top: 25px;
+    padding: 20px;
     background-color: #FFFFFF;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    display: none;
 }
 
 .error-message {
     color: #EF4444;
-    margin-top: clamp(0.5rem, 1.5vw, 0.75rem);
-    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    margin-top: 12px;
+    font-size: clamp(16px, 2vw, 24px);
 }
 
 .result-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: clamp(0.75rem, 2vw, 1rem);
+    margin-top: 20px;
     table-layout: auto;
-    min-width: 600px;
 }
 
 .result-table th,
 .result-table td {
     border: 1px solid #E0E4EA;
-    padding: clamp(0.5rem, 1.5vw, 0.75rem);
+    padding: 10px;
     text-align: left;
     white-space: normal;
     word-wrap: break-word;
-    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    font-size: clamp(16px, 2vw, 24px);
 }
 
 .result-table th {
@@ -220,12 +223,12 @@ button.reset:hover {
 }
 
 .result-section::-webkit-scrollbar {
-    height: 0.375rem;
+    height: 8px;
 }
 
 .result-section::-webkit-scrollbar-thumb {
     background-color: #4A90E2;
-    border-radius: 0.1875rem;
+    border-radius: 4px;
 }
 
 .result-section::-webkit-scrollbar-track {
@@ -234,15 +237,15 @@ button.reset:hover {
 
 .image-placeholder {
     width: 100%;
-    max-width: clamp(6rem, 15vw, 7.5rem);
-    height: clamp(5rem, 12vw, 6rem);
+    max-width: 150px;
+    height: 120px;
     border: 1px dashed #D1D5DB;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: clamp(0.5rem, 1.5vw, 0.75rem) 0;
+    margin: 10px 0;
     background-color: #F9FAFB;
-    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    font-size: clamp(16px, 2vw, 24px);
     overflow: hidden;
 }
 
@@ -254,12 +257,11 @@ button.reset:hover {
 
 footer {
     text-align: center;
-    margin-top: clamp(1.5rem, 4vw, 2rem);
-    padding: clamp(0.75rem, 2vw, 1rem) 0;
+    margin-top: 40px;
+    padding: 20px 0;
     border-top: 1px solid #E0E4EA;
     color: #6B7280;
-    font-size: clamp(0.75rem, 2vw, 0.875rem);
-    font-family: 'Roboto', sans-serif;
+    font-size: clamp(16px, 2vw, 24px);
 }
 
 .correct-answer {
@@ -271,8 +273,8 @@ footer {
 }
 
 .answer-feedback {
-    margin-top: clamp(0.375rem, 1vw, 0.5rem);
-    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    margin-top: 8px;
+    font-size: clamp(16px, 2vw, 24px);
     color: #4A90E2;
 }
 
@@ -282,14 +284,14 @@ footer {
 
 .timer {
     position: fixed;
-    top: clamp(0.5rem, 1.5vw, 0.75rem);
-    right: clamp(0.5rem, 1.5vw, 0.75rem);
+    top: 15px;
+    right: 15px;
     background-color: #4A90E2;
     color: #FFFFFF;
-    padding: clamp(0.5rem, 1.5vw, 0.75rem);
-    border-radius: 0.375rem;
-    font-size: clamp(0.75rem, 2.2vw, 0.875rem);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: clamp(16px, 2.5vw, 24px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 }
 
@@ -312,54 +314,58 @@ footer {
 
 .password-box {
     background-color: #FFFFFF;
-    padding: clamp(0.75rem, 2vw, 1rem);
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     text-align: center;
     max-width: 90%;
-    width: clamp(15rem, 50vw, 18.75rem);
+    width: 350px;
 }
 
 .password-box input {
     width: 100%;
-    padding: clamp(0.5rem, 1.5vw, 0.75rem);
-    margin: clamp(0.5rem, 1.5vw, 0.75rem) 0;
+    min-height: 48px;
+    padding: 10px;
+    margin: 10px 0;
     border: 1px solid #D1D5DB;
-    border-radius: 0.375rem;
+    border-radius: 8px;
     font-family: 'Roboto', sans-serif;
-    font-size: clamp(0.8125rem, 2.2vw, 0.9375rem);
+    font-size: clamp(18px, 2.5vw, 26px);
     box-sizing: border-box;
 }
 
 .password-box input:focus {
     border-color: #4A90E2;
     outline: none;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
 }
 
 .password-box button {
-    margin: clamp(0.5rem, 1.5vw, 0.75rem) 0.25rem;
+    margin: 10px 5px;
 }
 
 .password-error {
     color: #EF4444;
-    font-size: clamp(0.75rem, 2vw, 0.875rem);
-    margin-top: clamp(0.5rem, 1.5vw, 0.75rem);
+    font-size: clamp(16px, 2vw, 24px);
+    margin-top: 10px;
 }
 
 .text-input {
     width: 100%;
-    padding: clamp(0.5rem, 1.5vw, 0.75rem);
+    min-height: 48px;
+    padding: 10px;
     border: 1px solid #D1D5DB;
-    border-radius: 0.375rem;
+    border-radius: 8px;
     font-family: 'Roboto', sans-serif;
-    font-size: clamp(0.8125rem, 2.2vw, 0.9375rem);
-    margin-top: clamp(0.5rem, 1.5vw, 0.75rem);
+    font-size: clamp(18px, 2.5vw, 26px);
+    margin-top: 10px;
     box-sizing: border-box;
 }
 
 .text-input:focus {
     border-color: #4A90E2;
     outline: none;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
 }
 
 .button-container {
@@ -367,77 +373,86 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: clamp(0.5rem, 1.5vw, 0.75rem);
+    gap: 10px;
 }
 
 @media (max-width: 600px) {
     body {
-        padding: clamp(0.5rem, 2vw, 0.75rem);
+        padding: 10px;
     }
 
     .header {
-        padding: clamp(0.5rem, 1.5vw, 0.75rem);
-        margin-bottom: clamp(0.75rem, 2vw, 1rem);
+        padding: 10px;
+        margin-bottom: 15px;
     }
 
     .header h1 {
-        font-size: clamp(1rem, 3vw, 1.25rem);
+        font-size: clamp(24px, 3.5vw, 36px);
     }
 
     .header h2 {
-        font-size: clamp(0.75rem, 2.2vw, 0.875rem);
+        font-size: clamp(20px, 3vw, 30px);
     }
 
     .student-info {
-        padding: clamp(0.5rem, 1.5vw, 0.75rem);
+        padding: 12px;
     }
 
     .student-info input {
-        font-size: clamp(0.75rem, 2vw, 0.875rem);
+        font-size: clamp(16px, 2vw, 24px);
     }
 
     .question-section {
-        padding: clamp(0.5rem, 1.5vw, 0.75rem);
+        padding: 12px;
     }
 
     .result-section {
-        padding: clamp(0.5rem, 1.5vw, 0.75rem);
+        padding: 12px;
     }
 
     .result-table {
-        font-size: clamp(0.6875rem, 1.8vw, 0.8125rem);
-        min-width: 100%;
+        font-size: clamp(14px, 1.8vw, 22px);
     }
 
     .result-table th,
     .result-table td {
-        padding: clamp(0.375rem, 1vw, 0.5rem);
-        font-size: clamp(0.6875rem, 1.8vw, 0.8125rem);
+        padding: 8px;
+        font-size: clamp(14px, 1.8vw, 22px);
     }
 
     button {
-        padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
-        font-size: clamp(0.75rem, 2vw, 0.875rem);
+        padding: 10px 20px;
+        font-size: clamp(16px, 2vw, 24px);
+        width: 100%;
     }
 
     .timer {
-        top: clamp(0.375rem, 1vw, 0.5rem);
-        right: clamp(0.375rem, 1vw, 0.5rem);
-        padding: clamp(0.375rem, 1vw, 0.5rem) clamp(0.75rem, 2vw, 1rem);
-        font-size: clamp(0.6875rem, 1.8vw, 0.8125rem);
+        top: 10px;
+        right: 10px;
+        padding: 8px 15px;
+        font-size: clamp(14px, 2vw, 22px);
     }
 
     .image-placeholder {
-        max-width: clamp(5rem, 12vw, 6rem);
-        height: clamp(4rem, 10vw, 5rem);
+        max-width: 120px;
+        height: 100px;
     }
 
     .password-box {
-        width: clamp(80%, 40vw, 90%);
-        padding: clamp(0.5rem, 1.5vw, 0.75rem);
+        width: 90%;
+        padding: 15px;
     }
 }
-    </style>
+
+@media (min-width: 1200px) {
+    body {
+        padding: 25px;
+    }
+
+    .header, .student-info, .question-section, .result-section {
+        padding: 25px;
+    }
+}
 </head>
 <body>
     <div class="header">
