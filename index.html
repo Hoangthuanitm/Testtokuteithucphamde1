@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>飲食料品製造業特定技能1号</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <style>
+<style>
         body {
             font-family: 'Noto Sans JP', 'Roboto', sans-serif;
-            max-width: 800;
+            max-width: 800px;
             margin: 0 auto;
             padding: 15px;
             background-color: #F5F7FA;
             font-size: 16px;
             line-height: 1.6;
             color: #333;
+            overflow-x: hidden;
         }
         .header {
             text-align: center;
@@ -72,11 +73,17 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
             display: none;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
         }
         .question {
             margin-bottom: 20px;
             padding-bottom: 15px;
             border-bottom: 1px solid #E0E4EA;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
         }
         .options {
             display: flex;
@@ -86,6 +93,9 @@
             margin: 8px 0;
             display: flex;
             align-items: center;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
         }
         .option input {
             margin-right: 12px;
@@ -94,6 +104,9 @@
         .option label {
             font-size: 1em;
             color: #333;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
         }
         .example {
             background-color: #F9FAFB;
@@ -101,6 +114,9 @@
             border-left: 4px solid #4A90E2;
             margin-bottom: 20px;
             border-radius: 6px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
         }
         h2 {
             background-color: #4A90E2;
@@ -109,6 +125,9 @@
             border-radius: 8px;
             font-size: 1.3em;
             margin-top: 0;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
         }
         button {
             background-color: #4A90E2;
@@ -139,69 +158,63 @@
             color: #6B7280;
             margin-bottom: 15px;
             font-size: 0.95em;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
         }
         .result-section {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    display: none;
-}
-
-.error-message {
-    color: #EF4444;
-    margin-top: 15px;
-    font-size: 0.95em;
-}
-
-.result-table {
-    width: 100%; /* Bảng chiếm toàn bộ chiều rộng của phần tử chứa */
-    max-width: 100%; /* Đảm bảo bảng không vượt quá chiều rộng của phần tử chứa */
-    border-collapse: collapse;
-}
-
-.result-table th, .result-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-    white-space: nowrap;
-    min-width: auto; /* Giảm min-width nếu cần để bảng gọn hơn */
-}
-
-.result-table th {
-    background-color: #4A90E2;
-    color: #FFFFFF;
-    font-weight: 500;
-}
-.rank-a {
-    color: #4A90E2;
-    font-weight: 500;
-}
-
-.rank-f {
-    color: #EF4444;
-    font-weight: 500;
-}
-
-.result-section {
-    overflow-x: auto; /* Cho phép cuộn ngang */
-}
-
-.result-section::-webkit-scrollbar {
-    height: 8px;
-}
-
-.result-section::-webkit-scrollbar-thumb {
-    background-color: #4A90E2;
-    border-radius: 4px;
-}
-
-.result-section::-webkit-scrollbar-track {
-    background-color: #F5F7FA;
-}
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            display: none;
+        }
+        .error-message {
+            color: #EF4444;
+            margin-top: 15px;
+            font-size: 0.95em;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+        .result-table {
+            width: 100%;
+            max-width: 100%;
+            border-collapse: collapse;
+        }
+        .result-table th, .result-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            white-space: nowrap;
+            min-width: auto;
+        }
+        .result-table th {
+            background-color: #4A90E2;
+            color: #FFFFFF;
+            font-weight: 500;
+        }
+        .rank-a {
+            color: #4A90E2;
+            font-weight: 500;
+        }
+        .rank-f {
+            color: #EF4444;
+            font-weight: 500;
+        }
+        .result-section::-webkit-scrollbar {
+            height: 8px;
+        }
+        .result-section::-webkit-scrollbar-thumb {
+            background-color: #4A90E2;
+            border-radius: 4px;
+        }
+        .result-section::-webkit-scrollbar-track {
+            background-color: #F5F7FA;
+        }
         .image-placeholder {
             width: 150px;
             height: 120px;
@@ -238,6 +251,9 @@
             margin-top: 8px;
             font-size: 0.9em;
             color: #4A90E2;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
         }
         .answer-feedback.wrong {
             color: #EF4444;
@@ -294,6 +310,9 @@
             color: #EF4444;
             font-size: 0.9em;
             margin-top: 10px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
         }
         .text-input {
             width: 100%;
@@ -315,6 +334,40 @@
             align-items: center;
         }
         @media (max-width: 600px) {
+            body {
+                padding: 10px;
+                font-size: 14px;
+                max-width: 100%;
+            }
+            .header h1 {
+                font-size: 1.5em;
+            }
+            .header h2 {
+                font-size: 1.2em;
+            }
+            .student-info {
+                padding: 10px;
+            }
+            .question-section {
+                padding: 15px;
+            }
+            .question {
+                font-size: 0.95em;
+            }
+            .option label {
+                font-size: 0.95em;
+            }
+            h2 {
+                font-size: 1.1em;
+                padding: 10px 12px;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 0.95em;
+            }
+            .vietnamese {
+                font-size: 0.9em;
+            }
             .timer {
                 top: 10px;
                 right: 10px;
@@ -330,6 +383,10 @@
             .result-table th, .result-table td {
                 font-size: 0.8em;
                 padding: 8px;
+            }
+            .image-placeholder {
+                width: 120px;
+                height: 100px;
             }
         }
     </style>
