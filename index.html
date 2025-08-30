@@ -5,17 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>飲食料品製造業特定技能1号</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-    body {
-    font-family: 'Noto Sans JP', 'Roboto', sans-serif;
-    max-width: 100%;
+  <style>
+:root {
+    --font-base: clamp(14px, 2.5vw, 16px);
+    --font-small: clamp(12px, 2vw, 14px);
+    --font-heading: clamp(1.4em, 3vw, 1.6em);
+    --color-primary: #4A90E2;
+    --color-error: #EF4444;
+    --color-text: #333;
+    --color-gray: #6B7280;
+    --transition: 0.2s ease-in-out;
+}
+
+body {
+    font-family: 'Roboto', 'Noto Sans JP', sans-serif; /* Đảo thứ tự để ưu tiên Roboto cho Latin/Tiếng Việt */
+    max-width: 1200px; /* Thêm max-width cho desktop lớn */
     margin: 0 auto;
     padding: 15px;
     background-color: #F5F7FA;
-    font-size: clamp(14px, 4vw, 16px);
-    line-height: 1.5;
-    color: #333;
-    overflow-x: hidden;
+    font-size: var(--font-base);
+    line-height: 1.6; /* Tăng line-height cho dễ đọc */
+    color: var(--color-text);
+    overflow-x: auto; /* Thay hidden bằng auto để tránh ẩn nội dung */
 }
 
 .header {
@@ -28,15 +39,15 @@
 }
 
 .header h1 {
-    font-size: clamp(1.4em, 5vw, 1.6em);
+    font-size: var(--font-heading);
     margin: 0;
-    color: #4A90E2;
+    color: var(--color-primary);
 }
 
 .header h2 {
-    font-size: clamp(1.1em, 4vw, 1.3em);
+    font-size: clamp(1.1em, 2.5vw, 1.3em);
     margin: 8px 0;
-    color: #333;
+    color: var(--color-text);
 }
 
 .student-info {
@@ -55,9 +66,9 @@
 
 .student-info label {
     font-weight: 500;
-    color: #4A90E2;
+    color: var(--color-primary);
     display: block;
-    font-size: clamp(13px, 3.5vw, 15px);
+    font-size: clamp(13px, 2.5vw, 15px);
 }
 
 .student-info input {
@@ -66,13 +77,14 @@
     border: 1px solid #D1D5DB;
     border-radius: 6px;
     font-family: 'Roboto', sans-serif;
-    font-size: clamp(13px, 3.5vw, 15px);
-    transition: border-color 0.2s ease-in-out;
+    font-size: clamp(13px, 2.5vw, 15px);
+    transition: border-color var(--transition);
     box-sizing: border-box;
+    min-height: 40px; /* Thêm để input dễ chạm trên mobile */
 }
 
 .student-info input:focus {
-    border-color: #4A90E2;
+    border-color: var(--color-primary);
     outline: none;
 }
 
@@ -83,6 +95,7 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     display: none;
+    max-width: 100%; /* Đảm bảo không vượt màn */
 }
 
 .question {
@@ -104,42 +117,42 @@
 
 .option input {
     margin-right: 10px;
-    accent-color: #4A90E2;
+    accent-color: var(--color-primary);
 }
 
 .option label {
-    font-size: clamp(13px, 3.5vw, 15px);
-    color: #333;
+    font-size: clamp(13px, 2.5vw, 15px);
+    color: var(--color-text);
 }
 
 .example {
     background-color: #F9FAFB;
     padding: 12px;
-    border-left: 3px solid #4A90E2;
+    border-left: 3px solid var(--color-primary);
     margin-bottom: 15px;
     border-radius: 6px;
 }
 
 h2 {
-    background-color: #4A90E2;
+    background-color: var(--color-primary);
     color: #FFFFFF;
     padding: 10px 12px;
     border-radius: 6px;
-    font-size: clamp(1.1em, 4vw, 1.2em);
+    font-size: clamp(1.1em, 2.5vw, 1.2em);
     margin-top: 0;
 }
 
 button {
-    background-color: #4A90E2;
+    background-color: var(--color-primary);
     color: #FFFFFF;
     border: none;
     padding: 10px 20px;
     border-radius: 6px;
     cursor: pointer;
     margin-top: 15px;
-    font-size: clamp(13px, 3.5vw, 15px);
+    font-size: clamp(13px, 2.5vw, 15px);
     font-family: 'Roboto', sans-serif;
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color var(--transition);
     margin-right: 8px;
 }
 
@@ -148,7 +161,7 @@ button:hover {
 }
 
 button.reset {
-    background-color: #EF4444;
+    background-color: var(--color-error);
 }
 
 button.reset:hover {
@@ -158,9 +171,9 @@ button.reset:hover {
 .vietnamese {
     font-family: 'Roboto', sans-serif;
     font-style: italic;
-    color: #6B7280;
+    color: var(--color-gray);
     margin-bottom: 12px;
-    font-size: clamp(12px, 3vw, 14px);
+    font-size: var(--font-small);
 }
 
 .result-section {
@@ -175,9 +188,9 @@ button.reset:hover {
 }
 
 .error-message {
-    color: #EF4444;
+    color: var(--color-error);
     margin-top: 10px;
-    font-size: clamp(12px, 3vw, 14px);
+    font-size: var(--font-small);
 }
 
 .result-table {
@@ -185,6 +198,7 @@ button.reset:hover {
     border-collapse: collapse;
     margin-top: 15px;
     table-layout: auto;
+    overflow-x: auto; /* Thêm để table scroll ngang nếu cần */
 }
 
 .result-table th,
@@ -194,11 +208,11 @@ button.reset:hover {
     text-align: left;
     white-space: normal;
     word-wrap: break-word;
-    font-size: clamp(12px, 3vw, 14px);
+    font-size: var(--font-small);
 }
 
 .result-table th {
-    background-color: #4A90E2;
+    background-color: var(--color-primary);
     color: #FFFFFF;
     font-weight: 500;
 }
@@ -208,12 +222,12 @@ button.reset:hover {
 }
 
 .rank-a {
-    color: #4A90E2;
+    color: var(--color-primary);
     font-weight: 500;
 }
 
 .rank-f {
-    color: #EF4444;
+    color: var(--color-error);
     font-weight: 500;
 }
 
@@ -222,12 +236,18 @@ button.reset:hover {
 }
 
 .result-section::-webkit-scrollbar-thumb {
-    background-color: #4A90E2;
+    background-color: var(--color-primary);
     border-radius: 3px;
 }
 
 .result-section::-webkit-scrollbar-track {
     background-color: #F5F7FA;
+}
+
+/* Thêm scrollbar cho cross-browser */
+.result-section {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) #F5F7FA;
 }
 
 .image-placeholder {
@@ -240,7 +260,7 @@ button.reset:hover {
     justify-content: center;
     margin: 8px 0;
     background-color: #F9FAFB;
-    font-size: clamp(12px, 3vw, 14px);
+    font-size: var(--font-small);
     overflow: hidden;
 }
 
@@ -255,44 +275,44 @@ footer {
     margin-top: 30px;
     padding: 15px 0;
     border-top: 1px solid #E0E4EA;
-    color: #6B7280;
-    font-size: clamp(12px, 3vw, 14px);
+    color: var(--color-gray);
+    font-size: var(--font-small);
     font-family: 'Roboto', sans-serif;
 }
 
 .correct-answer {
-    color: #4A90E2;
+    color: var(--color-primary);
 }
 
 .wrong-answer {
-    color: #EF4444;
+    color: var(--color-error);
 }
 
 .answer-feedback {
     margin-top: 6px;
-    font-size: clamp(12px, 3vw, 14px);
-    color: #4A90E2;
+    font-size: var(--font-small);
+    color: var(--color-primary);
 }
 
 .answer-feedback.wrong {
-    color: #EF4444;
+    color: var(--color-error);
 }
 
 .timer {
     position: fixed;
     top: 10px;
     right: 10px;
-    background-color: #4A90E2;
+    background-color: var(--color-primary);
     color: #FFFFFF;
     padding: 8px 15px;
     border-radius: 6px;
-    font-size: clamp(12px, 3.5vw, 14px);
+    font-size: clamp(12px, 2.5vw, 14px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 }
 
 .timer.warning {
-    background-color: #EF4444;
+    background-color: var(--color-error);
 }
 
 .password-modal {
@@ -325,12 +345,13 @@ footer {
     border: 1px solid #D1D5DB;
     border-radius: 6px;
     font-family: 'Roboto', sans-serif;
-    font-size: clamp(13px, 3.5vw, 15px);
+    font-size: clamp(13px, 2.5vw, 15px);
     box-sizing: border-box;
+    transition: border-color var(--transition);
 }
 
 .password-box input:focus {
-    border-color: #4A90E2;
+    border-color: var(--color-primary);
     outline: none;
 }
 
@@ -339,8 +360,8 @@ footer {
 }
 
 .password-error {
-    color: #EF4444;
-    font-size: clamp(12px, 3vw, 14px);
+    color: var(--color-error);
+    font-size: var(--font-small);
     margin-top: 8px;
 }
 
@@ -350,13 +371,15 @@ footer {
     border: 1px solid #D1D5DB;
     border-radius: 6px;
     font-family: 'Roboto', sans-serif;
-    font-size: clamp(13px, 3.5vw, 15px);
+    font-size: clamp(13px, 2.5vw, 15px);
     margin-top: 8px;
     box-sizing: border-box;
+    min-height: 40px; /* Tương tự input */
+    transition: border-color var(--transition);
 }
 
 .text-input:focus {
-    border-color: #4A90E2;
+    border-color: var(--color-primary);
     outline: none;
 }
 
@@ -368,73 +391,69 @@ footer {
     gap: 8px;
 }
 
+@media (max-width: 768px) { /* Thêm breakpoint cho tablet */
+    body {
+        padding: 10px;
+    }
+    .header, .question-section, .result-section {
+        padding: 12px;
+    }
+}
+
 @media (max-width: 600px) {
     body {
         padding: 8px;
     }
-
     .header {
         padding: 8px;
         margin-bottom: 15px;
     }
-
     .header h1 {
-        font-size: clamp(1.2em, 4.5vw, 1.4em);
+        font-size: clamp(1.2em, 3vw, 1.4em);
     }
-
     .header h2 {
-        font-size: clamp(1em, 3.5vw, 1.2em);
+        font-size: clamp(1em, 2.5vw, 1.2em);
     }
-
     .student-info {
         padding: 10px;
     }
-
     .student-info input {
-        font-size: clamp(12px, 3vw, 14px);
+        font-size: clamp(12px, 2.5vw, 14px);
     }
-
     .question-section {
         padding: 10px;
     }
-
     .result-section {
         padding: 8px;
     }
-
     .result-table {
-        font-size: clamp(11px, 2.8vw, 13px);
+        font-size: clamp(11px, 2vw, 13px);
     }
-
     .result-table th,
     .result-table td {
         padding: 6px;
-        font-size: clamp(11px, 2.8vw, 13px);
+        font-size: clamp(11px, 2vw, 13px);
     }
-
     button {
         padding: 8px 16px;
-        font-size: clamp(12px, 3vw, 14px);
+        font-size: clamp(12px, 2.5vw, 14px);
     }
-
     .timer {
         top: 8px;
         right: 8px;
         padding: 6px 12px;
-        font-size: clamp(11px, 3vw, 13px);
+        font-size: clamp(11px, 2.5vw, 13px);
     }
-
     .image-placeholder {
         max-width: 100px;
         height: 80px;
     }
-
     .password-box {
         width: 85%;
         padding: 12px;
     }
 }
-    </style>
+</style>
 </head>
 <body>
     <div class="header">
