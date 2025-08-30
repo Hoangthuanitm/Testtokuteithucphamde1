@@ -56,6 +56,7 @@
         }
         .student-info input {
             width: 100%;
+            max-width: 100%;
             padding: 8px;
             border: 1px solid #D1D5DB;
             border-radius: 6px;
@@ -67,6 +68,23 @@
         .student-info input:focus {
             border-color: #4A90E2;
             outline: none;
+        }
+        .vietnamese {
+            font-family: 'Roboto', sans-serif;
+            font-style: italic;
+            color: #6B7280;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            background-color: #F9FAFB;
+            padding: 8px;
+            border-radius: 6px;
+            display: inline-block;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
         }
         .question-section {
             margin-bottom: 20px;
@@ -85,7 +103,7 @@
             hyphens: auto;
         }
         .question p {
-            font-size: 16px; /* Kích thước chữ câu hỏi là 16px */
+            font-size: 16px;
         }
         .options {
             display: flex;
@@ -153,18 +171,6 @@
         }
         button.reset:hover {
             background-color: #DC2626;
-        }
-        .vietnamese {
-            font-family: 'Roboto', sans-serif;
-            font-style: italic;
-            color: #6B7280;
-            margin-bottom: 15px;
-            font-size: 0.95em;
-            width: 100%; /* Chiều rộng bằng với input của tên và lớp */
-            box-sizing: border-box;
-            overflow-wrap: break-word;
-            word-wrap: break-word;
-            hyphens: auto;
         }
         .result-section {
             margin-top: 20px;
@@ -355,11 +361,24 @@
             .student-info {
                 padding: 10px;
             }
+            .student-info input {
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+            .vietnamese {
+                font-size: 0.9em;
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+                padding: 8px;
+                margin-bottom: 10px;
+            }
             .question-section {
                 padding: 15px;
             }
             .question p {
-                font-size: 16px; /* Đảm bảo kích thước chữ câu hỏi là 16px trên mobile */
+                font-size: 16px;
             }
             .option label {
                 font-size: 0.95em;
@@ -371,11 +390,6 @@
             button {
                 padding: 10px 20px;
                 font-size: 0.95em;
-            }
-            .vietnamese {
-                font-size: 0.9em;
-                width: 100%; /* Đảm bảo chiều rộng bằng với input trên mobile */
-                box-sizing: border-box;
             }
             .timer {
                 top: 10px;
