@@ -393,18 +393,22 @@
         -webkit-overflow-scrolling: touch;
     }
             .result-table {
-        width: auto;
-        min-width: 600px;
-        font-size: clamp(15px, 2.5vw, 17px);
-        table-layout: auto;
+        width: 100%;
+        min-width: 600px; /* Đảm bảo bảng không bị thu nhỏ quá mức */
+        table-layout: fixed; /* Duy trì độ rộng cố định trên điện thoại */
     }
-            .result-table th,
-            .result-table td {
-                padding: 10px;
-                font-size: clamp(15px, 2.5vw, 17px);
-            }
-            .result-section h2 {
-        width: auto;
+
+    .result-table th,
+    .result-table td {
+        padding: 10px;
+        font-size: clamp(15px, 2.5vw, 17px);
+        width: 12.5%; /* Chia đều cho 8 cột */
+        overflow: hidden; /* Ẩn nội dung vượt quá nếu cần */
+        text-overflow: ellipsis; /* Thêm dấu ... nếu nội dung dài */
+    }
+
+    .result-section h2 {
+        width: 100%;
         min-width: 600px;
         box-sizing: border-box;
         padding-left: 15px;
