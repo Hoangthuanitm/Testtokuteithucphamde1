@@ -5,78 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>飲食料品製造業特定技能1号</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-<style>
-        /* CSS điều chỉnh để chữ không tràn và tăng kích thước <ruby> */
+    <style>
         body {
             font-family: 'Noto Sans JP', 'Roboto', sans-serif;
             max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 30px;
             background-color: #F5F7FA;
             font-size: 16px;
             line-height: 1.6;
             color: #333;
-            width: 100%;
-            min-width: 0;
-            overflow-x: hidden;
-            box-sizing: border-box;
-            overflow-wrap: break-word;
-            word-break: break-word;
         }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        ruby {
-            font-size: 1.1em; /* Tăng kích thước chữ của <ruby> thêm 10% (16px -> ~17.6px) */
-        }
-
-        .header, .student-info, .question-section, .result-section {
-            width: 100%;
-            max-width: 100%;
-            background-color: #FFFFFF; /* Đảm bảo nền trắng */
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            overflow-wrap: break-word; /* Ngăn chữ tràn */
-            word-break: break-word;
-        }
-
         .header {
             text-align: center;
             margin-bottom: 30px;
+            padding: 15px;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
         }
-
         .header h1 {
             font-size: 1.8em;
             margin: 0;
             color: #4A90E2;
         }
-
         .header h2 {
             font-size: 1.4em;
             margin: 10px 0;
             color: #333;
         }
-
         .student-info {
             display: flex;
             flex-direction: column;
             margin-bottom: 20px;
             border: 1px solid #E0E4EA;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #FFFFFF;
         }
-
         .student-info div {
             margin: 10px 0;
         }
-
         .student-info label {
             font-weight: 500;
             color: #4A90E2;
             display: block;
         }
-
         .student-info input {
             width: 100%;
             padding: 8px;
@@ -86,56 +60,48 @@
             font-size: 16px;
             transition: border-color 0.2s;
             box-sizing: border-box;
-            overflow-wrap: break-word;
         }
-
         .student-info input:focus {
             border-color: #4A90E2;
             outline: none;
         }
-
         .question-section {
             margin-bottom: 30px;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
             display: none;
         }
-
         .question {
             margin-bottom: 20px;
             padding-bottom: 15px;
             border-bottom: 1px solid #E0E4EA;
         }
-
         .options {
             display: flex;
             flex-direction: column;
         }
-
         .option {
             margin: 8px 0;
             display: flex;
             align-items: center;
         }
-
         .option input {
             margin-right: 12px;
             accent-color: #4A90E2;
         }
-
         .option label {
             font-size: 1em;
             color: #333;
-            overflow-wrap: break-word;
         }
-
         .example {
             background-color: #F9FAFB;
             padding: 15px;
             border-left: 4px solid #4A90E2;
             margin-bottom: 20px;
             border-radius: 6px;
-            overflow-wrap: break-word;
         }
-
         h2 {
             background-color: #4A90E2;
             color: #FFFFFF;
@@ -144,7 +110,6 @@
             font-size: 1.3em;
             margin-top: 0;
         }
-
         button {
             background-color: #4A90E2;
             color: #FFFFFF;
@@ -158,83 +123,85 @@
             transition: background-color 0.2s, transform 0.1s;
             margin-right: 10px;
         }
-
         button:hover {
             background-color: #357ABD;
             transform: translateY(-1px);
         }
-
         button.reset {
             background-color: #EF4444;
         }
-
         button.reset:hover {
             background-color: #DC2626;
         }
-
         .vietnamese {
             font-family: 'Roboto', sans-serif;
             font-style: italic;
             color: #6B7280;
             margin-bottom: 15px;
             font-size: 0.95em;
-            overflow-wrap: break-word;
         }
-
         .result-section {
-            margin-top: 30px;
-            display: none;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-        }
+    margin-top: 30px; /* Tạo khoảng cách 30px từ phía trên của phần tử */
+    padding: 20px; /* Tạo khoảng đệm bên trong 20px cho tất cả các cạnh */
+    background-color: #FFFFFF; /* Màu nền của phần tử là màu trắng */
+    border-radius: 10px; /* Bo góc các cạnh của phần tử với bán kính 10px */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Hiệu ứng bóng mờ với độ lệch ngang 0, độ lệch dọc 4px, độ mờ 8px, màu đen với độ trong suốt 5% */
+    overflow-x: auto; /* Cho phép cuộn ngang nếu nội dung vượt quá kích thước phần tử */
+    -webkit-overflow-scrolling: touch; /* Cải thiện trải nghiệm cuộn trên các thiết bị sử dụng WebKit (như iPhone, iPad) để cuộn mượt hơn */
+    display: none; /* Ẩn phần tử này theo mặc định (không hiển thị cho đến khi được kích hoạt) */
+}
 
-        .result-table {
-            width: 100%;
-            max-width: none;
-            border-collapse: collapse;
-            display: block;
-            overflow-x: auto;
-            white-space: nowrap;
-        }
+.error-message {
+    color: #EF4444; /* Màu chữ của thông báo lỗi là màu đỏ */
+    margin-top: 15px; /* Tạo khoảng cách 15px từ phía trên của phần tử */
+    font-size: 0.95em; /* Kích thước chữ nhỏ hơn một chút so với kích thước chữ mặc định (95% kích thước chữ chuẩn) */
+}
 
-        .result-table th, .result-table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-            white-space: nowrap;
-            min-width: 40px;
-            overflow-wrap: break-word;
-        }
+.result-table {
+    width: auto; /* Chiều rộng của bảng sẽ tự điều chỉnh dựa trên nội dung bên trong */
+    border-collapse: collapse; /* Gộp các đường viền của các ô trong bảng lại với nhau, không để lại khoảng cách giữa các ô */
+}
 
-        .result-table th {
-            background-color: #4A90E2;
-            color: #FFFFFF;
-            font-weight: 500;
-        }
+.result-table th, .result-table td {
+    border: 1px solid #ddd; /* Tạo đường viền 1px màu xám nhạt cho các ô tiêu đề (th) và ô dữ liệu (td) */
+    padding: 8px; /* Tạo khoảng đệm 8px bên trong các ô */
+    text-align: left; /* Căn chỉnh nội dung bên trong các ô về phía bên trái */
+    white-space: nowrap; /* Ngăn nội dung trong ô xuống dòng, giữ tất cả nội dung trên một dòng */
+    min-width: 40px; /* Đặt chiều rộng tối thiểu cho mỗi ô là 120px */
+}
 
-        .rank-a {
-            color: #4A90E2;
-            font-weight: 500;
-        }
+.result-table th {
+    background-color: #4A90E2; /* Màu nền của ô tiêu đề là màu xanh dương */
+    color: #FFFFFF; /* Màu chữ trong ô tiêu đề là màu trắng */
+    font-weight: 500; /* Độ đậm của chữ trong ô tiêu đề là trung bình (không quá đậm như bold) */
+    width: 120%; /* Đảm bảo ô tiêu đề chiếm toàn bộ chiều rộng có thể (áp dụng trong ngữ cảnh phù hợp) */
+}
+.rank-a {
+    color: #4A90E2;
+    font-weight: 500;
+}
 
-        .rank-f {
-            color: #EF4444;
-            font-weight: 500;
-        }
+.rank-f {
+    color: #EF4444;
+    font-weight: 500;
+}
 
-        .result-section::-webkit-scrollbar {
-            height: 8px;
-        }
+.result-section {
+    overflow-x: auto; /* Cho phép cuộn ngang */
+}
 
-        .result-section::-webkit-scrollbar-thumb {
-            background-color: #4A90E2;
-            border-radius: 4px;
-        }
+.result-section::-webkit-scrollbar {
+    height: 8px;
+}
 
-        .result-section::-webkit-scrollbar-track {
-            background-color: #F5F7FA;
-        }
+.result-section::-webkit-scrollbar-thumb {
+    background-color: #4A90E2;
+    border-radius: 4px;
+}
 
+.result-section::-webkit-scrollbar-track {
+    background-color: #F5F7FA;
+}
         .image-placeholder {
             width: 150px;
             height: 120px;
@@ -247,13 +214,11 @@
             font-size: 0.9em;
             overflow: hidden;
         }
-
         .image-placeholder img {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
-
         footer {
             text-align: center;
             margin-top: 40px;
@@ -262,28 +227,21 @@
             color: #6B7280;
             font-size: 0.9em;
             font-family: 'Roboto', sans-serif;
-            background-color: #FFFFFF; /* Nền trắng cho footer */
         }
-
         .correct-answer {
             color: #4A90E2;
         }
-
         .wrong-answer {
             color: #EF4444;
         }
-
         .answer-feedback {
             margin-top: 8px;
             font-size: 0.9em;
             color: #4A90E2;
-            overflow-wrap: break-word;
         }
-
         .answer-feedback.wrong {
             color: #EF4444;
         }
-
         .timer {
             position: fixed;
             top: 20px;
@@ -296,11 +254,9 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             z-index: 1000;
         }
-
         .timer.warning {
             background-color: #EF4444;
         }
-
         .password-modal {
             display: none;
             position: fixed;
@@ -313,7 +269,6 @@
             align-items: center;
             z-index: 2000;
         }
-
         .password-box {
             background-color: #FFFFFF;
             padding: 20px;
@@ -323,7 +278,6 @@
             max-width: 400px;
             width: 90%;
         }
-
         .password-box input {
             width: 80%;
             padding: 10px;
@@ -332,20 +286,15 @@
             border-radius: 6px;
             font-family: 'Roboto', sans-serif;
             font-size: 16px;
-            overflow-wrap: break-word;
         }
-
         .password-box button {
             margin: 10px 5px;
         }
-
         .password-error {
             color: #EF4444;
             font-size: 0.9em;
             margin-top: 10px;
-            overflow-wrap: break-word;
         }
-
         .text-input {
             width: 100%;
             padding: 8px;
@@ -355,69 +304,33 @@
             font-size: 16px;
             margin-top: 10px;
             box-sizing: border-box;
-            overflow-wrap: break-word;
         }
-
         .text-input:focus {
             border-color: #4A90E2;
             outline: none;
         }
-
         .button-container {
             display: flex;
             justify-content: flex-start;
             align-items: center;
         }
-
         @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-
-            .header, .student-info, .question-section, .result-section, footer {
-                padding: 10px;
-            }
-
-            .result-table {
-                display: block;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-            }
-
-            .result-table th, .result-table td {
-                font-size: 0.75em;
-                padding: 6px;
-                overflow-wrap: break-word;
-            }
-
-            .student-info input,
-            .text-input,
-            .option label,
-            .question,
-            .example,
-            .vietnamese,
-            .answer-feedback,
-            .password-error {
-                overflow-wrap: break-word;
-                word-break: break-word;
-            }
-
             .timer {
                 top: 10px;
                 right: 10px;
                 font-size: 1em;
                 padding: 8px 16px;
             }
-
             .password-box {
                 width: 80%;
             }
-        }
-
-        html, body {
-            max-width: 100%;
-            overflow-x: hidden;
-            -webkit-text-size-adjust: 100%;
+            .result-section {
+                padding: 10px;
+            }
+            .result-table th, .result-table td {
+                font-size: 0.8em;
+                padding: 8px;
+            }
         }
     </style>
 </head>
