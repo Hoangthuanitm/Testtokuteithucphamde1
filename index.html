@@ -389,18 +389,19 @@
             }
  @media (max-width: 768px) {
     .result-section {
-        padding: 12px;
-        margin: 0 12px; /* Tạo khoảng trắng 12px ở cả hai bên, thay cho viền trắng */
+        padding: 12px 24px; /* Tăng padding phải/trái để tạo khung trắng rộng hơn */
+        background: #fff; /* Đảm bảo nền trắng rõ ràng */
         overflow-x: auto; /* Cho phép cuộn ngang */
         -webkit-overflow-scrolling: touch; /* Cuộn mượt trên iOS */
+        box-sizing: border-box;
     }
 
     .result-table {
-        width: calc(100% - 12px); /* Đảm bảo bảng cách lề phải 12px */
+        width: calc(100% - 12px); /* Giảm width để tạo khoảng cách 12px bên phải */
         min-width: 600px;
         font-size: clamp(15px, 2.5vw, 17px);
         table-layout: auto;
-        margin-right: 12px; /* Khoảng cách 12px so với lề phải */
+        margin-right: 12px; /* Cách lề phải 12px so với khung trắng */
     }
 
     .result-table th,
@@ -410,12 +411,12 @@
     }
 
     .result-section h2 {
-        width: calc(100% - 12px); /* Đảm bảo tiêu đề cách lề phải 12px */
+        width: calc(100% - 12px); /* Giảm width để tạo khoảng cách 12px bên phải */
         min-width: 600px;
         box-sizing: border-box;
         padding-left: 15px;
         padding-right: 15px;
-        margin-right: 12px; /* Khoảng cách 12px so với lề phải */
+        margin-right: 12px; /* Cách lề phải 12px so với khung trắng */
     }
             button {
                 padding: 10px 20px;
