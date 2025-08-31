@@ -393,14 +393,14 @@
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         position: relative;
-        display: block; /* Đảm bảo cuộn đồng bộ */
+        display: block;
     }
     .result-table {
-        width: 100%; /* Sử dụng 100% */
-        min-width: 588px; /* Giữ min-width */
+        width: 100%;
+        min-width: 588px;
         font-size: clamp(15px, 2.5vw, 17px);
         table-layout: auto;
-        display: inline-block; /* Kiểm soát chiều rộng */
+        display: inline-block;
     }
     .result-table th,
     .result-table td {
@@ -408,21 +408,20 @@
         font-size: clamp(15px, 2.5vw, 17px);
     }
     .result-section h2 {
-        width: 100%; /* Sử dụng 100% */
-        min-width: 588px; /* Giữ min-width */
+        width: 100%;
+        min-width: 588px;
         box-sizing: border-box;
         padding-left: 15px;
-        padding-right: 15px;
+        padding-right: 12px;
         overflow-x: auto;
-        display: inline-block; /* Kiểm soát chiều rộng */
+        display: inline-block;
     }
     .spacer {
-        width: 12px; /* Đặt khoảng trống cố định 12px */
-        height: 1px; /* Chiều cao tối thiểu */
-        display: inline-block; /* Đảm bảo spacer được tính vào cuộn */
-        vertical-align: top; /* Giữ bố cục thẳng hàng */
+        width: 12px;
+        height: 1px;
+        display: inline-block;
+        vertical-align: top;
     }
-    /* Đảm bảo tất cả phần tử con cuộn đồng bộ */
     .result-section > * {
         display: inline-block;
         vertical-align: top;
