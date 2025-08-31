@@ -389,13 +389,13 @@
             }
              @media (max-width: 768px) {
     .result-section {
-        padding: 12px; /* 12px gap from all sides of the white border */
+        padding: 12px; /* Khoảng cách 12px từ tất cả các cạnh */
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         box-sizing: border-box;
         width: 100%;
-        max-width: calc(100% - 24px); /* Adjust for 12px padding on both sides */
-        margin: 0 auto; /* Center the section */
+        max-width: calc(100% - 24px); /* Điều chỉnh để trừ đi 12px padding từ cả hai bên */
+        margin: 0 auto; /* Canh giữa phần nội dung */
     }
     .result-table {
         width: 100%;
@@ -403,14 +403,14 @@
         font-size: clamp(15px, 2.5vw, 17px);
         table-layout: auto;
         box-sizing: border-box;
-        border-spacing: 0; /* Remove any default spacing */
-        margin: 0 -12px; /* Negative margin to compensate for padding inside table */
+        border-collapse: collapse; /* Đảm bảo không có khoảng cách dư thừa giữa các ô */
+        margin: 0; /* Xóa margin mặc định */
     }
     .result-table th,
     .result-table td {
         padding: 10px;
         font-size: clamp(15px, 2.5vw, 17px);
-        border: 1px solid #fff; /* Optional: Ensure cell borders are visible */
+        border: 1px solid #fff; /* Tùy chọn: Đảm bảo viền ô dễ thấy */
     }
     .result-section h2 {
         width: 100%;
