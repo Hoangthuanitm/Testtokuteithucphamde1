@@ -388,21 +388,25 @@
                 padding: 12px;
             }
  @media (max-width: 768px) {
+    body {
+        padding: 0; /* Loại bỏ padding của body để tránh tăng khoảng cách */
+    }
+
     .result-section {
-        padding: 12px 24px 12px 12px; /* padding-right: 24px để tạo viền trắng rõ ràng, padding-left: 12px để cân đối */
+        padding: 12px; /* Padding 12px đồng đều để tạo viền trắng 12px ở cả hai bên */
         background: #fff; /* Nền trắng rõ ràng */
         overflow-x: auto; /* Cho phép cuộn ngang */
         -webkit-overflow-scrolling: touch; /* Cuộn mượt trên iOS */
         box-sizing: border-box;
+        margin: 0; /* Đảm bảo không có margin thừa */
     }
 
     .result-table {
-        width: calc(100% - 36px); /* Giảm width để bù cho margin-right: 12px và padding-right: 24px */
-        min-width: 600px;
+        width: 100%; /* Sử dụng toàn bộ chiều rộng trong .result-section */
+        min-width: 600px; /* Giữ min-width để đảm bảo bảng không co nhỏ quá */
         font-size: clamp(15px, 2.5vw, 17px);
         table-layout: auto;
-        margin-right: 12px; /* Cách lề phải 12px so với viền trắng */
-        margin-left: 12px; /* Lề trái cân đối */
+        margin: 0; /* Loại bỏ margin để tận dụng padding của .result-section */
     }
 
     .result-table th,
@@ -412,14 +416,13 @@
     }
 
     .result-section h2 {
-        width: calc(100% - 36px); /* Giảm width để bù cho margin-right: 12px và padding-right: 24px */
-        min-width: 600px;
+        width: 100%; /* Sử dụng toàn bộ chiều rộng trong .result-section */
+        min-width: 600px; /* Giữ min-width để đảm bảo tiêu đề không co nhỏ quá */
         box-sizing: border-box;
         padding-left: 15px;
         padding-right: 15px;
-        margin-right: 12px; /* Cách lề phải 12px so với viền trắng */
-        margin-left: 12px; /* Lề trái cân đối */
-}
+        margin: 0; /* Loại bỏ margin để tận dụng padding của .result-section */
+    }
             button {
                 padding: 10px 20px;
                 font-size: clamp(15px, 2.8vw, 17px);
