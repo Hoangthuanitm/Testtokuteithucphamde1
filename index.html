@@ -392,14 +392,15 @@
         padding: 12px;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-        position: relative; /* Đảm bảo spacer được đặt đúng vị trí */
+        position: relative;
+        display: block; /* Đảm bảo cuộn đồng bộ */
     }
     .result-table {
-        width: 100%; /* Sử dụng 100% thay vì giá trị cố định */
-        min-width: 588px; /* Giữ min-width để đảm bảo bảng không quá nhỏ */
+        width: 100%; /* Sử dụng 100% */
+        min-width: 588px; /* Giữ min-width */
         font-size: clamp(15px, 2.5vw, 17px);
         table-layout: auto;
-        display: inline-block; /* Kiểm soát chiều rộng tự động */
+        display: inline-block; /* Kiểm soát chiều rộng */
     }
     .result-table th,
     .result-table td {
@@ -407,21 +408,25 @@
         font-size: clamp(15px, 2.5vw, 17px);
     }
     .result-section h2 {
-        width: 100%; /* Sử dụng 100% thay vì giá trị cố định */
+        width: 100%; /* Sử dụng 100% */
         min-width: 588px; /* Giữ min-width */
         box-sizing: border-box;
         padding-left: 15px;
         padding-right: 15px;
         overflow-x: auto;
-        margin-right:12px;
-        display: inline-block; /* Kiểm soát chiều rộng tự động */
+        display: inline-block; /* Kiểm soát chiều rộng */
     }
     .spacer {
-        width: 12px; /* Tạo khoảng trống 12px ở mép phải */
-        height: 1px; /* Chiều cao tối thiểu để không ảnh hưởng giao diện */
-        display: inline-block; /* Đảm bảo spacer được tính vào chiều rộng cuộn */
+        width: 12px; /* Đặt khoảng trống cố định 12px */
+        height: 1px; /* Chiều cao tối thiểu */
+        display: inline-block; /* Đảm bảo spacer được tính vào cuộn */
+        vertical-align: top; /* Giữ bố cục thẳng hàng */
     }
-}
+    /* Đảm bảo tất cả phần tử con cuộn đồng bộ */
+    .result-section > * {
+        display: inline-block;
+        vertical-align: top;
+    }
             button {
                 padding: 10px 20px;
                 font-size: clamp(15px, 2.8vw, 17px);
