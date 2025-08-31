@@ -389,19 +389,20 @@
             }
  @media (max-width: 768px) {
     .result-section {
-        padding: 12px 24px; /* Tăng padding phải/trái để tạo khung trắng rộng hơn */
-        background: #fff; /* Đảm bảo nền trắng rõ ràng */
+        padding: 12px 12px 12px 0; /* Padding trái = 0 để giảm khoảng cách trái, phải = 12px để tạo viền trắng */
+        background: #fff; /* Nền trắng rõ ràng */
         overflow-x: auto; /* Cho phép cuộn ngang */
         -webkit-overflow-scrolling: touch; /* Cuộn mượt trên iOS */
         box-sizing: border-box;
     }
 
     .result-table {
-        width: calc(100% - 12px); /* Giảm width để tạo khoảng cách 12px bên phải */
+        width: calc(100% - 12px); /* Giảm width để cách lề phải 12px */
         min-width: 600px;
         font-size: clamp(15px, 2.5vw, 17px);
         table-layout: auto;
-        margin-right: 12px; /* Cách lề phải 12px so với khung trắng */
+        margin-right: 12px; /* Cách lề phải 12px so với viền trắng */
+        margin-left: 12px; /* Đảm bảo lề trái cân đối, không quá rộng */
     }
 
     .result-table th,
@@ -411,12 +412,13 @@
     }
 
     .result-section h2 {
-        width: calc(100% - 12px); /* Giảm width để tạo khoảng cách 12px bên phải */
+        width: calc(100% - 12px); /* Giảm width để cách lề phải 12px */
         min-width: 600px;
         box-sizing: border-box;
-        padding-left: 15px;
+        padding-left: 15px; /* Giữ padding-left cho nội dung h2 */
         padding-right: 15px;
-        margin-right: 12px; /* Cách lề phải 12px so với khung trắng */
+        margin-right: 12px; /* Cách lề phải 12px so với viền trắng */
+        margin-left: 12px; /* Đảm bảo lề trái cân đối, không quá rộng */
     }
             button {
                 padding: 10px 20px;
