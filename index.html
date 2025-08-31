@@ -386,50 +386,38 @@
             }
  @media (max-width: 768px) {
     .result-section {
-        padding: 12px; /* Đồng bộ padding cho toàn bộ section */
-        overflow-x: auto; /* Cho phép cuộn ngang */
+        padding: 12px;
+        overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-        position: relative;
-        display: block; /* Sử dụng block để kiểm soát bố cục */
+        position: relative; /* Đảm bảo spacer được đặt đúng vị trí */
     }
-
-    .result-section h2 {
-        width: 100%; /* Sử dụng 100% chiều rộng */
-        box-sizing: border-box;
-        padding: 0; /* Loại bỏ padding để tránh tràn */
-        margin: 0 0 12px 0; /* Chỉ dùng margin dưới để cách bảng */
-        font-size: clamp(15px, 2.5vw, 17px);
-        white-space: nowrap; /* Ngăn tiêu đề bị ngắt dòng */
-        overflow-x: auto; /* Cho phép cuộn nếu tiêu đề quá dài */
-    }
-
     .result-table {
-        width: 100%; /* Sử dụng 100% chiều rộng */
-        min-width: 588px; /* Giữ min-width để bảng không co quá nhỏ */
+        width: 100%; /* Sử dụng 100% thay vì giá trị cố định */
+        min-width: 588px; /* Giữ min-width để đảm bảo bảng không quá nhỏ */
         font-size: clamp(15px, 2.5vw, 17px);
         table-layout: auto;
-        display: block; /* Sử dụng block để kiểm soát tốt hơn */
-        margin: 0 0 12px 0; /* Thêm margin dưới để cách các phần tử khác */
+        display: inline-block; /* Kiểm soát chiều rộng tự động */
     }
-
     .result-table th,
     .result-table td {
-        padding: 12px; /* Đồng bộ padding với .result-section */
+        padding: 10px;
         font-size: clamp(15px, 2.5vw, 17px);
-        box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
     }
-
-    /* Loại bỏ hoặc tối ưu spacer nếu không cần thiết */
+    .result-section h2 {
+        width: 100%; /* Sử dụng 100% thay vì giá trị cố định */
+        min-width: 588px; /* Giữ min-width */
+        box-sizing: border-box;
+        padding-left: 15px;
+        padding-right: 15px;
+        overflow-x: auto;
+        display: inline-block; /* Kiểm soát chiều rộng tự động */
+    }
     .spacer {
-        display: none; /* Tạm thời ẩn spacer để kiểm tra */
+        width: 12px; /* Tạo khoảng trống 12px ở mép phải */
+        height: 1px; /* Chiều cao tối thiểu để không ảnh hưởng giao diện */
+        display: inline-block; /* Đảm bảo spacer được tính vào chiều rộng cuộn */
     }
-
-    /* Đảm bảo tất cả phần tử con cuộn đồng bộ */
-    .result-section > * {
-        display: block; /* Sử dụng block để tránh tràn */
-        width: 100%; /* Đảm bảo chiều rộng đầy đủ */
-        box-sizing: border-box; /* Bao gồm padding trong chiều rộng */
-    }
+}
             button {
                 padding: 10px 20px;
                 font-size: clamp(15px, 2.8vw, 17px);
