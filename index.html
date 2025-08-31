@@ -134,6 +134,8 @@
         border-radius: 8px;
         font-size: clamp(1.4em, 3vw, 1.6em);
         margin-top: 0;
+                    text-align: center;
+
     }
     button {
         background-color: var(--color-primary);
@@ -194,6 +196,8 @@
         text-align: left;
         white-space: nowrap;
         font-size: clamp(16px, 2.5vw, 18px);
+                    text-align: center;
+
     }
     .result-table th {
         background-color: var(--color-primary);
@@ -383,11 +387,11 @@
             padding: 12px;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
-            position: relative; /* Đảm bảo wrapper bên trong có thể căn chỉnh */
+            position: relative;
         }
         .result-wrapper {
-            margin-right: 12px; /* Khoảng cách 12px từ viền trắng mới */
-            overflow-x: auto; /* Cho phép cuộn ngang trong wrapper */
+            margin: 0 12px; /* Căn đều 12px từ cả lề trái và lề phải */
+            overflow-x: auto;
         }
         .result-table {
             width: 768px;
@@ -438,7 +442,7 @@
             position: relative;
         }
         .result-wrapper {
-            margin-right: 2px;
+            margin: 0 12px; /* Đảm bảo căn đều 12px từ cả hai bên */
             overflow-x: auto;
         }
         .result-table {
