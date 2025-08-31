@@ -387,46 +387,46 @@
             .question-section {
                 padding: 12px;
             }
- @media (max-width: 768px) {
-    .result-section {
-        padding: 12px;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        position: relative;
-        display: block; /* Đảm bảo cuộn đồng bộ */
-    }
-    .result-table {
-        width: 100%; /* Sử dụng 100% */
-        min-width: 588px; /* Giữ min-width */
-        font-size: clamp(15px, 2.5vw, 17px);
-        table-layout: auto;
-        display: inline-block; /* Kiểm soát chiều rộng */
-    }
-    .result-table th,
-    .result-table td {
-        padding: 10px;
-        font-size: clamp(15px, 2.5vw, 17px);
-    }
-    .result-section h2 {
-        width: 100%; /* Sử dụng 100% */
-        min-width: 588px; /* Giữ min-width */
-        box-sizing: border-box;
-        padding-left: 15px;
-        padding-right: 15px;
-        overflow-x: auto;
-        display: inline-block; /* Kiểm soát chiều rộng */
-    }
-    .spacer {
-        width: 12px; /* Đặt khoảng trống cố định 12px */
-        height: 1px; /* Chiều cao tối thiểu */
-        display: inline-block; /* Đảm bảo spacer được tính vào cuộn */
-        vertical-align: top; /* Giữ bố cục thẳng hàng */
-    }
-    /* Đảm bảo tất cả phần tử con cuộn đồng bộ */
-    .result-section > * {
-        display: inline-block;
-        vertical-align: top;
-    }
+@media (max-width: 768px) {
+.result-section {
+padding: 12px;
+overflow-x: auto;
+-webkit-overflow-scrolling: touch;
+position: relative;
+display: block; /* Đảm bảo cuộn đồng bộ /
+}
+.result-table {
+width: 100%; / Sử dụng 100% /
+min-width: 588px; / Giữ min-width /
+font-size: clamp(15px, 2.5vw, 17px);
+table-layout: auto;
+display: inline-block; / Kiểm soát chiều rộng /
+}
+.result-table th,
+.result-table td {
+padding: 10px;
+font-size: clamp(15px, 2.5vw, 17px);
+}
+.result-section h2 {
+width: 100%; / Sử dụng 100% /
+min-width: 588px; / Giữ min-width /
+box-sizing: border-box;
+padding-left: 12px;
+padding-right: 12px;
+overflow-x: auto;
+display: inline-block; / Kiểm soát chiều rộng /
+}
+.spacer {
+width: 12px; / Đặt khoảng trống cố định 12px /
+height: 1px; / Chiều cao tối thiểu /
+display: inline-block; / Đảm bảo spacer được tính vào cuộn /
+vertical-align: top; / Giữ bố cục thẳng hàng /
+}
+/ Đảm bảo tất cả phần tử con cuộn đồng bộ */
+.result-section > * {
+display: inline-block;
+vertical-align: top;
+}
             button {
                 padding: 10px 20px;
                 font-size: clamp(15px, 2.8vw, 17px);
