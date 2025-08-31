@@ -392,15 +392,17 @@
         padding: 12px;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-        border: 1px solid white;
+        border: 1px solid white; /* Viền trắng */
         box-sizing: border-box;
+        /* Tăng padding bên phải để chứa lề */
+        padding-right: 24px; /* Tăng lên để bao gồm lề 12px */
     }
     .result-table {
-        width: 744px; /* Giảm 24px để chừa chỗ cho margin 12px và padding */
+        width: 768px;
         min-width: 600px;
         font-size: clamp(15px, 2.5vw, 17px);
         table-layout: auto;
-        margin-right: 12px;
+        margin-right: 12px; /* Lề để tạo khoảng cách */
     }
     .result-table th,
     .result-table td {
@@ -408,12 +410,12 @@
         font-size: clamp(15px, 2.5vw, 17px);
     }
     .result-section h2 {
-        width: 744px; /* Giảm 24px để chừa chỗ cho margin 12px và padding */
+        width: 768px;
         min-width: 600px;
         box-sizing: border-box;
         padding-left: 15px;
         padding-right: 15px;
-        margin-right: 12px;
+        margin-right: 12px; /* Lề để tạo khoảng cách */
         overflow-x: auto;
     }
             button {
