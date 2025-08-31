@@ -395,7 +395,7 @@
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        gap: 10px; /* Khoảng cách giữa tiêu đề và bảng */
+        gap: 10px;
     }
     .result-table {
         width: auto;
@@ -411,7 +411,7 @@
         font-size: clamp(15px, 2.5vw, 17px);
     }
     .result-section h2 {
-        width: auto;
+        width: inherit; /* Kế thừa chiều rộng từ container flex */
         min-width: 600px;
         box-sizing: border-box;
         padding-left: 15px;
