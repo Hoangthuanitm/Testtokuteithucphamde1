@@ -390,15 +390,18 @@
  @media (max-width: 768px) {
     body {
         padding: 0; /* Loại bỏ padding của body để tránh khoảng cách thừa */
+        margin: 0; /* Loại bỏ margin để .result-section sử dụng toàn bộ chiều rộng */
+        max-width: 100%; /* Vô hiệu hóa max-width: 1200px để tránh giới hạn chiều rộng */
     }
 
     .result-section {
-        padding: 0 12px; /* Padding 12px ở lề phải và trái để tạo viền trắng */
+        padding: 12px; /* Padding 12px đồng đều tạo viền trắng 12px ở cả hai bên */
         background: #fff; /* Nền trắng rõ ràng */
         overflow-x: auto; /* Cho phép cuộn ngang */
         -webkit-overflow-scrolling: touch; /* Cuộn mượt trên iOS */
         box-sizing: border-box;
-        margin: 0; /* Loại bỏ margin để tận dụng toàn bộ chiều rộng */
+        width: 100%; /* Sử dụng toàn bộ chiều rộng */
+        margin: 0; /* Loại bỏ margin để tránh khoảng cách thừa */
     }
 
     .result-table {
@@ -406,7 +409,7 @@
         min-width: 600px; /* Giữ min-width để bảng không co nhỏ quá */
         font-size: clamp(15px, 2.5vw, 17px);
         table-layout: auto;
-        margin: 0; /* Loại bỏ margin để dựa vào padding của .result-section */
+        margin: 0; /* Loại bỏ margin để nội dung sát với viền trắng */
     }
 
     .result-table th,
@@ -419,9 +422,9 @@
         width: 100%; /* Sử dụng toàn bộ chiều rộng trong .result-section */
         min-width: 600px; /* Giữ min-width để tiêu đề không co nhỏ quá */
         box-sizing: border-box;
-        padding-left: 15px; /* Giữ padding-left cho nội dung h2 */
-        padding-right: 15px; /* Giữ padding-right cho nội dung h2 */
-        margin: 0; /* Loại bỏ margin để dựa vào padding của .result-section */
+        padding-left: 15px; /* Padding cho nội dung h2 */
+        padding-right: 15px; /* Padding cho nội dung h2 */
+        margin: 0; /* Loại bỏ margin để nội dung sát với viền trắng */
     }
             button {
                 padding: 10px 20px;
