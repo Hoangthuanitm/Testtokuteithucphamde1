@@ -390,6 +390,7 @@
              @media (max-width: 768px) {
     .result-section {
         padding: 12px;
+        padding-right: 24px; /* Tăng padding-right để tạo khoảng cách 12px ở mép phải khi cuộn */
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
@@ -398,7 +399,7 @@
         min-width: 600px;
         font-size: clamp(15px, 2.5vw, 17px);
         table-layout: auto;
-        margin-right: 24px; /* Thêm khoảng cách bên ngoài 12px cho cạnh phải của bảng */
+        /* Không cần margin-right ở đây */
     }
     .result-table th,
     .result-table td {
@@ -412,9 +413,8 @@
         padding-left: 15px;
         padding-right: 15px;
         overflow-x: auto;
-        margin-right: 24px; /* Thêm khoảng cách bên ngoài 12px cho cạnh phải của tiêu đề */
+        /* Không cần margin-right ở đây */
     }
-}
             button {
                 padding: 10px 20px;
                 font-size: clamp(15px, 2.8vw, 17px);
