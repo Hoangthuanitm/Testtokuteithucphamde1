@@ -392,14 +392,15 @@
         padding: 12px;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-        margin-right: 12px; /* Thêm margin-right cho result-section */
+        box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
     }
     .result-table {
         width: 768px;
         min-width: 600px;
         font-size: clamp(15px, 2.5vw, 17px);
         table-layout: auto;
-        margin-right: 12px; /* Thêm margin-right cho bảng */
+        margin-right: 12px; /* Giữ khoảng cách 12px bên phải */
+        display: inline-block; /* Đảm bảo bảng giữ margin khi trượt */
     }
     .result-table th,
     .result-table td {
@@ -412,7 +413,8 @@
         box-sizing: border-box;
         padding-left: 15px;
         padding-right: 15px;
-        margin-right: 12px; /* Thêm margin-right cho tiêu đề */
+        margin-right: 12px; /* Giữ khoảng cách 12px bên phải */
+        display: inline-block; /* Đảm bảo tiêu đề giữ margin khi trượt */
         overflow-x: auto;
     }
             button {
