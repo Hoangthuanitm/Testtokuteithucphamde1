@@ -391,12 +391,15 @@
         padding: 12px;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
+        max-width: 800px;
+            margin: 0 auto;
     }
             .result-table {
-        width: 700px;
+        width: 100%;
         min-width: 600px;
         font-size: clamp(15px, 2.5vw, 17px);
         table-layout: auto;
+                border-collapse: collapse;
     }
             .result-table th,
             .result-table td {
@@ -404,11 +407,11 @@
                 font-size: clamp(15px, 2.5vw, 17px);
             }
             .result-section h2 {
-        width: 700px;
+        width: 768px;
         min-width: 600px;
         box-sizing: border-box;
         padding-left: 15px;
-        padding-right: 12px;
+        padding-right: 20px;
         overflow-x: auto;
     }
             button {
