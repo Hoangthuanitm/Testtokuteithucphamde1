@@ -165,40 +165,55 @@
             font-size: var(--font-small);
         }
         .result-section {
-            margin-top: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
             padding: 15px;
-            background-color: #FFFFFF;
-            border-radius: 10px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            display: none;
+            margin: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
         }
+     .result-section h2 {
+            background-color: #1e90ff;
+            color: white;
+            padding: 15px 12px; /* Padding trái/phải đồng bộ với bảng (12px) */
+            margin: 0 -15px 15px -15px;
+            border-radius: 8px 8px 0 0;
+            font-size: clamp(18px, 3vw, 20px);
+            text-align: center;
+            box-sizing: border-box;
+        }
+
         .error-message {
             color: var(--color-error);
             margin-top: 10px;
             font-size: var(--font-small);
         }
-        .result-table {
+       .result-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 15px;
-            table-layout: auto;
-            overflow-x: auto;
-            min-width: 600px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
         }
-        .result-table th,
+
+       .result-table th,
         .result-table td {
-            border: 1px solid #E0E4EA;
             padding: 12px;
-            text-align: left;
-            white-space: nowrap;
-            font-size: clamp(16px, 2.5vw, 18px);
+            text-align: center;
+            font-size: clamp(16px, 2.8vw, 18px);
+            border-bottom: 1px solid #e0e0e0;
         }
+
         .result-table th {
-            background-color: var(--color-primary);
-            color: #FFFFFF;
-            font-weight: 500;
+            background-color: #1e90ff;
+            color: white;
+            font-weight: bold;
+        }
+
+        .result-table td {
+            background-color: #f9f9f9;
         }
         .result-table tr:nth-child(even) {
             background-color: #F9FAFB;
