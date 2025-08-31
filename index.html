@@ -392,26 +392,38 @@
         padding: 12px;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
+        display: flex;
+        justify-content: center;
     }
-            .result-table {
+    .result-table {
         width: 768px;
         min-width: 600px;
         font-size: clamp(15px, 2.5vw, 17px);
         table-layout: auto;
+        margin-left: auto;
+        margin-right: auto;
     }
-            .result-table th,
-            .result-table td {
-                padding: 10px;
-                font-size: clamp(15px, 2.5vw, 17px);
-            }
-            .result-section h2 {
+    .result-table th,
+    .result-table td {
+        padding: 10px;
+        font-size: clamp(15px, 2.5vw, 17px);
+    }
+    .result-table th {
+        background-color: #4CAF50; /* Màu xanh cho header */
+        color: white; /* Màu chữ trắng để tương phản */
+    }
+    .result-section h2 {
         width: 768px;
         min-width: 600px;
         box-sizing: border-box;
         padding-left: 15px;
         padding-right: 15px;
-        overflow-x: auto;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #4CAF50; /* Màu xanh cho h2 */
+        color: white; /* Màu chữ trắng để tương phản */
     }
+}
             button {
                 padding: 10px 20px;
                 font-size: clamp(15px, 2.8vw, 17px);
