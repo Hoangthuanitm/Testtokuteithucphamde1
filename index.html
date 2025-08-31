@@ -404,14 +404,14 @@
         font-size: clamp(15px, 2.5vw, 17px);
     }
     .result-section h2 {
-        width: 100%; /* Sử dụng 100% thay vì giá trị cố định */
-        min-width: 588px; /* Giữ min-width */
-        box-sizing: border-box;
-        padding-left: 15px;
-        padding-right: 15px;
-        overflow-x: auto;
-        display: inline-block; /* Kiểm soát chiều rộng tự động */
-    }
+    width: 100%; /* Sử dụng 100% thay vì giá trị cố định */
+    min-width: 588px; /* Giữ min-width */
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 27px; /* Tăng padding-right từ 15px lên 27px để tổng cộng cách mép phải 12px (bao gồm spacer 12px) */
+    overflow-x: auto;
+    display: inline-block; /* Kiểm soát chiều rộng tự động */
+}
     .spacer {
         width: 12px; /* Tạo khoảng trống 12px ở mép phải */
         height: 1px; /* Chiều cao tối thiểu để không ảnh hưởng giao diện */
