@@ -398,13 +398,14 @@
         font-size: clamp(15px, 2.5vw, 17px);
         table-layout: auto;
     }
-            .result-table th,
-            .result-table td {
-                padding: 10px;
+            .result-table td:last-child,
+.result-table th:last-child {
+    margin-right: -8px; /* Lùi viền cột cuối về trái 8px */
+    padding-right: 18px; /* Điều chỉnh padding để giữ nội dung không bị chồng chéo */
                 font-size: clamp(15px, 2.5vw, 17px);
             }
             .result-section h2 {
-        width: 90%;
+        width: 768;
         min-width: 600px;
         box-sizing: border-box;
         padding-left: 15px;
