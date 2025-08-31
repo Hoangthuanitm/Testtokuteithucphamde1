@@ -400,7 +400,8 @@
         min-width: 588px;
         font-size: clamp(15px, 2.5vw, 17px);
         table-layout: auto;
-        display: inline-block;
+        display: block; /* Đảm bảo bảng không bị ảnh hưởng bởi inline-block */
+        margin: 0; /* Loại bỏ margin mặc định */
     }
     .result-table th,
     .result-table td {
@@ -411,21 +412,18 @@
         width: 100%;
         min-width: 588px;
         box-sizing: border-box;
-        padding-left: 15px;
-        padding-right: 12px;
-        overflow-x: auto;
-        display: inline-block;
+        padding: 0 12px; /* Đồng bộ padding-left và padding-right thành 12px */
+        margin: 0 0 12px 0; /* Thêm margin-bottom để tách biệt với bảng */
+        display: block; /* Đảm bảo tiêu đề không bị ảnh hưởng bởi inline-block */
+        overflow-x: hidden; /* Loại bỏ cuộn ngang không cần thiết */
     }
     .spacer {
-        width: 12px;
-        height: 1px;
-        display: inline-block;
-        vertical-align: top;
+        display: none; /* Loại bỏ spacer nếu không cần thiết */
     }
     .result-section > * {
-        display: inline-block;
-        vertical-align: top;
+        display: block; /* Đảm bảo các phần tử con không bị lệch do inline-block */
     }
+}
             button {
                 padding: 10px 20px;
                 font-size: clamp(15px, 2.8vw, 17px);
