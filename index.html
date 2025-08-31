@@ -165,55 +165,40 @@
             font-size: var(--font-small);
         }
         .result-section {
-            background-color: #ffffff;
-            border-radius: 8px;
+            margin-top: 20px;
             padding: 15px;
-            margin: 15px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 100%;
-            box-sizing: border-box;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            display: none;
         }
-     .result-section h2 {
-            background-color: #1e90ff;
-            color: white;
-            padding: 15px 12px; /* Padding trái/phải đồng bộ với bảng (12px) */
-            margin: 0 -15px 15px -15px;
-            border-radius: 8px 8px 0 0;
-            font-size: clamp(18px, 3vw, 20px);
-            text-align: center;
-            box-sizing: border-box;
-        }
-
         .error-message {
             color: var(--color-error);
             margin-top: 10px;
             font-size: var(--font-small);
         }
-       .result-table {
+        .result-table {
             width: 100%;
             border-collapse: collapse;
-            background-color: #ffffff;
-            border-radius: 8px;
-            overflow: hidden;
+            margin-top: 15px;
+            table-layout: auto;
+            overflow-x: auto;
+            min-width: 600px;
         }
-
-       .result-table th,
+        .result-table th,
         .result-table td {
+            border: 1px solid #E0E4EA;
             padding: 12px;
-            text-align: center;
-            font-size: clamp(16px, 2.8vw, 18px);
-            border-bottom: 1px solid #e0e0e0;
+            text-align: left;
+            white-space: nowrap;
+            font-size: clamp(16px, 2.5vw, 18px);
         }
-
         .result-table th {
-            background-color: #1e90ff;
-            color: white;
-            font-weight: bold;
-        }
-
-        .result-table td {
-            background-color: #f9f9f9;
+            background-color: var(--color-primary);
+            color: #FFFFFF;
+            font-weight: 500;
         }
         .result-table tr:nth-child(even) {
             background-color: #F9FAFB;
@@ -402,35 +387,31 @@
             .question-section {
                 padding: 12px;
             }
-                    @media (max-width: 768px) {
-            .result-section {
-                padding: 10px;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-            }
-
-            .result-section h2 {
-                width: 768px;
-                min-width: 600px;
-                box-sizing: border-box;
-                padding: 12px 10px; /* Padding trái/phải đồng bộ với bảng (10px) */
-                margin: 0 -10px 10px -10px;
-                font-size: clamp(16px, 2.8vw, 18px);
-            }
-
+             @media (max-width: 768px) {
+    .result-section {
+        padding: 12px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
             .result-table {
-                width: 768px;
-                min-width: 600px;
-                table-layout: auto;
-                font-size: clamp(14px, 2.5vw, 16px);
-            }
-
+        width: 768px;
+        min-width: 600px;
+        font-size: clamp(15px, 2.5vw, 17px);
+        table-layout: auto;
+    }
             .result-table th,
             .result-table td {
                 padding: 10px;
-                font-size: clamp(14px, 2.5vw, 16px);
+                font-size: clamp(15px, 2.5vw, 17px);
             }
-        }
+            .result-section h2 {
+        width: 768px;
+        min-width: 600px;
+        box-sizing: border-box;
+        padding-left: 15px;
+        padding-right: 15px;
+        overflow-x: auto;
+    }
             button {
                 padding: 10px 20px;
                 font-size: clamp(15px, 2.8vw, 17px);
