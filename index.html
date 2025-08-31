@@ -387,19 +387,20 @@
             .question-section {
                 padding: 12px;
             }
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
     .result-section {
         padding: 12px;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-        position: relative; /* Đảm bảo spacer được đặt đúng vị trí */
+        position: relative;
+        display: block; /* Đảm bảo toàn bộ section cuộn đồng bộ */
     }
     .result-table {
-        width: 100%; /* Sử dụng 100% thay vì giá trị cố định */
-        min-width: 588px; /* Giữ min-width để đảm bảo bảng không quá nhỏ */
+        width: 100%;
+        min-width: 588px;
         font-size: clamp(15px, 2.5vw, 17px);
         table-layout: auto;
-        display: inline-block; /* Kiểm soát chiều rộng tự động */
+        display: inline-block;
     }
     .result-table th,
     .result-table td {
@@ -407,20 +408,26 @@
         font-size: clamp(15px, 2.5vw, 17px);
     }
     .result-section h2 {
-        width: 100%; /* Sử dụng 100% thay vì giá trị cố định */
-        min-width: 588px; /* Giữ min-width */
+        width: 100%; /* Sử dụng 100% để tự động điều chỉnh */
+        min-width: 588px;
         box-sizing: border-box;
         padding-left: 15px;
         padding-right: 15px;
-        overflow-x: auto;
-        display: inline-block; /* Kiểm soát chiều rộng tự động */
+        overflow-x: auto; /* Đảm bảo tiêu đề cũng cuộn */
+        display: inline-block; /* Kiểm soát chiều rộng */
+        margin-bottom: 0; /* Loại bỏ khoảng cách thừa */
     }
     .spacer {
-        width: 12px; /* Tạo khoảng trống 12px ở mép phải */
-        height: 1px; /* Chiều cao tối thiểu để không ảnh hưởng giao diện */
-        display: inline-block; /* Đảm bảo spacer được tính vào chiều rộng cuộn */
+        width: 12px; /* Giữ khoảng trống 12px */
+        height: 1px;
+        display: inline-block;
+        vertical-align: top; /* Đảm bảo spacer không làm lệch bố cục */
     }
-}
+    /* Đảm bảo toàn bộ nội dung trong .result-section cuộn đồng bộ */
+    .result-section > * {
+        display: inline-block;
+        vertical-align: top;
+    }
             button {
                 padding: 10px 20px;
                 font-size: clamp(15px, 2.8vw, 17px);
