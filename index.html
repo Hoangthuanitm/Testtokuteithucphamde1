@@ -389,43 +389,48 @@
             }
  @media (max-width: 768px) {
     .result-section {
-        padding: 12px;
-        overflow-x: auto;
+        padding: 12px; /* Đồng bộ padding cho toàn bộ section */
+        overflow-x: auto; /* Cho phép cuộn ngang */
         -webkit-overflow-scrolling: touch;
         position: relative;
-        display: block; /* Đảm bảo cuộn đồng bộ */
+        display: block; /* Sử dụng block để kiểm soát tốt hơn */
     }
+
+    .result-section h2 {
+        width: 100%; /* Sử dụng 100% chiều rộng */
+        box-sizing: border-box;
+        padding: 0 12px; /* Đồng bộ padding với .result-section */
+        margin: 0 0 12px 0; /* Thêm margin dưới để cách bảng */
+        font-size: clamp(15px, 2.5vw, 17px);
+        overflow-x: auto; /* Đảm bảo tiêu đề cũng cuộn nếu cần */
+    }
+
     .result-table {
-        width: 100%; /* Sử dụng 100% */
-        min-width: 588px; /* Giữ min-width */
+        width: 100%; /* Sử dụng 100% chiều rộng */
+        min-width: 588px; /* Giữ min-width để bảng không bị co quá nhỏ */
         font-size: clamp(15px, 2.5vw, 17px);
         table-layout: auto;
-        display: inline-block; /* Kiểm soát chiều rộng */
+        display: block; /* Sử dụng block thay inline-block */
+        margin: 0 0 12px 0; /* Thêm margin dưới để cách các phần tử khác */
     }
+
     .result-table th,
     .result-table td {
-        padding: 10px;
+        padding: 10px; /* Giữ padding nhưng có thể điều chỉnh nếu cần */
         font-size: clamp(15px, 2.5vw, 17px);
     }
-    .result-section h2 {
-        width: 100%; /* Sử dụng 100% */
-        min-width: 588px; /* Giữ min-width */
-        box-sizing: border-box;
-        padding-left: 15px;
-        padding-right: 15px;
-        overflow-x: auto;
-                display: inline-block; /* Kiểm soát chiều rộng */
-    }
+
     .spacer {
-        width: 12px; /* Đặt khoảng trống cố định 12px */
+        width: 12px; /* Giữ khoảng trống cố định */
         height: 1px; /* Chiều cao tối thiểu */
-        display: inline-block; /* Đảm bảo spacer được tính vào cuộn */
-        vertical-align: top; /* Giữ bố cục thẳng hàng */
+        display: block; /* Sử dụng block để tránh ảnh hưởng bố cục */
+        margin: 0 auto; /* Căn giữa nếu cần */
     }
+
     /* Đảm bảo tất cả phần tử con cuộn đồng bộ */
     .result-section > * {
-        display: inline-block;
-        vertical-align: top;
+        display: block; /* Sử dụng block để kiểm soát tốt hơn */
+        width: 100%; /* Đảm bảo chiều rộng đầy đủ */
     }
             button {
                 padding: 10px 20px;
