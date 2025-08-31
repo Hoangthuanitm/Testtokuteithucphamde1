@@ -380,7 +380,7 @@
             padding: 12px;
         }
         .result-section {
-            padding: 12px;
+            padding: 12px 24px 12px 12px; /* Thêm padding-right: 24px để bao gồm khoảng cách 12px */
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
         }
@@ -389,7 +389,7 @@
             min-width: 600px;
             font-size: clamp(15px, 2.5vw, 17px);
             table-layout: auto;
-            margin-right: 12px;
+            /* Loại bỏ margin-right, thay vào đó dùng padding ở result-section */
         }
         .result-table th,
         .result-table td {
@@ -405,7 +405,7 @@
             padding-right: 15px;
             overflow-x: auto;
             text-align: center;
-            margin-right: 12px;
+            /* Loại bỏ margin-right, thay vào đó dùng padding ở result-section */
         }
         button {
             padding: 10px 20px;
@@ -429,7 +429,7 @@
     }
     @media (max-width: 768px) {
         .result-section {
-            padding: 12px;
+            padding: 12px 24px 12px 12px; /* Đảm bảo padding-right 24px (12px + 12px khoảng cách) */
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
         }
@@ -438,7 +438,6 @@
             min-width: 600px;
             font-size: clamp(15px, 2.5vw, 17px);
             table-layout: auto;
-            margin-right: 12px;
         }
         .result-table th,
         .result-table td {
@@ -454,7 +453,6 @@
             padding-right: 15px;
             overflow-x: auto;
             text-align: center;
-            margin-right: 12px;
         }
     }
     </style>
