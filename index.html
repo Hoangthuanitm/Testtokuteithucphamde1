@@ -393,15 +393,14 @@
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         position: relative;
-        display: block;
+        display: block; /* Đảm bảo cuộn đồng bộ */
     }
     .result-table {
-        width: 100%;
-        min-width: 588px;
+        width: 100%; /* Sử dụng 100% */
+        min-width: 588px; /* Giữ min-width */
         font-size: clamp(15px, 2.5vw, 17px);
         table-layout: auto;
-        display: block; /* Đảm bảo bảng không bị ảnh hưởng bởi inline-block */
-        margin: 0; /* Loại bỏ margin mặc định */
+        display: inline-block; /* Kiểm soát chiều rộng */
     }
     .result-table th,
     .result-table td {
@@ -409,21 +408,25 @@
         font-size: clamp(15px, 2.5vw, 17px);
     }
     .result-section h2 {
-        width: 100%;
-        min-width: 588px;
+        width: 100%; /* Sử dụng 100% */
+        min-width: 588px; /* Giữ min-width */
         box-sizing: border-box;
-        padding: 0 12px; /* Đồng bộ padding-left và padding-right thành 12px */
-        margin: 0 0 12px 0; /* Thêm margin-bottom để tách biệt với bảng */
-        display: block; /* Đảm bảo tiêu đề không bị ảnh hưởng bởi inline-block */
-        overflow-x: hidden; /* Loại bỏ cuộn ngang không cần thiết */
+        padding-left: 15px;
+        padding-right: 15px;
+        overflow-x: auto;
+        display: inline-block; /* Kiểm soát chiều rộng */
     }
     .spacer {
-        display: none; /* Loại bỏ spacer nếu không cần thiết */
+        width: 12px; /* Đặt khoảng trống cố định 12px */
+        height: 1px; /* Chiều cao tối thiểu */
+        display: inline-block; /* Đảm bảo spacer được tính vào cuộn */
+        vertical-align: top; /* Giữ bố cục thẳng hàng */
     }
+    /* Đảm bảo tất cả phần tử con cuộn đồng bộ */
     .result-section > * {
-        display: block; /* Đảm bảo các phần tử con không bị lệch do inline-block */
+        display: inline-block;
+        vertical-align: top;
     }
-}
             button {
                 padding: 10px 20px;
                 font-size: clamp(15px, 2.8vw, 17px);
