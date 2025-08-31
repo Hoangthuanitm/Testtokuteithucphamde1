@@ -387,19 +387,17 @@
             .question-section {
                 padding: 12px;
             }
-             @media (max-width: 768px) {
+            @media (max-width: 768px) {
     .result-section {
         padding: 12px;
-        padding-right: 24px; /* Tăng padding-right để tạo khoảng cách 12px ở mép phải khi cuộn */
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
     .result-table {
-        width: 768px;
-        min-width: 600px;
+        width: 756px; /* Giảm 12px để tạo khoảng trống ở mép phải */
+        min-width: 588px; /* Giảm tương ứng để giữ tỷ lệ */
         font-size: clamp(15px, 2.5vw, 17px);
         table-layout: auto;
-        /* Không cần margin-right ở đây */
     }
     .result-table th,
     .result-table td {
@@ -407,13 +405,12 @@
         font-size: clamp(15px, 2.5vw, 17px);
     }
     .result-section h2 {
-        width: 768px;
-        min-width: 600px;
+        width: 756px; /* Giảm 12px để tạo khoảng trống ở mép phải */
+        min-width: 588px; /* Giảm tương ứng */
         box-sizing: border-box;
         padding-left: 15px;
         padding-right: 15px;
         overflow-x: auto;
-        /* Không cần margin-right ở đây */
     }
             button {
                 padding: 10px 20px;
