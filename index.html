@@ -380,16 +380,20 @@
             padding: 12px;
         }
         .result-section {
-            padding: 12px 24px 12px 12px; /* Thêm padding-right: 24px để bao gồm khoảng cách 12px */
+            padding: 12px;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
+            position: relative; /* Đảm bảo wrapper bên trong có thể căn chỉnh */
+        }
+        .result-wrapper {
+            margin-right: 12px; /* Khoảng cách 12px từ viền trắng mới */
+            overflow-x: auto; /* Cho phép cuộn ngang trong wrapper */
         }
         .result-table {
             width: 768px;
             min-width: 600px;
             font-size: clamp(15px, 2.5vw, 17px);
             table-layout: auto;
-            /* Loại bỏ margin-right, thay vào đó dùng padding ở result-section */
         }
         .result-table th,
         .result-table td {
@@ -405,7 +409,6 @@
             padding-right: 15px;
             overflow-x: auto;
             text-align: center;
-            /* Loại bỏ margin-right, thay vào đó dùng padding ở result-section */
         }
         button {
             padding: 10px 20px;
@@ -429,9 +432,14 @@
     }
     @media (max-width: 768px) {
         .result-section {
-            padding: 12px 24px 12px 12px; /* Đảm bảo padding-right 24px (12px + 12px khoảng cách) */
+            padding: 12px;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
+            position: relative;
+        }
+        .result-wrapper {
+            margin-right: 12px;
+            overflow-x: auto;
         }
         .result-table {
             width: 768px;
@@ -489,7 +497,11 @@
     <button id="submit-test" type="button" style="display: none;">テストを提出する (Nộp bài)</button>
     <div id="message-result" class="error-message"></div>
     <div class="result-section" id="results">
+    <div class="result-wrapper">
         <h2>採点結果 (Kết quả)</h2>
+        <table class="result-table">
+            <!-- Nội dung bảng -->
+        </table>
         <div id="score-display"></div>
     </div>
     <div class="password-modal" id="password-modal">
