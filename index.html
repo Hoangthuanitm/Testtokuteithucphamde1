@@ -387,7 +387,7 @@
             .question-section {
                 padding: 12px;
             }
-             @media (max-width: 768px) {
+                  @media (max-width: 768px) {
     .result-section {
         padding: 12px;
         overflow-x: auto;
@@ -396,32 +396,24 @@
         flex-direction: column; /* Xếp các phần tử theo cột */
         align-items: center; /* Căn giữa theo chiều ngang */
     }
-
-    .result-table {
-        width: 100%; /* Đặt width linh hoạt để phù hợp với container */
-        max-width: 768px; /* Giới hạn chiều rộng tối đa */
-        min-width: 600px; /* Giữ min-width nếu cần */
-        margin: 0 auto; /* Căn giữa bảng */
+            .result-table {
+        width: 768px;
+        min-width: 600px;
         font-size: clamp(15px, 2.5vw, 17px);
         table-layout: auto;
     }
-
-    .result-table th,
-    .result-table td {
-        padding: 10px;
-        font-size: clamp(15px, 2.5vw, 17px);
-    }
-
-    .result-section h2 {
-        width: 100%; /* Đặt width linh hoạt */
-        max-width: 768px; /* Giới hạn chiều rộng tối đa */
-        min-width: 600px; /* Giữ min-width nếu cần */
-        margin: 0 auto; /* Căn giữa tiêu đề */
+            .result-table th,
+            .result-table td {
+                padding: 10px;
+                font-size: clamp(15px, 2.5vw, 17px);
+            }
+            .result-section h2 {
+        width: 768px;
+        min-width: 600px;
         box-sizing: border-box;
         padding-left: 15px;
         padding-right: 15px;
-        text-align: center; /* Căn giữa nội dung văn bản trong h2 */
-        overflow-x: visible; /* Loại bỏ cuộn ngang nếu không cần */
+        overflow-x: auto;
     }
             button {
                 padding: 10px 20px;
