@@ -526,12 +526,9 @@
 
     /* Đảm bảo nút "Làm lại" hiển thị rõ ràng */
     button.reset {
-        display: block;
-        margin: 20px auto; /* Căn giữa và thêm khoảng cách trên/dưới */
         max-width: 100%;
         box-sizing: border-box;
-        z-index: 10; /* Đảm bảo nút không bị che bởi thanh trượt */
-        position: relative;
+        /* Không thêm margin hoặc position mới để giữ nguyên vị trí */
     }
 
     /* Đảm bảo các nút và modal khác không gây trượt ngang */
