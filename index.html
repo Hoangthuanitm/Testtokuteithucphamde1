@@ -450,12 +450,12 @@
         overflow-x: hidden;
     }
 
-    /* Sửa .image-placeholder để hiển thị hình ảnh đúng trên mobile */
+    /* Sửa .image-placeholder để hiển thị hình ảnh đúng */
     .image-placeholder {
-        width: 100%; /* Chiếm toàn bộ chiều rộng container cha */
-        max-width: 100%; /* Không vượt quá viewport */
-        height: auto; /* Tự động điều chỉnh chiều cao để giữ tỷ lệ */
-        min-height: 80px; /* Đảm bảo chiều cao tối thiểu */
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 80px;
         border: 1px dashed #D1D5DB;
         display: flex;
         align-items: center;
@@ -469,18 +469,10 @@
 
     .image-placeholder img {
         width: 100%;
-        height: auto; /* Giữ tỷ lệ hình ảnh */
-        max-height: 100%; /* Không vượt quá chiều cao container */
-        object-fit: contain; /* Giữ tỷ lệ, không cắt */
+        height: auto;
+        max-height: 100%;
+        object-fit: contain;
         display: block;
-    }
-
-    /* Đảm bảo container cha của hình ảnh không gây trượt ngang */
-    .question-section {
-        max-width: 100%;
-        overflow-x: hidden;
-        padding: 12px;
-        box-sizing: border-box;
     }
 
     /* Sửa input ngày */
@@ -492,18 +484,21 @@
         background-color: #E0E4EA;
     }
 
-    /* Cho phép trượt ngang chỉ ở bảng kết quả */
+    /* Điều chỉnh .result-section để thêm khoảng cách cho thanh trượt */
     .result-section {
         max-width: 100%;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         box-sizing: border-box;
+        padding-bottom: 30px; /* Thêm khoảng cách dưới để đẩy thanh trượt xuống */
+        position: relative;
     }
 
     .result-wrapper {
         max-width: 100%;
         overflow-x: auto;
         margin: 0;
+        padding-bottom: 20px; /* Thêm padding để đảm bảo thanh trượt không che nút */
     }
 
     .result-table {
@@ -529,10 +524,26 @@
         overflow-x: hidden;
     }
 
-    /* Đảm bảo nút và modal không gây trượt ngang */
+    /* Đảm bảo nút "Làm lại" hiển thị rõ ràng */
+    button.reset {
+        display: block;
+        margin: 20px auto; /* Căn giữa và thêm khoảng cách trên/dưới */
+        max-width: 100%;
+        box-sizing: border-box;
+        z-index: 10; /* Đảm bảo nút không bị che bởi thanh trượt */
+        position: relative;
+    }
+
+    /* Đảm bảo các nút và modal khác không gây trượt ngang */
     button, .password-box {
         max-width: 100%;
         box-sizing: border-box;
+    }
+
+    /* Ngăn văn bản dài gây trượt ngang */
+    .question, .option label {
+        word-break: break-all;
+        overflow-wrap: break-word;
     }
     </style>
 </head>
