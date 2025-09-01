@@ -434,47 +434,49 @@
             padding: 15px;
         }
     @media (max-width: 768px) {
-    /* Prevent horizontal scrolling for the body */
+    /* Ngăn trượt ngang cho toàn bộ body */
     body {
-        overflow-x: hidden; /* Disable horizontal scrolling */
+        overflow-x: hidden; /* Tắt trượt ngang */
+        width: 100%;
+        max-width: 100vw; /* Giới hạn chiều rộng tối đa bằng viewport */
+        box-sizing: border-box;
+    }
+
+    /* Đảm bảo các container chính không vượt quá viewport */
+    .header, .student-info, .question-section, .password-box {
+        max-width: 100%; /* Không vượt quá viewport */
         width: 100%;
         box-sizing: border-box;
+        overflow-x: hidden; /* Ngăn trượt ngang trong các container */
     }
 
-    /* Ensure all containers fit within the viewport */
-    .header, .student-info, .question-section {
-        max-width: 100%; /* Ensure containers don't exceed viewport width */
-        box-sizing: border-box;
-    }
-
-    /* Fix the date input to prevent overflow */
+    /* Sửa input ngày để không gây trượt ngang */
     .student-info #date {
-        width: 100%; /* Full width, no fixed percentage */
-        max-width: 100%; /* Ensure it doesn't overflow */
+        width: 100%; /* Chiếm toàn bộ chiều rộng container */
+        max-width: 100%; /* Không vượt quá container */
         box-sizing: border-box;
         height: 48px;
         background-color: #E0E4EA;
     }
 
-    /* Ensure result-section allows horizontal scrolling for the table */
+    /* Cho phép trượt ngang chỉ ở bảng kết quả */
     .result-section {
-        max-width: 100%; /* Fit within viewport */
-        overflow-x: auto; /* Allow horizontal scrolling for the table */
+        max-width: 100%; /* Giới hạn container trong viewport */
+        overflow-x: auto; /* Cho phép trượt ngang cho bảng */
         -webkit-overflow-scrolling: touch;
-        position: relative;
         box-sizing: border-box;
     }
 
     .result-wrapper {
-        overflow-x: auto; /* Allow scrolling for the wrapper */
-        max-width: 100%; /* Prevent wrapper from exceeding viewport */
-        margin: 0; /* Remove unnecessary margins */
+        max-width: 100%; /* Giới hạn wrapper trong viewport */
+        overflow-x: auto; /* Cho phép trượt ngang */
+        margin: 0;
     }
 
-    /* Adjust result-table to maintain scrollable behavior */
+    /* Đảm bảo bảng kết quả có thể trượt ngang */
     .result-table {
-        min-width: 600px; /* Keep minimum width for scrolling */
-        width: auto; /* Allow table to size naturally but scroll if needed */
+        width: auto; /* Cho phép bảng tự điều chỉnh */
+        min-width: 600px; /* Giữ chiều rộng tối thiểu để trượt ngang */
         font-size: clamp(15px, 2.5vw, 17px);
         table-layout: auto;
     }
@@ -486,31 +488,26 @@
         text-align: center;
     }
 
-    /* Fix result-section h2 to prevent overflow */
+    /* Sửa h2 trong result-section để không gây trượt ngang */
     .result-section h2 {
-        width: 100%; /* Fit within viewport */
-        max-width: 100%; /* Prevent overflow */
+        width: 100%; /* Chiếm toàn bộ chiều rộng container */
+        max-width: 100%; /* Không vượt quá viewport */
         box-sizing: border-box;
         padding: 12px 15px;
         text-align: center;
-        overflow-x: hidden; /* Prevent h2 from causing horizontal scroll */
+        overflow-x: hidden; /* Ngăn trượt ngang */
     }
 
-    /* Ensure buttons and other elements don't cause overflow */
-    button {
-        max-width: 100%; /* Prevent buttons from overflowing */
+    /* Đảm bảo các nút và hình ảnh không gây trượt ngang */
+    button, .image-placeholder {
+        max-width: 100%; /* Giới hạn trong viewport */
         box-sizing: border-box;
     }
 
-    .image-placeholder {
-        max-width: 100px;
-        height: 80px;
-        box-sizing: border-box;
-    }
-
+    /* Modal password không gây trượt ngang */
     .password-box {
         width: 90%;
-        max-width: 100%; /* Prevent modal from overflowing */
+        max-width: 100%; /* Giới hạn trong viewport */
         box-sizing: border-box;
     }
     </style>
