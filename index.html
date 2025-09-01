@@ -434,26 +434,59 @@
             padding: 15px;
         }
     @media (max-width: 768px) {
-    /* Ngăn trượt ngang cho toàn bộ body */
+    /* Ngăn trượt ngang cho body */
     body {
-        overflow-x: hidden; /* Tắt trượt ngang */
+        overflow-x: hidden;
         width: 100%;
-        max-width: 100vw; /* Giới hạn chiều rộng tối đa bằng viewport */
+        max-width: 100vw;
         box-sizing: border-box;
     }
 
     /* Đảm bảo các container chính không vượt quá viewport */
     .header, .student-info, .question-section, .password-box {
-        max-width: 100%; /* Không vượt quá viewport */
+        max-width: 100%;
         width: 100%;
         box-sizing: border-box;
-        overflow-x: hidden; /* Ngăn trượt ngang trong các container */
+        overflow-x: hidden;
     }
 
-    /* Sửa input ngày để không gây trượt ngang */
+    /* Sửa .image-placeholder để hiển thị hình ảnh đúng trên mobile */
+    .image-placeholder {
+        width: 100%; /* Chiếm toàn bộ chiều rộng container cha */
+        max-width: 100%; /* Không vượt quá viewport */
+        height: auto; /* Tự động điều chỉnh chiều cao để giữ tỷ lệ */
+        min-height: 80px; /* Đảm bảo chiều cao tối thiểu */
+        border: 1px dashed #D1D5DB;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 8px 0;
+        background-color: #F9FAFB;
+        font-size: clamp(14px, 2.5vw, 16px);
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .image-placeholder img {
+        width: 100%;
+        height: auto; /* Giữ tỷ lệ hình ảnh */
+        max-height: 100%; /* Không vượt quá chiều cao container */
+        object-fit: contain; /* Giữ tỷ lệ, không cắt */
+        display: block;
+    }
+
+    /* Đảm bảo container cha của hình ảnh không gây trượt ngang */
+    .question-section {
+        max-width: 100%;
+        overflow-x: hidden;
+        padding: 12px;
+        box-sizing: border-box;
+    }
+
+    /* Sửa input ngày */
     .student-info #date {
-        width: 100%; /* Chiếm toàn bộ chiều rộng container */
-        max-width: 100%; /* Không vượt quá container */
+        width: 100%;
+        max-width: 100%;
         box-sizing: border-box;
         height: 48px;
         background-color: #E0E4EA;
@@ -461,22 +494,21 @@
 
     /* Cho phép trượt ngang chỉ ở bảng kết quả */
     .result-section {
-        max-width: 100%; /* Giới hạn container trong viewport */
-        overflow-x: auto; /* Cho phép trượt ngang cho bảng */
+        max-width: 100%;
+        overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         box-sizing: border-box;
     }
 
     .result-wrapper {
-        max-width: 100%; /* Giới hạn wrapper trong viewport */
-        overflow-x: auto; /* Cho phép trượt ngang */
+        max-width: 100%;
+        overflow-x: auto;
         margin: 0;
     }
 
-    /* Đảm bảo bảng kết quả có thể trượt ngang */
     .result-table {
-        width: auto; /* Cho phép bảng tự điều chỉnh */
-        min-width: 600px; /* Giữ chiều rộng tối thiểu để trượt ngang */
+        width: auto;
+        min-width: 600px; /* Giữ trượt ngang */
         font-size: clamp(15px, 2.5vw, 17px);
         table-layout: auto;
     }
@@ -488,26 +520,18 @@
         text-align: center;
     }
 
-    /* Sửa h2 trong result-section để không gây trượt ngang */
     .result-section h2 {
-        width: 100%; /* Chiếm toàn bộ chiều rộng container */
-        max-width: 100%; /* Không vượt quá viewport */
+        width: 100%;
+        max-width: 100%;
         box-sizing: border-box;
         padding: 12px 15px;
         text-align: center;
-        overflow-x: hidden; /* Ngăn trượt ngang */
+        overflow-x: hidden;
     }
 
-    /* Đảm bảo các nút và hình ảnh không gây trượt ngang */
-    button, .image-placeholder {
-        max-width: 100%; /* Giới hạn trong viewport */
-        box-sizing: border-box;
-    }
-
-    /* Modal password không gây trượt ngang */
-    .password-box {
-        width: 90%;
-        max-width: 100%; /* Giới hạn trong viewport */
+    /* Đảm bảo nút và modal không gây trượt ngang */
+    button, .password-box {
+        max-width: 100%;
         box-sizing: border-box;
     }
     </style>
