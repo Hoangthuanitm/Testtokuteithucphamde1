@@ -433,39 +433,85 @@
             width: 90%;
             padding: 15px;
         }
-    }
     @media (max-width: 768px) {
-        .result-section {
-            padding: 12px;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            position: relative;
-        }
-        .result-wrapper {
-            margin: 0 0px; /* Đảm bảo căn đều 0px từ cả hai bên */
-            overflow-x: auto;
-        }
-        .result-table {
-            width: 768px;
-            min-width: 600px;
-            font-size: clamp(15px, 2.5vw, 17px);
-            table-layout: auto;
-        }
-        .result-table th,
-        .result-table td {
-            padding: 10px;
-            font-size: clamp(15px, 2.5vw, 17px);
-            text-align: center;
-        }
-        .result-section h2 {
-            width: 768px;
-            min-width: 600px;
-            box-sizing: border-box;
-            padding-left: 15px;
-            padding-right: 15px;
-            overflow-x: auto;
-            text-align: center;
-        }
+    /* Prevent horizontal scrolling for the body */
+    body {
+        overflow-x: hidden; /* Disable horizontal scrolling */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Ensure all containers fit within the viewport */
+    .header, .student-info, .question-section {
+        max-width: 100%; /* Ensure containers don't exceed viewport width */
+        box-sizing: border-box;
+    }
+
+    /* Fix the date input to prevent overflow */
+    .student-info #date {
+        width: 100%; /* Full width, no fixed percentage */
+        max-width: 100%; /* Ensure it doesn't overflow */
+        box-sizing: border-box;
+        height: 48px;
+        background-color: #E0E4EA;
+    }
+
+    /* Ensure result-section allows horizontal scrolling for the table */
+    .result-section {
+        max-width: 100%; /* Fit within viewport */
+        overflow-x: auto; /* Allow horizontal scrolling for the table */
+        -webkit-overflow-scrolling: touch;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    .result-wrapper {
+        overflow-x: auto; /* Allow scrolling for the wrapper */
+        max-width: 100%; /* Prevent wrapper from exceeding viewport */
+        margin: 0; /* Remove unnecessary margins */
+    }
+
+    /* Adjust result-table to maintain scrollable behavior */
+    .result-table {
+        min-width: 600px; /* Keep minimum width for scrolling */
+        width: auto; /* Allow table to size naturally but scroll if needed */
+        font-size: clamp(15px, 2.5vw, 17px);
+        table-layout: auto;
+    }
+
+    .result-table th,
+    .result-table td {
+        padding: 10px;
+        font-size: clamp(15px, 2.5vw, 17px);
+        text-align: center;
+    }
+
+    /* Fix result-section h2 to prevent overflow */
+    .result-section h2 {
+        width: 100%; /* Fit within viewport */
+        max-width: 100%; /* Prevent overflow */
+        box-sizing: border-box;
+        padding: 12px 15px;
+        text-align: center;
+        overflow-x: hidden; /* Prevent h2 from causing horizontal scroll */
+    }
+
+    /* Ensure buttons and other elements don't cause overflow */
+    button {
+        max-width: 100%; /* Prevent buttons from overflowing */
+        box-sizing: border-box;
+    }
+
+    .image-placeholder {
+        max-width: 100px;
+        height: 80px;
+        box-sizing: border-box;
+    }
+
+    .password-box {
+        width: 90%;
+        max-width: 100%; /* Prevent modal from overflowing */
+        box-sizing: border-box;
     }
     </style>
 </head>
